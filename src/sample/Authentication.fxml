@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Authentication">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Authentication">
    <children>
       <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -26,6 +22,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label fx:id="errorMessage" layoutX="242.0" layoutY="89.0" prefHeight="17.0" prefWidth="104.0" />
          </children>
       </AnchorPane>
    </children>
