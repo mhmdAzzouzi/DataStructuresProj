@@ -1,7 +1,7 @@
 package sample;
 
 public class LinkedList {
-    private class Node{
+    protected class Node{
         Book book;
         Node next;
         public Node(Book book) {
@@ -9,6 +9,7 @@ public class LinkedList {
         }
     }
     Node head;
+    Node tail;
     int size;
 
     public LinkedList() {
@@ -23,6 +24,7 @@ public class LinkedList {
         Node obj = new Node(b1);
         if(isEmpty()){
             head= obj;
+            tail =obj;
         }else{
             obj.next= head;
             head= obj;
@@ -34,12 +36,10 @@ public class LinkedList {
         Node obj = new Node(b1);
         if(isEmpty()){
             head=obj;
+            tail=obj;
         }else{
-            Node itr = head;
-            while(itr.next !=null){
-                itr= itr.next;
-            }
-            itr.next = obj;
+            tail.next= obj;
+            tail= obj;
         }
         size++;
     }
@@ -51,21 +51,6 @@ public class LinkedList {
         }
     }
 
-    public void deleteEnd(){
-        if(!isEmpty()){
-            if(size == 1 ){
-                head = head.next;
-
-            }else{
-                Node itr = head;
-                while(itr.next.next != null){
-                    itr = itr.next;
-                }
-                itr.next= itr.next.next;
-            }
-            size--;
-        }
-    }
 
     public void display(){
         if(!isEmpty()){
