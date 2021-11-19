@@ -11,6 +11,10 @@ public class LinkedList {
     Node head;
     int size;
 
+    public LinkedList() {
+        head = null;
+    }
+
     public boolean isEmpty(){
         return head==null;
     }

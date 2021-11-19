@@ -23,9 +23,11 @@ public class Authentication {
 //            System.out.println("please enter your Password");
         } else {
 //            System.out.println("You are logged in");
+            Data.initialize();
             FXMLLoader loginPage = new FXMLLoader(getClass().getResource("HomeScreen.fxml"));
             Parent root = loginPage.load();
 //            Main m = new Main();
+
             Main.switchScene(root);
         }
     }
