@@ -1,13 +1,9 @@
-package sample;
+package sample.Models;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.Initializable;
-import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import sample.Main;
+import sample.Models.Book;
 
 public class Data {
     public static ObservableList<Book> bookInfo = FXCollections.observableArrayList();

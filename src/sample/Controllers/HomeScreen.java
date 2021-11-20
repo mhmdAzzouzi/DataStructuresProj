@@ -1,4 +1,4 @@
-package sample;
+package sample.Controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,8 +11,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import sample.Models.Book;
+import sample.Models.Data;
+import sample.Main;
 
-import javax.swing.text.TabableView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -60,7 +62,7 @@ public class HomeScreen implements Initializable {
     }
 
     public void backToLogin() throws IOException {
-        FXMLLoader back = new FXMLLoader(getClass().getResource("Authentication.fxml"));
+        FXMLLoader back = new FXMLLoader(getClass().getResource("View/Authentication.fxml"));
         Parent root = back.load();
         Main.switchScene(root);
     }
