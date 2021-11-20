@@ -1,11 +1,14 @@
 package sample.Models;
 
 import java.time.LocalTime;
+import java.util.Random;
 
 public class Book {
+
+    Random random = new Random();
     String author;
     String genre;
-    static int ID;
+    int ID;
     String title;
     int quantity;
     LocalTime duration;
@@ -15,13 +18,16 @@ public class Book {
         this.author = author;
         this.genre = genre;
         this.title = title;
+        ID= random.nextInt(10000) + 1;
+
     }
 
     public Book(String author, String genre, String title, int quantity) {
         this.author = author;
         this.genre = genre;
         this.title = title;
-        ID++;
+
+        ID = random.nextInt(10000) + 1;
         this.quantity = quantity;
     }
 
@@ -41,12 +47,12 @@ public class Book {
         this.genre = genre;
     }
 
-    public static int getID() {
+    public int getID() {
         return ID;
     }
 
-    public static void setID(int ID) {
-        Book.ID = ID;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getTitle() {
@@ -80,7 +86,8 @@ public class Book {
                 ", genre='" + genre + '\'' +
                 ", title='" + title + '\'' +
                 ", quantity=" + quantity +
-                ", duration=" + duration +
+                ", duration=" + duration + '\'' +
+                ", ID=" + ID +
                 '}';
     }
 }
