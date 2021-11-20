@@ -23,6 +23,7 @@ public class Authentication {
             errorMessage.setText("Invalid Password");
         } else {
             Data.initialize();
+            Main.binaryTree.DisplayInorder();
             FXMLLoader loginPage = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
             Parent root = loginPage.load();
             Main.switchScene(root);

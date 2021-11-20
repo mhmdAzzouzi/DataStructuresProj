@@ -17,6 +17,13 @@ public class BST {
             this.left = left;
             this.right = right;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "book=" + book +
+                    '}';
+        }
     }
 
     Node root;
@@ -31,7 +38,49 @@ public class BST {
         inOrder(this.root);
     }
 
+    public void insertion(Book b1){
+        insert(root, b1);
+    }
 
+    public Node search(int ID){
+        try{
+            return searchTree(root, ID);
+        }catch (Exception NullPointerException){
+            System.out.println("No Book exists with the given ID");
+            return root;
+        }
+    }
+
+    public Node searchTree(Node r, int ID){
+        if(!isEmpty()){
+           if (r.book.getID() == ID){
+                return r;
+            }else if(r.book.getID() >= ID){
+               return searchTree(r.left, ID);
+           }else{
+               return searchTree(r.right, ID);
+           }
+        }else{
+            return null;
+        }
+    }
+
+    public Node insert(Node r , Book b1){
+        if(r ==null){
+            if(isEmpty()){
+                this.root = new Node(b1);
+            }else{
+                r=new Node(b1);
+            }
+        }else{
+            if(r.book.getID() >= b1.getID()){
+                r.left = insert(r.left, b1);
+            }else {
+                r.right= insert(r.right, b1);
+            }
+        }
+        return r;
+    }
 
     public void inOrder(Node r){
         if(r !=null){
