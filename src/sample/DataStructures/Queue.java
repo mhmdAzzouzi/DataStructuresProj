@@ -1,6 +1,8 @@
-package sample;
+package sample.DataStructures;
 
-public class Queue extends LinkedList{
+import sample.Models.Book;
+
+public class Queue extends LinkedList {
 
 
     public void enqueue(Book b1){

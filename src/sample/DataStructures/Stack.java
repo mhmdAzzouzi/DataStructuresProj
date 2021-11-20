@@ -1,4 +1,6 @@
-package sample;
+package sample.DataStructures;
+
+import sample.Models.Book;
 
 public class Stack extends LinkedList {
 

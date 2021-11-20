@@ -1,7 +1,8 @@
-package sample;
+package sample.Models;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.Models.Book;
 
 public class Librarian {
 
