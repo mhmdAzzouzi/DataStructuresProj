@@ -10,7 +10,7 @@ public class LinkedList {
             this.book = book;
         }
     }
-    Node head;
+    public Node head;
     Node tail;
     int size;
 
@@ -63,7 +63,9 @@ public class LinkedList {
             }
         }
     }
-
+    public Book getHead(){
+        return head.book;
+    }
     public int length(){
         return size;
     }

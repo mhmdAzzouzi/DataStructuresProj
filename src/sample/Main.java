@@ -9,7 +9,7 @@ import sample.DataStructures.BST;
 import sample.DataStructures.LinkedList;
 import sample.Models.Book;
 import sample.Models.Librarian;
-
+import sample.DataStructures.Stack;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -17,9 +17,12 @@ public class Main extends Application {
 
     private static Stage stage;
     public static LinkedList linkedlist = new LinkedList();
+    public static Stack stack =  new Stack();
     public static Librarian librarian = new Librarian();
     public static ArrayList<Book> arrayList = new ArrayList<>();
     public static BST binaryTree = new BST();
+
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
