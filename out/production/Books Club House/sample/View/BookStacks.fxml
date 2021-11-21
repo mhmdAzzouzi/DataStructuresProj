@@ -11,14 +11,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.BookStacks">
    <children>
-       <VBox prefHeight="648.0" prefWidth="164.0">
+       <VBox prefHeight="648.0" prefWidth="164.0" stylesheets="/sample/styles/NavMenu.css" styleClass="container">
            <children>
                <Label alignment="CENTER" prefHeight="79.0" prefWidth="164.0" style="-fx-background-color: lightBlue;" text="Books Library" />
                <AnchorPane prefHeight="82.0" prefWidth="164.0" />
-               <Button fx:id="addBook" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Add Book" />
-               <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Latest additions" />
-               <Button fx:id="BookStacks" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Book Stacks" />
-               <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="283.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Other Readers" />
+               <Button fx:id="addBook" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles"  text="Add Book" />
+               <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles"  text="View Latest additions" />
+               <Button fx:id="BookStacks" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles"  text="Book Stacks" />
+               <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="283.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles"  text="View Other Readers" />
                <AnchorPane prefHeight="266.0" prefWidth="164.0">
                    <children>
                        <Button layoutY="210.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Log out" />

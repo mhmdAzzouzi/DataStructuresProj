@@ -1,0 +1,18 @@
+.button-styles{
+-fx-background-color:none;
+ -fx-background-color:#e8ebe9;
+ -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 7, 0, 0, 0);
+}
+.container{
+ -fx-border-color: black;
+ -fx-border-width: 0 .6px 0 0;
+    -fx-background-color: linear-gradient(from 25px 25px to 100px 100px,purple, pink);
+}
+
+.button-styles:hover{
+-fx-cursor:hand;
+-fx-background-color:purple;
+-fx-shadow: 0 0 10px 0;
+-fx-text-fill:white;
+ -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}

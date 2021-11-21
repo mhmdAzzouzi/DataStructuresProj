@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -10,15 +11,41 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.AddBook">
    <children>
-   
-       <VBox prefHeight="648.0" prefWidth="164.0">
+
+       <VBox prefHeight="648.0" prefWidth="164.0" styleClass="container" stylesheets="/sample/styles/NavMenu.css">
            <children>
                <Label alignment="CENTER" prefHeight="79.0" prefWidth="164.0" style="-fx-background-color: lightBlue;" text="Books Library" />
-               <AnchorPane prefHeight="82.0" prefWidth="164.0" />
-               <Button fx:id="addBook" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Add Book" />
-               <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Latest additions" />
-               <Button fx:id="BookStacks" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Book Stacks" />
-               <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="283.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Other Readers" />
+               <AnchorPane prefHeight="33.0" prefWidth="164.0" />
+               <Button fx:id="addBook" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles" text="Add Book">
+               <VBox.margin>
+                  <Insets bottom="10.0" right="2.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="file:/C:/Users/User/IdeaProjects/Books%20Club%20House/src/sample/images/icons8_plus_math_26px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+               <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles" text="View Latest additions">
+               <VBox.margin>
+                  <Insets bottom="10.0" right="2.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="file:/C:/Users/User/IdeaProjects/Books%20Club%20House/src/sample/images/icons8_view_all_24px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+               <Button fx:id="BookStacks" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles" text="Book Stacks">
+               <VBox.margin>
+                  <Insets bottom="10.0" right="2.0" />
+               </VBox.margin></Button>
+               <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="283.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" styleClass="button-styles" text="View Other Readers">
+               <VBox.margin>
+                  <Insets bottom="10.0" right="2.0" />
+               </VBox.margin></Button>
                <AnchorPane prefHeight="266.0" prefWidth="164.0">
                    <children>
                        <Button layoutY="210.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Log out" />
@@ -30,6 +57,12 @@
            <children>
                <Label layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="79.0" text="Logged in as : " />
                <TextField layoutX="552.0" layoutY="27.0" promptText="Search.." />
+            <Button layoutX="500.0" layoutY="27.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="23.0" style="-fx-background-color: none;" />
+            <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="512.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/User/AppData/Local/Temp/icons8_search_50px.png" />
+               </image>
+            </ImageView>
            </children>
        </AnchorPane>
       <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0">
