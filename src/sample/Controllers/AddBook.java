@@ -6,19 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import sample.Main;
 
-import javax.naming.ldap.Control;
 import java.io.IOException;
 
-public class Home {
-
-
-
-
-
-
-
-    // navigation functionality !-------
-
+public class AddBook {
     public void navigate(ActionEvent event) throws IOException {
         Button b1= (Button) event.getTarget();
         try{

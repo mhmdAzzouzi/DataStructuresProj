@@ -46,8 +46,7 @@ public class BST {
         try{
             return searchTree(root, ID);
         }catch (Exception NullPointerException){
-            System.out.println("No Book exists with the given ID");
-            return root;
+            return null;
         }
     }
 
