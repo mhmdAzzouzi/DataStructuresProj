@@ -1,16 +1,81 @@
 package sample.Controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import sample.DataStructures.Stack;
 import sample.Main;
+import sample.Models.Book;
 
 import java.io.IOException;
 
 public class BookStacks {
 
+    @FXML
+    Label idLabel, titleLabel, authorLabel, quantityLabel, genreLabel;
 
+    Stack stackPreserve = new Stack();
+    Stack stackToView = Main.stack.copy();
+    public void popFromCard(){
+        try{
+
+                if(!stackPreserve.isEmpty()){
+
+
+                stackToView.push(stackPreserve.pop());
+                Book popedBook = stackPreserve.getHead();
+
+
+                if (popedBook != null) {
+                    idLabel.setText(String.valueOf(popedBook.getID()));
+                    quantityLabel.setText(String.valueOf(popedBook.getQuantity()));
+                    titleLabel.setText(popedBook.getTitle());
+                    authorLabel.setText(popedBook.getAuthor());
+                    genreLabel.setText(popedBook.getGenre());
+
+                }
+                }
+
+
+
+
+
+        }catch (Exception e){
+            System.out.println("error in popFrom Card");
+        }
+    }
+
+    public void pushToCard(){
+        try{
+
+
+
+                if(!stackToView.isEmpty()){
+
+
+                Book popedBook = stackToView.getHead();
+
+
+            if(popedBook != null){
+                idLabel.setText(String.valueOf(popedBook.getID()));
+                quantityLabel.setText(String.valueOf(popedBook.getQuantity()));
+                titleLabel.setText(popedBook.getTitle());
+                authorLabel.setText(popedBook.getAuthor());
+                genreLabel.setText(popedBook.getGenre());
+                stackPreserve.push(stackToView.pop());
+            }
+                }
+
+
+
+        }catch (Exception e){
+            System.out.println("error from push to card!!");
+        }
+
+    }
 
 
     public void navigate(ActionEvent event) throws IOException {
