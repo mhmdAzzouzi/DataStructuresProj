@@ -12,7 +12,7 @@
    <children>
        <VBox layoutX="1.0" layoutY="-1.0" prefHeight="649.0" prefWidth="166.0" styleClass="container" stylesheets="/sample/styles/NavMenu.css">
            <children>
-               <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="97.0" prefWidth="166.0" styleClass="Buttons" text="Books Library" textFill="WHITE">
+               <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="97.0" prefWidth="166.0" styleClass="logo" text="Books Library" textFill="WHITE">
 
                    <font>
                        <Font name="Rockwell Bold Italic" size="14.0" />
@@ -20,7 +20,7 @@
                    <graphic>
                        <ImageView fitHeight="51.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                               <Image url="file:/C:/Users/user/IdeaProjects/DataStructuresProj/src/sample/images/library_24px.png" />
+                               <Image url="@/sample/images/library_24px.png" />
                            </image>
                        </ImageView>
                    </graphic></Button>
@@ -28,7 +28,7 @@
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                               <Image url="file:/C:/Users/user/IdeaProjects/DataStructuresProj/src/sample/images/add_24px.png" />
+                               <Image url="@/sample/images/add_24px.png" />
                            </image></ImageView>
                    </graphic>
                    <font>
@@ -38,7 +38,7 @@
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                               <Image url="file:/C:/Users/user/IdeaProjects/DataStructuresProj/src/sample/images/view_all_24px.png" />
+                               <Image url="@/sample/images/view_all_24px.png" />
                            </image>
                        </ImageView>
                    </graphic>
@@ -49,7 +49,7 @@
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                               <Image url="file:/C:/Users/user/IdeaProjects/DataStructuresProj/src/sample/images/book_24px.png" />
+                               <Image url="@/sample/images/book_24px.png" />
                            </image>
                        </ImageView>
                    </graphic>
@@ -60,7 +60,7 @@
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                               <Image url="file:/C:/Users/user/IdeaProjects/DataStructuresProj/src/sample/images/people_24px.png" />
+                               <Image url="@/sample/images/people_24px.png" />
                            </image>
                        </ImageView>
                    </graphic>
@@ -71,7 +71,7 @@
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                               <Image url="file:/C:/Users/user/IdeaProjects/DataStructuresProj/src/sample/images/logout_rounded_left_24px.png" />
+                               <Image url="@/sample/images/logout_rounded_left_24px.png" />
                            </image>
                        </ImageView>
                    </graphic>
@@ -89,7 +89,7 @@
                <TextField layoutX="512.0" layoutY="27.0" promptText="Search.." />
                <ImageView fitHeight="18.0" fitWidth="26.0" layoutX="670.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                    <image>
-                       <Image url="file:/C:/Users/user/IdeaProjects/DataStructuresProj/src/sample/images/icons8_search_32.png" />
+                       <Image url="@/sample/images/icons8_search_32.png" />
                    </image>
                </ImageView>
 
