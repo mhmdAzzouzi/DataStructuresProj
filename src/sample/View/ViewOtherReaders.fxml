@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -11,25 +11,89 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.Controllers.ViewOtherReaders"
             prefHeight="400.0" prefWidth="600.0">
-    <VBox prefHeight="648.0" prefWidth="164.0">
+    <VBox layoutX="1.0" layoutY="-1.0" prefHeight="649.0" prefWidth="166.0" styleClass="container" stylesheets="/sample/styles/NavMenu.css">
         <children>
-            <Label alignment="CENTER" prefHeight="79.0" prefWidth="164.0" style="-fx-background-color: lightBlue;" text="Books Library" />
-            <AnchorPane prefHeight="82.0" prefWidth="164.0" />
-            <Button fx:id="addBook" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Add Book" />
-            <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Latest additions" />
-            <Button fx:id="BookStacks" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Book Stacks" />
-            <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="283.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Other Readers" />
-            <AnchorPane prefHeight="266.0" prefWidth="164.0">
-                <children>
-                    <Button layoutY="210.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Log out" />
-                </children>
-            </AnchorPane>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="97.0" prefWidth="166.0" styleClass="logo" text="Books Library" textFill="WHITE">
+
+                <font>
+                    <Font name="Rockwell Bold Italic" size="14.0" />
+                </font>
+                <graphic>
+                    <ImageView fitHeight="51.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/sample/images/library_24px.png" />
+                        </image>
+                    </ImageView>
+                </graphic></Button>
+            <Button id="addBook" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Add Book" textFill="WHITE">
+                <graphic>
+                    <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/sample/images/add_24px.png" />
+                        </image></ImageView>
+                </graphic>
+                <font>
+                    <Font name="Rockwell" size="12.0" />
+                </font></Button>
+            <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="view latest addition" textFill="WHITE">
+                <graphic>
+                    <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/sample/images/view_all_24px.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="Rockwell" size="12.0" />
+                </font></Button>
+            <Button fx:id="BookStacks" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Book Stacks" textFill="WHITE">
+                <graphic>
+                    <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/sample/images/book_24px.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="Rockwell" size="12.0" />
+                </font></Button>
+            <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="View Other Reader" textFill="WHITE">
+                <graphic>
+                    <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/sample/images/people_24px.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="Rockwell" size="12.0" />
+                </font></Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
+                <graphic>
+                    <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/sample/images/logout_rounded_left_24px.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="Rockwell" size="12.0" />
+                </font></Button>
         </children>
     </VBox>
-    <AnchorPane layoutX="164.0" prefHeight="79.0" prefWidth="742.0">
+    <AnchorPane layoutX="164.0" prefHeight="67.0" prefWidth="742.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
         <children>
-            <Label layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="79.0" text="Logged in as : " />
-            <TextField layoutX="552.0" layoutY="27.0" promptText="Search.." />
+            <Label layoutX="11.0" layoutY="24.0" prefHeight="44.0" prefWidth="142.0" text="Logged in as : " textFill="WHITE">
+                <font>
+                    <Font name="Berlin Sans FB" size="18.0" />
+                </font></Label>
+            <TextField layoutX="512.0" layoutY="27.0" promptText="Search.." />
+            <ImageView fitHeight="18.0" fitWidth="26.0" layoutX="670.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@/sample/images/icons8_search_32.png" />
+                </image>
+            </ImageView>
+
         </children>
     </AnchorPane>
     <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0">

@@ -1,0 +1,22 @@
+.Buttons{
+-fx-background-color:#3F2B63;
+
+
+}
+.logo{
+-fx-background-color:#3F2B63;
+}
+.container{
+ -fx-border-color: black;
+ -fx-border-width: 0 .6px 0 0;
+    -fx-background-color: #3F2B63;
+}
+
+.Buttons:hover{
+-fx-cursor:hand;
+-fx-background-color:purple;
+
+}
+.Buttons:pressed{
+  -fx-background-color: #7156DD;
+}
