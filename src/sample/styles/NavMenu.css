@@ -1,18 +1,22 @@
-.button-styles{
--fx-background-color:none;
- -fx-background-color:#e8ebe9;
- -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 7, 0, 0, 0);
+.Buttons{
+-fx-background-color:#3F2B63;
+
+
+}
+.logo{
+-fx-background-color:#3F2B63;
 }
 .container{
  -fx-border-color: black;
  -fx-border-width: 0 .6px 0 0;
-    -fx-background-color: linear-gradient(from 25px 25px to 100px 100px,purple, pink);
+    -fx-background-color: #3F2B63;
 }
 
-.button-styles:hover{
+.Buttons:hover{
 -fx-cursor:hand;
 -fx-background-color:purple;
--fx-shadow: 0 0 10px 0;
--fx-text-fill:white;
- -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+
+}
+.Buttons:pressed{
+  -fx-background-color: #7156DD;
 }
