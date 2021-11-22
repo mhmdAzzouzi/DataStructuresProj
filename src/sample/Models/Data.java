@@ -39,4 +39,26 @@ public class Data {
         }
 
     }
+
+    public static Book deleteFromArrayList(int id){
+        Book deletedBook = null;
+        for(int i = 0; i<Main.arrayList.size() ; i++){
+            if(Main.arrayList.get(i).getID() == id){
+                 deletedBook = Main.arrayList.get(i);
+                Main.arrayList.remove(i);
+            }
+
+        }
+        if(deletedBook != null)
+         return deletedBook;
+        else
+            System.out.println("no book with that id exists");
+            return null;
+    }
+
+    public static void display(){
+        for(int i = 0 ; i < Main.arrayList.size();i++){
+            System.out.println(Main.arrayList.get(i));
+        }
+    }
 }

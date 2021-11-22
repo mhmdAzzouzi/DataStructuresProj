@@ -81,6 +81,52 @@ public class BST {
         return r;
     }
 
+    public void deletion(int bookId){
+        delete(this.root,bookId );
+    }
+
+    public Node delete(Node r, int id)
+    {
+        //If the tree is empty return null and if r==null
+        // then just return r because it's null :)
+        if (r == null)
+            return r;
+
+        if (id < r.book.getID())
+            r.left = delete(r.left, id);
+        else if (id > r.book.getID())
+            r.right = delete(r.right, id);
+
+        else {
+            // node with only one child or no child
+            if (r.left == null)
+                return r.right;
+            else if (r.right == null)
+                return r.left;
+
+
+            r.book = minValue(r.right);
+
+            // Delete the inorder successor
+            r.right = delete(r.right, r.book.getID());
+        }
+
+        return r;
+    }
+
+
+    //to return minimum of a tree or a subtree
+    public Book minValue(Node r)
+    {
+        Book min = r.book;
+        while (r.left != null)
+        {
+            min = r.left.book;
+            r = r.left;
+        }
+        return min;
+    }
+
     public void inOrder(Node r){
         if(r !=null){
             inOrder(r.left);
