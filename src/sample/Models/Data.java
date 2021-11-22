@@ -40,6 +40,7 @@ public class Data {
 
     }
 
+
     public static Book deleteFromArrayList(int id){
         Book deletedBook = null;
         for(int i = 0; i<Main.arrayList.size() ; i++){

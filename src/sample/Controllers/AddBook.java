@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import sample.Controllers.Items.BookItem;
 import sample.Main;
 import sample.Models.Book;
 import sample.Models.Data;
@@ -18,6 +20,8 @@ public class AddBook {
     TextField authorField, genreField, quantityField,titleField;
     @FXML
     Label messageLabel;
+    @FXML
+    VBox listBox;
 
     public void addBook(){
         try{
@@ -35,8 +39,10 @@ public class AddBook {
             Main.binaryTree.DisplayInorder();
             messageLabel.setText("Thank you ! Book was added");
 
+
         }catch (Exception e){
-            messageLabel.setText("Failed to add the book");
+            messageLabel.setText("Failed to add the book" );
+            e.printStackTrace();
         }
     }
 

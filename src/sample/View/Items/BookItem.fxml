@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controllers.Items.BookItem" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="12.0" prefHeight="76.0" prefWidth="517.0" style="-fx-background-radius: 30px; -fx-background-color: #784296;">
+         <children>
+            <Label fx:id="titleLabel" layoutX="138.0" layoutY="15.0" text="Title" textFill="#fcf8f8">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="idLabel" layoutX="138.0" layoutY="42.0" text="ID" textFill="#fcf8f8">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="authorLabel" layoutX="259.0" layoutY="15.0" text="Author" textFill="#fcf8f8">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="quantityLabel" layoutX="259.0" layoutY="42.0" text="Quantity" textFill="#fcf8f8">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox fx:id="ratingBox" layoutX="380.0" layoutY="42.0" prefHeight="27.0" prefWidth="123.0">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8_star_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8_star_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="34.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8_star_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="58.0" layoutY="10.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <Image url="@../../images/icons8_star_48px.png"/>
+                  </ImageView>
+               </children>
+            </HBox>
+            <AnchorPane layoutX="29.0" layoutY="20.0" prefHeight="43.0" prefWidth="55.0" style="-fx-background-color: #e2e1e3; -fx-background-radius: 30px;">
+               <children>
+                  <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="11.0" layoutY="4.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <Image url="@../../images/icons8_books_64px.png"/>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="9.0" top="10.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</AnchorPane>
