@@ -1,23 +1,57 @@
 package sample.Controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import sample.Controllers.Items.BookItem;
 import sample.Main;
+import sample.Models.Book;
+import sample.Models.Data;
 
-import javax.naming.ldap.Control;
 import java.io.IOException;
 
-public class Home {
+public class AddBook {
+    @FXML
+    TextField authorField, genreField, quantityField,titleField;
+    @FXML
+    Label messageLabel;
+    @FXML
+    VBox listBox;
+
+    public void addBook(){
+        try{
+            messageLabel.setText("");
+            String author = authorField.getText();
+            String title = titleField.getText();
+            String genre = genreField.getText();
+            String quantity = quantityField.getText();
+
+            Book newBook = new Book(author , title,genre,Integer.parseInt(quantity));
+            Main.binaryTree.insertion(newBook);
+            Main.arrayList.add(newBook);
+            Data.bookInfo.addAll(newBook);
+            System.out.println("new print ");
+            Main.binaryTree.DisplayInorder();
+            messageLabel.setText("Thank you ! Book was added");
 
 
+        }catch (Exception e){
+            messageLabel.setText("Failed to add the book" );
+            e.printStackTrace();
+        }
+    }
 
-
-
-
-
-    // navigation functionality !-------
+    public void clear(){
+        authorField.setText("");
+        genreField.setText("");
+        titleField.setText("");
+        quantityField.setText("");
+    }
 
     public void navigate(ActionEvent event) throws IOException {
         Button b1= (Button) event.getTarget();

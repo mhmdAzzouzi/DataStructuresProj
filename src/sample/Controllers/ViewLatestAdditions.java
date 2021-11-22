@@ -1,23 +1,46 @@
 package sample.Controllers;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import sample.Main;
+import sample.Models.Book;
+import sample.Models.Data;
 
-import javax.naming.ldap.Control;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Home {
-
-
-
-
+public class ViewLatestAdditions implements Initializable {
 
 
+    @FXML
+    TableColumn<Book, String> authorColumn, titleColumn, genreColumn;
+    @FXML
+    TableColumn<Book, Integer>idColumn , quantityColumn;
 
-    // navigation functionality !-------
+    @FXML
+    TableView<Book> latestAdditionsTable;
+
+    public void initialize(URL location, ResourceBundle resourceBundle) {
+        this.authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+        this.genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        this.titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        this.quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        this.idColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        setTable();
+    }
+
+    public void setTable(){
+      this.latestAdditionsTable.setItems(Data.bookInfo);
+    }
 
     public void navigate(ActionEvent event) throws IOException {
         Button b1= (Button) event.getTarget();
@@ -46,5 +69,4 @@ public class Home {
 
 
     }
-
 }

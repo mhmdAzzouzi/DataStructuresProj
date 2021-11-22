@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.BookStacks">
+   <children>
+       <VBox prefHeight="648.0" prefWidth="164.0">
+           <children>
+               <Label alignment="CENTER" prefHeight="79.0" prefWidth="164.0" style="-fx-background-color: lightBlue;" text="Books Library" />
+               <AnchorPane prefHeight="82.0" prefWidth="164.0" />
+               <Button fx:id="addBook" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Add Book" />
+               <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Latest additions" />
+               <Button fx:id="BookStacks" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Book Stacks" />
+               <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="283.0" mnemonicParsing="false" onAction="#navigate" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="View Other Readers" />
+               <AnchorPane prefHeight="266.0" prefWidth="164.0">
+                   <children>
+                       <Button layoutY="210.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="164.0" style="-fx-background-color: none;" text="Log out" />
+                   </children>
+               </AnchorPane>
+           </children>
+       </VBox>
+       <AnchorPane layoutX="164.0" prefHeight="79.0" prefWidth="742.0">
+           <children>
+               <Label layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="79.0" text="Logged in as : " />
+               <TextField layoutX="552.0" layoutY="27.0" promptText="Search.." />
+           </children>
+       </AnchorPane>
+       <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0">
+           <children>
+               <Label layoutX="24.0" layoutY="14.0" prefHeight="49.0" prefWidth="115.0" text="Book Stacks">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Label>
+            <AnchorPane layoutX="111.0" layoutY="88.0" prefHeight="256.0" prefWidth="457.0" style="-fx-background-color: lightblue;">
+               <children>
+                  <Label layoutX="27.0" layoutY="104.0" prefHeight="25.0" prefWidth="40.0" text="Title" />
+                  <Label layoutX="27.0" layoutY="168.0" prefHeight="25.0" prefWidth="40.0" text="Author" />
+                  <Label layoutX="230.0" layoutY="104.0" prefHeight="25.0" prefWidth="40.0" text="Genre" />
+                  <Label layoutX="230.0" layoutY="168.0" prefHeight="25.0" prefWidth="53.0" text="Quanity" />
+                  <Label layoutX="21.0" layoutY="23.0" prefHeight="40.0" prefWidth="80.0" text="Book ID">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="titleLabel" layoutX="74.0" layoutY="108.0" prefHeight="17.0" prefWidth="155.0" />
+                  <Label fx:id="authorLabel" layoutX="74.0" layoutY="172.0" prefHeight="17.0" prefWidth="155.0" />
+                  <Label fx:id="quantityLabel" layoutX="283.0" layoutY="172.0" prefHeight="17.0" prefWidth="155.0" />
+                  <Label fx:id="genreLabel" layoutX="283.0" layoutY="108.0" prefHeight="17.0" prefWidth="155.0" />
+                  <Label fx:id="idLabel" layoutX="93.0" layoutY="23.0" prefHeight="40.0" prefWidth="164.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button layoutX="113.0" layoutY="384.0" mnemonicParsing="false" onAction="#popFromCard" text="&lt;" />
+            <Button layoutX="543.0" layoutY="384.0" mnemonicParsing="false" onAction="#pushToCard" text="&gt;" />
+           </children>
+       </AnchorPane>
+   </children>
+</AnchorPane>
