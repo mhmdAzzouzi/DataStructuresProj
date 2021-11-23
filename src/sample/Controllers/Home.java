@@ -1,10 +1,12 @@
 package sample.Controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import sample.Main;
+import sample.Models.Data;
 
 import javax.naming.ldap.Control;
 import java.io.IOException;
@@ -12,7 +14,10 @@ import java.io.IOException;
 public class Home {
 
 
-
+    @FXML
+    public void initialize(){
+        Data.load();
+    }
 
 
 
