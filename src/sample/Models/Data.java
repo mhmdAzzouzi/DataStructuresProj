@@ -12,7 +12,7 @@ public class Data {
         return bookInfo;
     }
 
-    public static void initialize() {
+    public static void load() {
         Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers",2);
         Book b2 = new Book("Harper Lee", "Classics", "To Kill A Mockingbird",4);
         Book b3 = new Book("Louisa Sullivan", "Classics", "Little Women",3);

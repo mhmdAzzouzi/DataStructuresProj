@@ -8,17 +8,17 @@ public class BookItem {
     @FXML
     HBox ratingBox;
     @FXML
-    Label titleLabel, idLabel, authorLabel,quantityLabel;
+    Label titleLabel, genreLabel, authorLabel,quantityLabel;
 
-    public void setItems(String title,String  id, String author,String quantity){
+    public void setItems(String title,String  genre, String author,String quantity){
         try{
             titleLabel.setText(title);
-            idLabel.setText(id);
+            genreLabel.setText(genre);
             authorLabel.setText(author);
             quantityLabel.setText(quantity);
         }catch (Exception e){
             titleLabel.setText("12");
-            idLabel.setText("!2");
+            genreLabel.setText("!2");
             authorLabel.setText("12");
             quantityLabel.setText("!2");
         }

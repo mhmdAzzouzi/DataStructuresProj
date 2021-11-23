@@ -7,9 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import sample.Controllers.Items.BookItem;
 import sample.Main;
 import sample.Models.Book;
 import sample.Models.Data;
@@ -18,24 +21,49 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ViewLatestAdditions implements Initializable {
+public class ViewLatestAdditions  {
 
-
-    @FXML
-    TableColumn<Book, String> authorColumn, titleColumn, genreColumn;
-    @FXML
-    TableColumn<Book, Integer>idColumn , quantityColumn;
+//
+//    @FXML
+//    TableColumn<Book, String> authorColumn, titleColumn, genreColumn;
+//    @FXML
+//    TableColumn<Book, Integer>idColumn , quantityColumn;
 
     @FXML
     TableView<Book> latestAdditionsTable;
+    @FXML
+    ScrollPane scrollPane;
+    @FXML
+    VBox listBox;
 
-    public void initialize(URL location, ResourceBundle resourceBundle) {
-        this.authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
-        this.genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
-        this.titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        this.quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        this.idColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
-        setTable();
+    public void drawList() throws IOException {
+        System.out.println("I ran by myself");
+        System.out.println(Main.arrayList.size());
+        for(int i = 0 ; i<Main.arrayList.size();i++){
+
+            String author= Main.arrayList.get(i).getAuthor();
+            String title= Main.arrayList.get(i).getTitle();
+            String genre= Main.arrayList.get(i).getGenre();
+            String quantity= String.valueOf(Main.arrayList.get(i).getQuantity());
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
+            Parent component = loader.load();
+            BookItem bookItem = loader.getController();
+            bookItem.setItems(title,genre, author, quantity);
+            listBox.getChildren().add(component);
+
+        }
+
+    }
+
+    @FXML
+    public void initialize()throws IOException{
+//        this.authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+//        this.genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
+//        this.titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+//        this.quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+//        this.idColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
+//        setTable();
+        drawList();
     }
 
     public void setTable(){
