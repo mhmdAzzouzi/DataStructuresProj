@@ -31,7 +31,6 @@ public class Data {
         Book listOfBooks[] = {b1, b2, b3, b4, b5, b6,b7, b8, b9, b10, b11, b12, b13, b14, b15};
 
         for (int i = 0; i < listOfBooks.length; i++) {
-
             Main.arrayList.add(listOfBooks[i]);
             bookInfo.addAll(listOfBooks[i]);
             Main.stack.push(listOfBooks[i]);
