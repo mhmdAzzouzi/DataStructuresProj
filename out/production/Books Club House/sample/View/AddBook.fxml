@@ -12,10 +12,10 @@
 
       <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="649.0" prefWidth="168.0" styleClass="container" stylesheets="/sample/styles/NavMenu.css">
          <children>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="71.0" prefWidth="166.0" styleClass="logo" text="Books Library" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="67.0" prefWidth="168.0" styleClass="logo" text="Books Library" textFill="WHITE">
 
                <font>
-                  <Font name="Rockwell Bold Italic" size="14.0" />
+                  <Font name="Rockwell Bold Italic" size="13.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="51.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
