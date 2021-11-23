@@ -1,7 +1,7 @@
 .Topmenu{
 -fx-border-color: black;
  -fx-border-width: 0 .6px 0 0;
-    -fx-background-color: linear-gradient(from 25px 25px to 100px 100px,purple,  #3F2B63);}
+    -fx-background-color: linear-gradient(from 100px 100px to 25px 25px  ,purple ,  #3F2B63);}
 
 .mainpage{
 
