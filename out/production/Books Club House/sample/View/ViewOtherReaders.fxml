@@ -89,17 +89,25 @@
                 <font>
                     <Font name="Berlin Sans FB" size="18.0" />
                 </font></Label>
-            <TextField layoutX="512.0" layoutY="21.0" promptText="Search.." />
-            <ImageView fitHeight="18.0" fitWidth="26.0" layoutX="489.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@/sample/images/icons8_search_32.png" />
-                </image>
-            </ImageView>
-            <ImageView fitHeight="21.0" fitWidth="22.0" layoutX="452.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../images/add_friends.png" />
-                </image>
-            </ImageView>
+            <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
+            <Button styleClass="topMenuButtons" layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0">
+                <graphic>
+                    <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/sample/images/icons8_search_32.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button styleClass="topMenuButtons" layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0">
+                <graphic>
+                    <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/add_friends.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
 
         </children>
     </AnchorPane>

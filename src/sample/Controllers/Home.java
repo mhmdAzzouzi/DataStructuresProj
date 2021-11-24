@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Data;
 
@@ -13,6 +15,19 @@ import java.io.IOException;
 
 public class Home {
 
+    @FXML
+    TextField searchField;
+
+
+
+    public void searchItem() throws Exception {
+        System.out.println(searchField.getText());
+        if(searchField.getText().length() > 0){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
+            Parent page = loader.load();
+            Main.switchScene(page);
+        }
+    }
 
     @FXML
     public void initialize(){

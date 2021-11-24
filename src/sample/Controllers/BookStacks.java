@@ -6,19 +6,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Book;
 
+import javax.xml.soap.Text;
 import java.io.IOException;
 
 public class BookStacks {
 
     @FXML
     Label idLabel, titleLabel, authorLabel, quantityLabel, genreLabel;
+    @FXML
+    TextField searchField;
 
     Stack stackPreserve = new Stack();
     Stack stackToView = Main.stack.copy();
+
+    public void searchItem() throws Exception {
+        System.out.println(searchField.getText());
+        if(searchField.getText().length() > 0){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
+            Parent page = loader.load();
+            Main.switchScene(page);
+        }
+    }
+
     public void popFromCard(){
         try{
 
