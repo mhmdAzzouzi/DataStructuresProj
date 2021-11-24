@@ -90,7 +90,7 @@
                        <Font name="Berlin Sans FB" size="18.0" />
                    </font></Label>
                <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
-               <Button styleClass="topMenuButtons" layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0">
+               <Button layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0" styleClass="topMenuButtons">
                    <graphic>
                        <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -99,7 +99,7 @@
                        </ImageView>
                    </graphic>
                </Button>
-               <Button styleClass="topMenuButtons" layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0">
+               <Button layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" styleClass="topMenuButtons">
                    <graphic>
                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -111,18 +111,27 @@
 
            </children>
        </AnchorPane>
-       <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0">
+       <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0" stylesheets="/sample/styles/ViewLatest.css">
            <children>
             <ScrollPane fx:id="scrollPane" layoutX="6.0" layoutY="47.0" prefHeight="519.0" prefWidth="734.0">
                <content>
-                  <VBox fx:id="listBox" alignment="CENTER" prefHeight="518.0" prefWidth="728.0" />
+                  <VBox fx:id="listBox" alignment="CENTER" prefHeight="518.0" prefWidth="728.0">
+                     <children>
+                        <Label fx:id="messageLabel" prefHeight="49.0" text="No Books where added lately..">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children></VBox>
                </content>
             </ScrollPane>
-               <Label layoutX="5.0" layoutY="2.0" prefHeight="49.0" prefWidth="134.0" text="Latest Addtions">
+               <Label layoutX="24.0" layoutY="2.0" prefHeight="49.0" text="Latest Addtions">
                    <font>
-                       <Font size="18.0" />
+                       <Font name="Berlin Sans FB" size="24.0" />
                    </font>
                </Label>
+            <Button layoutX="585.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterByLatest" styleClass="Buttons" text="Filter By Latest Added" />
+            <Button layoutX="437.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterAll" prefHeight="25.0" prefWidth="134.0" styleClass="Buttons" text="View All" />
            </children>
        </AnchorPane>
    </children>

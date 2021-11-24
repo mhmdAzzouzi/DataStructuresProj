@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import sample.Controllers.Items.BookItem;
+import sample.DataStructures.Queue;
 import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Book;
@@ -35,11 +36,17 @@ public class ViewLatestAdditions  {
     VBox listBox;
     @FXML
     TextField searchField;
+    @FXML
+    Label messageLabel;
+
+
+    Queue queueToView = Main.queue.copy();
 
 
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
+
         if(searchField.getText().length() > 0){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
@@ -47,9 +54,37 @@ public class ViewLatestAdditions  {
         }
     }
 
+    public void filterAll()throws IOException{
+
+        drawList();
+    }
+
+    public void filterByLatest() throws IOException{
+        Main.queue.display();
+        listBox.getChildren().clear();
+        if(Main.queue.length() == 0){
+            listBox.getChildren().add(messageLabel);
+        }
+        for(int i = 0 ; i<Main.queue.length();i++){
+            Book book = queueToView.dequeue();
+            String author= book.getAuthor();
+            String title= book.getTitle();
+            String genre= book.getGenre();
+            String quantity= String.valueOf(book.getQuantity());
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
+            Parent component = loader.load();
+            BookItem bookItem = loader.getController();
+            bookItem.setItems(title,genre, author, quantity);
+            listBox.getChildren().add(component);
+
+        }
+
+    }
+
     public void drawList() throws IOException {
         System.out.println("I ran by myself");
         System.out.println(Main.arrayList.size());
+        listBox.getChildren().clear();
         for(int i = 0 ; i<Main.arrayList.size();i++){
 
             String author= Main.arrayList.get(i).getAuthor();

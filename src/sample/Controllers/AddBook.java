@@ -45,6 +45,7 @@ public class AddBook {
             Main.binaryTree.insertion(newBook);
             Main.arrayList.add(newBook);
             Data.bookInfo.addAll(newBook);
+            Main.queue.enqueue(newBook);
             System.out.println("new print ");
             Main.binaryTree.DisplayInorder();
             messageLabel.setText("Thank you ! Book was added");
