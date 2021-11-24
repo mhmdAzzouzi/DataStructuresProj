@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -10,9 +11,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ViewLatestAdditions">
    <children>
-       <VBox layoutX="1.0" layoutY="-1.0" prefHeight="649.0" prefWidth="166.0" styleClass="container" stylesheets="/sample/styles/NavMenu.css">
+       <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="649.0" prefWidth="168.0" styleClass="container" stylesheets="/sample/styles/NavMenu.css">
            <children>
-               <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="97.0" prefWidth="166.0" styleClass="logo" text="Books Library" textFill="WHITE">
+               <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="71.0" prefWidth="166.0" styleClass="logo" text="Books Library" textFill="WHITE">
 
                    <font>
                        <Font name="Rockwell Bold Italic" size="14.0" />
@@ -24,6 +25,7 @@
                            </image>
                        </ImageView>
                    </graphic></Button>
+               <AnchorPane prefHeight="44.0" prefWidth="166.0" />
                <Button id="addBook" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Add Book" textFill="WHITE">
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
@@ -67,6 +69,7 @@
                    <font>
                        <Font name="Rockwell" size="12.0" />
                    </font></Button>
+               <AnchorPane layoutX="10.0" layoutY="107.0" prefHeight="89.0" prefWidth="166.0" />
                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
@@ -80,37 +83,55 @@
                    </font></Button>
            </children>
        </VBox>
-       <AnchorPane layoutX="164.0" prefHeight="67.0" prefWidth="742.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
+       <AnchorPane layoutX="165.0" prefHeight="67.0" prefWidth="743.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
            <children>
-               <Label layoutX="11.0" layoutY="24.0" prefHeight="44.0" prefWidth="142.0" text="Logged in as : " textFill="WHITE">
+               <Label layoutX="14.0" layoutY="12.0" prefHeight="44.0" prefWidth="142.0" text="Logged in as : " textFill="WHITE">
                    <font>
                        <Font name="Berlin Sans FB" size="18.0" />
                    </font></Label>
-               <TextField layoutX="512.0" layoutY="27.0" promptText="Search.." />
-               <ImageView fitHeight="18.0" fitWidth="26.0" layoutX="670.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-                   <image>
-                       <Image url="@/sample/images/icons8_search_32.png" />
-                   </image>
-               </ImageView>
+               <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
+               <Button layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0" styleClass="topMenuButtons">
+                   <graphic>
+                       <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@/sample/images/icons8_search_32.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+               </Button>
+               <Button layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" styleClass="topMenuButtons">
+                   <graphic>
+                       <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../images/add_friends.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+               </Button>
 
            </children>
        </AnchorPane>
-       <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0">
+       <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0" stylesheets="/sample/styles/ViewLatest.css">
            <children>
-               <Label layoutX="14.0" layoutY="14.0" prefHeight="49.0" prefWidth="134.0" text="Latest Addtions">
+            <ScrollPane fx:id="scrollPane" layoutX="6.0" layoutY="47.0" prefHeight="519.0" prefWidth="734.0">
+               <content>
+                  <VBox fx:id="listBox" alignment="CENTER" prefHeight="518.0" prefWidth="728.0">
+                     <children>
+                        <Label fx:id="messageLabel" prefHeight="49.0" text="No Books where added lately..">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children></VBox>
+               </content>
+            </ScrollPane>
+               <Label layoutX="24.0" layoutY="2.0" prefHeight="49.0" text="Latest Addtions">
                    <font>
-                       <Font size="18.0" />
+                       <Font name="Berlin Sans FB" size="24.0" />
                    </font>
                </Label>
-            <TableView fx:id="latestAdditionsTable" layoutX="12.0" layoutY="63.0" prefHeight="463.0" prefWidth="719.0">
-              <columns>
-                <TableColumn fx:id="idColumn" prefWidth="139.0" text="ID" />
-                <TableColumn fx:id="titleColumn" prefWidth="123.0" text="Title" />
-                  <TableColumn fx:id="authorColumn" prefWidth="132.0" text="Author" />
-                  <TableColumn fx:id="genreColumn" prefWidth="122.0" text="Genre" />
-                  <TableColumn fx:id="quantityColumn" prefWidth="202.0" text="Quantity" />
-              </columns>
-            </TableView>
+            <Button layoutX="585.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterByLatest" styleClass="Buttons" text="Filter By Latest Added" />
+            <Button layoutX="437.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterAll" prefHeight="25.0" prefWidth="134.0" styleClass="Buttons" text="View All" />
            </children>
        </AnchorPane>
    </children>

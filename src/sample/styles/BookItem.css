@@ -1,0 +1,10 @@
+
+.container{
+-fx-background-radius: 30px;
+-fx-background-color: #3F2B63;
+}
+
+.container:hover{
+-fx-cursor:hand;
+-fx-background-color:purple;
+}

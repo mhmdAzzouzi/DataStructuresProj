@@ -12,13 +12,13 @@ public class Data {
         return bookInfo;
     }
 
-    public static void initialize() {
-        Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers", 2);
-        Book b2 = new Book("Harper Lee", "Classics", "To Kill A Mockingbird", 4);
-        Book b3 = new Book("Louisa Sullivan", "Classics", "Little Women", 3);
+    public static void load() {
+        Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers",2);
+        Book b2 = new Book("Harper Lee", "Classics", "To Kill A Mockingbird",4);
+        Book b3 = new Book("Louisa Sullivan", "Classics", "Little Women",3);
         Book b4 = new Book("Madeline Miller", "Fantasy", "Circe");
-        Book b5 = new Book("Kathryn Stockett", "Historical Fiction", "The Help", 2);
-        Book b6 = new Book("Josh Malerman", "Horror", "Bird Box", 1);
+        Book b5 = new Book("Kathryn Stockett", "Historical Fiction", "The Help",2);
+        Book b6 = new Book("Josh Malerman", "Horror", "Bird Box",1);
         Book b7 = new Book("Sarah Maclean", "Romance", "Brazen and the Beast", 3);
         Book b8 = new Book("George R.R. Martin", "Fantasy", "Game of Thrones", 8);
         Book b9 = new Book("Brandon Sanderson", "Fantasy", "The Way of Kings", 2);
@@ -28,36 +28,37 @@ public class Data {
         Book b13 = new Book("Walter Scott", "Action and Adventure", "Ivanhoe", 6);
         Book b14 = new Book("Emily Brontë", "Romance", "Wuthering Heights", 1);
         Book b15 = new Book("William Shakespeare", "Romance", "Romeo and Juliet", 2);
-        Book listOfBooks[] = {b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15};
+        Book listOfBooks[] = {b1, b2, b3, b4, b5, b6,b7, b8, b9, b10, b11, b12, b13, b14, b15};
 
         for (int i = 0; i < listOfBooks.length; i++) {
             Main.arrayList.add(listOfBooks[i]);
             bookInfo.addAll(listOfBooks[i]);
             Main.stack.push(listOfBooks[i]);
             Main.binaryTree.insertion(listOfBooks[i]);
+
         }
 
     }
 
 
-    public static Book deleteFromArrayList(int id) {
+    public static Book deleteFromArrayList(int id){
         Book deletedBook = null;
-        for (int i = 0; i < Main.arrayList.size(); i++) {
-            if (Main.arrayList.get(i).getID() == id) {
-                deletedBook = Main.arrayList.get(i);
+        for(int i = 0; i<Main.arrayList.size() ; i++){
+            if(Main.arrayList.get(i).getID() == id){
+                 deletedBook = Main.arrayList.get(i);
                 Main.arrayList.remove(i);
             }
 
         }
-        if (deletedBook != null)
-            return deletedBook;
+        if(deletedBook != null)
+         return deletedBook;
         else
             System.out.println("no book with that id exists");
-        return null;
+            return null;
     }
 
-    public static void display() {
-        for (int i = 0; i < Main.arrayList.size(); i++) {
+    public static void display(){
+        for(int i = 0 ; i < Main.arrayList.size();i++){
             System.out.println(Main.arrayList.get(i));
         }
     }

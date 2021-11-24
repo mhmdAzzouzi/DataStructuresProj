@@ -10,6 +10,8 @@
  -fx-border-color: black;
  -fx-border-width: 0 .6px 0 0;
     -fx-background-color: #3F2B63;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 3 , 1 );
+
 }
 
 .Buttons:hover{
