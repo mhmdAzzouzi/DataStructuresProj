@@ -35,6 +35,7 @@ public class Data {
             bookInfo.addAll(listOfBooks[i]);
             Main.stack.push(listOfBooks[i]);
             Main.binaryTree.insertion(listOfBooks[i]);
+
         }
 
     }

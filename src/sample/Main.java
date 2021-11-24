@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.DataStructures.BST;
 import sample.DataStructures.LinkedList;
+import sample.DataStructures.Queue;
 import sample.Models.Book;
 import sample.Models.Data;
 import sample.Models.Librarian;
@@ -22,7 +23,7 @@ public class Main extends Application {
     public static Librarian librarian = new Librarian();
     public static ArrayList<Book> arrayList = new ArrayList<>();
     public static BST binaryTree = new BST();
-
+    public static Queue queue = new Queue();
 
     @Override
     public void start(Stage primaryStage) throws IOException {
