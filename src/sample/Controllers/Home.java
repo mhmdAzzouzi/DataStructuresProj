@@ -12,16 +12,11 @@ import java.io.IOException;
 public class Home {
 
 
-
-
-
-
-
     // navigation functionality !-------
 
     public void navigate(ActionEvent event) throws IOException {
-        Button b1= (Button) event.getTarget();
-        try{
+        Button b1 = (Button) event.getTarget();
+        try {
             if ("addBook".equals(b1.getId())) {
                 FXMLLoader page = new FXMLLoader(getClass().getResource("/sample/View/AddBook.fxml"));
                 Parent root = page.load();
@@ -31,16 +26,16 @@ public class Home {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-            }else if("ViewLatestAdditions".equals(b1.getId())){
+            } else if ("ViewLatestAdditions".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-            }else if("ViewOtherReaders".equals(b1.getId())){
+            } else if ("ViewOtherReaders".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("something went wrong");
         }
 

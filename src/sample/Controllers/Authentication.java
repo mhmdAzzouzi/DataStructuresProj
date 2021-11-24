@@ -15,6 +15,7 @@ public class Authentication {
     TextField id, password;
     @FXML
     Label errorMessage;
+    static int idVerification;
 
     public void loginAction() throws IOException {
         if (id.getText().length() <= 0) {
@@ -22,12 +23,33 @@ public class Authentication {
         } else if (password.getText().length() <= 0) {
             errorMessage.setText("Invalid Password");
         } else {
-            Data.initialize();
-            Main.binaryTree.DisplayInorder();
-            FXMLLoader loginPage = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
-            Parent root = loginPage.load();
-            Main.switchScene(root);
+            idVerification = Integer.parseInt(id.getText());
+            switch (idVerification) {
+                case 1111:
+                    if (Main.jihan.getID() == id.getText() && Main.jihan.getPassword() == password.getText()) {
+                        try{
+                            FXMLLoader homeScreen = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
+                            Parent root = homeScreen.load();
+                            Main.switchScene(root);
+                        }catch(Exception e){}
+
+                    }
+                    break;
+                case 0000:
+                    break;
+                case 2222:
+                    break;
+                case 3333:
+                    break;
+//                Data.initialize();
+//                Main.binaryTree.DisplayInorder();
+//                FXMLLoader loginPage = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
+//                Parent root = loginPage.load();
+//                Main.switchScene(root);
+            }
         }
+
+
     }
 
     public void closeAction() {
