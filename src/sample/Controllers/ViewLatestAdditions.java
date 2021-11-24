@@ -6,13 +6,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import sample.Controllers.Items.BookItem;
+import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Book;
 import sample.Models.Data;
@@ -35,6 +33,19 @@ public class ViewLatestAdditions  {
     ScrollPane scrollPane;
     @FXML
     VBox listBox;
+    @FXML
+    TextField searchField;
+
+
+
+    public void searchItem() throws Exception {
+        System.out.println(searchField.getText());
+        if(searchField.getText().length() > 0){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
+            Parent page = loader.load();
+            Main.switchScene(page);
+        }
+    }
 
     public void drawList() throws IOException {
         System.out.println("I ran by myself");

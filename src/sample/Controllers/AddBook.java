@@ -17,11 +17,21 @@ import java.io.IOException;
 
 public class AddBook {
     @FXML
-    TextField authorField, genreField, quantityField,titleField;
+    TextField authorField, genreField, quantityField,titleField, searchField;
     @FXML
     Label messageLabel;
+
     @FXML
     VBox listBox;
+
+    public void searchItem() throws Exception {
+        System.out.println(searchField.getText());
+        if(searchField.getText().length() > 0){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
+            Parent page = loader.load();
+            Main.switchScene(page);
+        }
+    }
 
     public void addBook(){
         try{
@@ -77,6 +87,7 @@ public class AddBook {
         }catch (Exception e){
             System.out.println("something went wrong");
         }
+
 
 
     }
