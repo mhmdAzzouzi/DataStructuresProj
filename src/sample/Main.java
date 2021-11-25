@@ -12,25 +12,29 @@ import sample.Models.Book;
 import sample.Models.Data;
 import sample.Models.Librarian;
 import sample.DataStructures.Stack;
+import sample.Models.User;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends Application {
 
-    private static Stage stage;
+    public static Stage stage;
     public static LinkedList linkedlist = new LinkedList();
-    public static Stack stack =  new Stack();
-    public static Librarian librarian = new Librarian();
+    public static Stack stack = new Stack();
+    //    public static Librarian librarian = new Librarian();
     public static ArrayList<Book> arrayList = new ArrayList<>();
     public static BST binaryTree = new BST();
     public static Queue queue = new Queue();
+    public static ArrayList<User> userList = new ArrayList<>();
+    public static ArrayList<User> friendsList = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("View/Home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/View/SignUp.fxml"));
         primaryStage.setTitle("Book Club House");
-        primaryStage.setScene(new Scene(root, 906, 648));
+        primaryStage.setScene(new Scene(root, 600, 390));
         stage.show();
     }
 
@@ -39,8 +43,8 @@ public class Main extends Application {
     }
 
 
-
     public static void main(String[] args) {
         launch(args);
+        System.out.println(userList);
     }
 }

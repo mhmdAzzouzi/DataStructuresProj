@@ -16,10 +16,9 @@ public class ViewOtherReaders {
     @FXML
     TextField searchField;
 
-
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
-        if(searchField.getText().length() > 0){
+        if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
             Main.switchScene(page);
@@ -50,7 +49,6 @@ public class ViewOtherReaders {
         } catch (Exception e) {
             System.out.println("something went wrong");
         }
-
 
     }
 }

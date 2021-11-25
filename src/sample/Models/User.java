@@ -1,30 +1,46 @@
 package sample.Models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class User {
-    String type;
     String name;
-    String lastName;
-    String ID;
+//    String lastName;
+    int ID;
     String password;
+    String email;
     LocalDate date;
+    Random random = new Random();
+//
+//    public User(String name ,String password) {
+//        this.name = name;
+////        this.lastName = lastName;
+//        ID = random.nextInt(10000) + 1;
+//        this.password = password;
+//        date = LocalDate.now();
+//    }
 
-    public User(String type, String name, String lastName, String ID, String password) {
-        this.type = type;
+    public User(String name, String password, String email) {
         this.name = name;
-        this.lastName = lastName;
-        this.ID = ID;
         this.password = password;
-        date = LocalDate.now();
+        this.email = email;
     }
 
-    public String getType() {
-        return type;
+    public String getEmail() {
+        return email;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getName() {
@@ -35,21 +51,13 @@ public class User {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
 
     public String getPassword() {
         return password;
@@ -70,9 +78,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "type='" + type + '\'' +
                 ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
+//                ", lastName='" + lastName + '\'' +
                 ", ID='" + ID + '\'' +
                 ", password='" + password + '\'' +
                 ", date=" + date +

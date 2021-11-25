@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="392.0" prefWidth="582.0" stylesheets="@../styles/SignUp.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Authentication">
+<AnchorPane prefHeight="392.0" prefWidth="582.0" stylesheets="@../styles/SignUp.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SignUp">
    <children>
-      <Label layoutX="319.0" layoutY="42.0" text="Log In to your Account">
+      <Label layoutX="319.0" layoutY="42.0" text="Create New Account">
          <font>
             <Font name="Leelawadee UI" size="24.0" />
          </font>
@@ -38,10 +39,22 @@
                </stops>
             </LinearGradient>
          </textFill></Label>
-      <TextField fx:id="nameText" layoutX="368.0" layoutY="142.0" promptText="Name" styleClass="textfield" />
-      <TextField fx:id="passwordText" layoutX="368.0" layoutY="198.0" promptText="Password" styleClass="textfield" />
-      <Button layoutX="440.0" layoutY="286.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="25.0" prefWidth="89.0" text="Log In" />
-      <Label fx:id="errorMessage" layoutX="368.0" layoutY="100.0" prefHeight="17.0" prefWidth="194.0" textAlignment="CENTER">
+      <TextField fx:id="nameText" layoutX="368.0" layoutY="118.0" promptText="Name" styleClass="textfield" />
+      <TextField fx:id="emailText" layoutX="368.0" layoutY="164.0" promptText="Email" styleClass="textfield" />
+      <TextField fx:id="passwordText" layoutX="368.0" layoutY="212.0" promptText="Password" styleClass="textfield" />
+      <CheckBox fx:id="checkBox" layoutX="380.0" layoutY="260.0" mnemonicParsing="false" text="I Agree To Terms">
+         <font>
+            <Font name="Mongolian Baiti" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.5978882312774658" green="0.09551656991243362" blue="0.7368420958518982" />
+               </color>
+            </InnerShadow>
+         </effect></CheckBox>
+      <Button layoutX="447.0" layoutY="296.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="25.0" prefWidth="89.0" text="Sign Up" />
+      <Label fx:id="errorMessage" layoutX="364.0" layoutY="91.0" prefHeight="17.0" prefWidth="192.0" textAlignment="CENTER">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -77,7 +90,7 @@
          <image>
             <Image url="@../images/usericon-removebg-preview.png" />
          </image></ImageView>
-      <Label layoutX="103.0" layoutY="251.0" text="Log In">
+      <Label layoutX="94.0" layoutY="251.0" text="Sign Up">
          <font>
             <Font name="Leelawadee UI Bold" size="24.0" />
          </font>
@@ -108,16 +121,21 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="326.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="326.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_name_24px_1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="326.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="326.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_key_24px_5.png" />
          </image>
       </ImageView>
-      <Button layoutX="332.0" layoutY="286.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="25.0" prefWidth="89.0" text="Close" />
+      <ImageView fitHeight="25.0" fitWidth="37.0" layoutX="326.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_important_mail_24px_1.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="339.0" layoutY="296.0" mnemonicParsing="false" onAction="#backtologinAction" prefHeight="25.0" prefWidth="89.0" text="Back to login" />
    </children>
 </AnchorPane>

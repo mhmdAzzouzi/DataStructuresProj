@@ -1,29 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Authentication">
+<AnchorPane prefHeight="392.0" prefWidth="582.0" stylesheets="@../styles/SignUp.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Authentication">
    <children>
-      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <Button layoutX="172.0" layoutY="238.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="25.0" prefWidth="88.0" text="Login" />
-            <Button layoutX="319.0" layoutY="238.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="25.0" prefWidth="96.0" text="Close" />
-            <TextField fx:id="id" layoutX="172.0" layoutY="116.0" prefHeight="31.0" prefWidth="243.0" />
-            <TextField fx:id="password" layoutX="172.0" layoutY="169.0" prefHeight="31.0" prefWidth="243.0" />
-            <Label layoutX="122.0" layoutY="120.0" prefHeight="27.0" prefWidth="20.0" text="id:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="64.0" layoutY="171.0" prefHeight="27.0" prefWidth="88.0" text="password:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="errorMessage" layoutX="242.0" layoutY="89.0" prefHeight="17.0" prefWidth="104.0" />
-         </children>
-      </AnchorPane>
+      <Label layoutX="319.0" layoutY="42.0" text="Log In to your Account">
+         <font>
+            <Font name="Leelawadee UI" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="0.5476190476190477" endY="0.5238095238095238" startX="0.2761904761904762" startY="0.319047619047619">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7032407522201538" green="0.0486111119389534" blue="0.75" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007662835249042145">
+                     <color>
+                        <Color red="0.7032407522201538" green="0.0486111119389534" blue="0.75" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8556701030927835">
+                     <color>
+                        <Color red="0.8500000238418579" green="0.042500000447034836" blue="0.677762508392334" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5509482622146606" green="0.04008284583687782" blue="0.6184210777282715" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="nameText" layoutX="368.0" layoutY="142.0" promptText="Name" styleClass="textfield" />
+      <TextField fx:id="passwordText" layoutX="368.0" layoutY="198.0" promptText="Password" styleClass="textfield" />
+      <Button layoutX="440.0" layoutY="286.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="25.0" prefWidth="89.0" text="Log In" />
+      <Label fx:id="errorMessage" layoutX="368.0" layoutY="100.0" prefHeight="17.0" prefWidth="194.0" textAlignment="CENTER">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5844917297363281" green="0.1283503919839859" blue="0.6447368264198303" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.37425445352924913">
+                     <color>
+                        <Color red="0.6399999856948853" green="0.12800000607967377" blue="0.40525633096694946" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6941580756013745">
+                     <color>
+                        <Color red="0.5802666544914246" green="0.12800000607967377" blue="0.6399999856948853" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3379111886024475" green="0.008223684504628181" blue="0.3552631437778473" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <ImageView fitHeight="448.0" fitWidth="277.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bg.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="149.0" layoutX="73.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/usericon-removebg-preview.png" />
+         </image></ImageView>
+      <Label layoutX="103.0" layoutY="251.0" text="Log In">
+         <font>
+            <Font name="Leelawadee UI Bold" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="0.5476190476190477" endY="0.5238095238095238" startX="0.2761904761904762" startY="0.319047619047619">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9333333373069763" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007662835249042145">
+                     <color>
+                        <Color red="0.9333333373069763" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8556701030927835">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5831708908081055" green="0.0974658876657486" blue="0.6578947305679321" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="326.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_name_24px_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="326.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_key_24px_5.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="332.0" layoutY="286.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="25.0" prefWidth="89.0" text="Close" />
    </children>
 </AnchorPane>
