@@ -39,6 +39,7 @@ public class Authentication {
 //                    try {
                 FXMLLoader loginPage = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
                 Parent root = loginPage.load();
+                Main.restoreSize();
                 Main.switchScene(root);
 //                    } catch (Exception e) {
 //                        e.printStackTrace();

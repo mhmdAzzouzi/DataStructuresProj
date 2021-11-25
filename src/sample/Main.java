@@ -29,6 +29,11 @@ public class Main extends Application {
     public static ArrayList<User> userList = new ArrayList<>();
     public static ArrayList<User> friendsList = new ArrayList<>();
 
+    public static void restoreSize(){
+        stage.setWidth(910);
+        stage.setHeight(650);
+    }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;

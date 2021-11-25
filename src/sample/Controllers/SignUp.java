@@ -40,6 +40,7 @@ public class SignUp {
                         Main.userList.add(user);
                         FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
                         Parent root = home.load();
+                        Main.restoreSize();
                         Main.switchScene(root);
                     } else {
                         errorMessage.setText("Please accept our terms");
