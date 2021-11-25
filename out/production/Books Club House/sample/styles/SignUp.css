@@ -2,12 +2,6 @@
 -fx-background-color:white;
 -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 3, 1, 1 , 1 );
 }
-.textfield:hover{
-          -fx-cursor:hand;
-
- -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 3, 1, 1 , 1 );
-          }
-
 
 .button{
 
@@ -28,10 +22,3 @@
         -fx-text-fill:white;
 
         }
-.bg{
-        -fx-background-color: linear-gradient(from 100px 100px to 25px 25px  ,purple ,  #3F2B63);
-
-}
-.bg1{
-    -fx-background-color: linear-gradient(90deg, rgba(174,28,199,1) 0%, rgba(252,70,199,1) 100%);
-}
