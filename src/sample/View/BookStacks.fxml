@@ -16,7 +16,7 @@
                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="71.0" prefWidth="166.0" styleClass="logo" text="Books Library" textFill="WHITE">
 
                    <font>
-                       <Font name="Rockwell Bold Italic" size="14.0" />
+                       <Font name="Leelawadee UI Bold Italic" size="14.0" />
                    </font>
                    <graphic>
                        <ImageView fitHeight="51.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
@@ -34,7 +34,7 @@
                            </image></ImageView>
                    </graphic>
                    <font>
-                       <Font name="Rockwell" size="12.0" />
+                       <Font name="Leelawadee UI" size="12.0" />
                    </font></Button>
                <Button fx:id="ViewLatestAdditions" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="view latest addition" textFill="WHITE">
                    <graphic>
@@ -45,7 +45,7 @@
                        </ImageView>
                    </graphic>
                    <font>
-                       <Font name="Rockwell" size="12.0" />
+                       <Font name="Leelawadee UI" size="12.0" />
                    </font></Button>
                <Button fx:id="BookStacks" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Book Stacks" textFill="WHITE">
                    <graphic>
@@ -56,7 +56,7 @@
                        </ImageView>
                    </graphic>
                    <font>
-                       <Font name="Rockwell" size="12.0" />
+                       <Font name="Leelawadee UI" size="12.0" />
                    </font></Button>
                <Button fx:id="ViewOtherReaders" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="View Other Reader" textFill="WHITE">
                    <graphic>
@@ -67,7 +67,7 @@
                        </ImageView>
                    </graphic>
                    <font>
-                       <Font name="Rockwell" size="12.0" />
+                       <Font name="Leelawadee UI" size="12.0" />
                    </font></Button>
                <AnchorPane layoutX="10.0" layoutY="107.0" prefHeight="89.0" prefWidth="166.0" />
                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
@@ -79,7 +79,7 @@
                        </ImageView>
                    </graphic>
                    <font>
-                       <Font name="Rockwell" size="12.0" />
+                       <Font name="Leelawadee UI" size="12.0" />
                    </font></Button>
            </children>
        </VBox>
@@ -87,7 +87,7 @@
            <children>
                <Label layoutX="14.0" layoutY="12.0" prefHeight="44.0" prefWidth="142.0" text="Logged in as : " textFill="WHITE">
                    <font>
-                       <Font name="Berlin Sans FB" size="18.0" />
+                       <Font name="Leelawadee UI" size="18.0" />
                    </font></Label>
                <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
                <Button styleClass="topMenuButtons" layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0">
@@ -115,7 +115,7 @@
            <children>
                <Label layoutX="24.0" layoutY="14.0" prefHeight="49.0" prefWidth="115.0" text="Book Stacks">
                    <font>
-                       <Font size="18.0" />
+                       <Font name = "Leelawadee UI" size="18.0" />
                    </font>
                </Label>
             <AnchorPane layoutX="111.0" layoutY="88.0" prefHeight="256.0" prefWidth="457.0" style="-fx-background-color: lightblue;">
@@ -126,7 +126,7 @@
                   <Label layoutX="230.0" layoutY="168.0" prefHeight="25.0" prefWidth="53.0" text="Quanity" />
                   <Label layoutX="21.0" layoutY="23.0" prefHeight="40.0" prefWidth="80.0" text="Book ID">
                      <font>
-                        <Font size="18.0" />
+                        <Font name = "Leelawadee UI" size="18.0" />
                      </font>
                   </Label>
                   <Label fx:id="titleLabel" layoutX="74.0" layoutY="108.0" prefHeight="17.0" prefWidth="155.0" />
@@ -135,7 +135,7 @@
                   <Label fx:id="genreLabel" layoutX="283.0" layoutY="108.0" prefHeight="17.0" prefWidth="155.0" />
                   <Label fx:id="idLabel" layoutX="93.0" layoutY="23.0" prefHeight="40.0" prefWidth="164.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font name = "Leelawadee UI" size="18.0" />
                      </font>
                   </Label>
                </children>
