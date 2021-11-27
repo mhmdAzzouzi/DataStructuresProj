@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Items.BookCard">
+
+
+
+
+<AnchorPane prefHeight="272.0" prefWidth="451.0" styleClass="card" stylesheets="/sample/styles/cardpage.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+    <ImageView fitHeight="71.0" fitWidth="48.0" layoutX="396.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@/sample/images/icons8_open_book_30px.png" />
+        </image>
+    </ImageView>
+    <Label fx:id="idLabel" layoutX="243.0" layoutY="23.0" prefHeight="40.0" prefWidth="74.0" styleClass="top-card" stylesheets="/sample/styles/cardpage.css" textFill="WHITE">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+    <Label alignment="CENTER" layoutX="7.0" layoutY="104.0" prefHeight="26.0" prefWidth="60.0" text="Title :" textFill="WHITE" />
+    <Label alignment="CENTER" layoutX="7.0" layoutY="167.0" prefHeight="26.0" prefWidth="60.0" text="Author :" textFill="WHITE" />
+    <Label alignment="CENTER" layoutX="230.0" layoutY="104.0" prefHeight="26.0" prefWidth="54.0" text="Genre :" textFill="WHITE" />
+    <Label alignment="CENTER" layoutX="230.0" layoutY="168.0" prefHeight="26.0" prefWidth="73.0" text="Quantity :" textFill="WHITE" />
+    <Label alignment="CENTER" layoutX="128.0" layoutY="23.0" prefHeight="40.0" prefWidth="128.0" styleClass="top-card" stylesheets="/sample/styles/cardpage.css" text="Book ID" textFill="WHITE">
+        <font>
+            <Font name="Candara" size="24.0" />
+        </font>
+    </Label>
+    <Label fx:id="titleLabel" layoutX="74.0" layoutY="108.0" prefHeight="17.0" prefWidth="155.0" textFill="WHITE" />
+    <Label fx:id="authorLabel" layoutX="74.0" layoutY="172.0" prefHeight="17.0" prefWidth="155.0" textFill="WHITE" />
+    <Label fx:id="quantityLabel" layoutX="310.0" layoutY="172.0" prefHeight="18.0" prefWidth="128.0" textFill="WHITE" />
+    <Label fx:id="genreLabel" layoutX="296.0" layoutY="108.0" prefHeight="18.0" prefWidth="155.0" textFill="WHITE" />
+    <ImageView fitHeight="71.0" fitWidth="48.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@/sample/images/icons8_open_book_30px.png" />
+        </image></ImageView>
+</children>
+
+</AnchorPane>
+</AnchorPane>

@@ -1,0 +1,26 @@
+.card{
+
+ -fx-background-color:  linear-gradient(from 100px 100px to 100px 25px  ,  #9d50bb,#6e48aa);
+ -fx-background-radius:20;
+  -fx-border-radius:50;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.9) , 30, 0.0 , 0 , 1 );
+
+}
+
+.button{
+-fx-background-color:transparent;
+}
+
+.button:hover{
+-fx-background-color:transparent;
+
+}
+.button:pressed{
+  -fx-background-color: #7156DD;
+}
+.top-card{
+-fx-border-color:white ;
+ -fx-border-width: 0 0 2px 0;
+}
+
+

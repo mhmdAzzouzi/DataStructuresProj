@@ -1,12 +1,18 @@
 package sample.Controllers;
 
+import animatefx.animation.FadeIn;
+import animatefx.animation.FlipInX;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import sample.Controllers.Items.BookCard;
 import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Book;
@@ -18,11 +24,20 @@ public class BookStacks {
 
     @FXML
     Label idLabel, titleLabel, authorLabel, quantityLabel, genreLabel;
+
     @FXML
     TextField searchField;
-
     Stack stackPreserve = new Stack();
     Stack stackToView = Main.stack.copy();
+
+    @FXML
+    VBox cardposition;
+
+    @FXML
+    public void initialize() throws IOException {
+
+        pushToCard();
+    }
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
@@ -33,24 +48,24 @@ public class BookStacks {
         }
     }
 
-    public void popFromCard(){
+    public void popFromCard() throws IOException{
         try{
 
                 if(!stackPreserve.isEmpty()){
 
-
                 stackToView.push(stackPreserve.pop());
                 Book popedBook = stackPreserve.getHead();
 
+                 cardposition.getChildren().clear();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/book card.fxml"));
+              Parent bookcard = loader.load();
+               BookCard b1= loader.getController();
 
-                if (popedBook != null) {
-                    idLabel.setText(String.valueOf(popedBook.getID()));
-                    quantityLabel.setText(String.valueOf(popedBook.getQuantity()));
-                    titleLabel.setText(popedBook.getTitle());
-                    authorLabel.setText(popedBook.getAuthor());
-                    genreLabel.setText(popedBook.getGenre());
+               b1.setLabels(String.valueOf(popedBook.getID()), popedBook.getTitle(), popedBook.getAuthor(),String.valueOf(popedBook.getQuantity()) , popedBook.getGenre());
+                    cardposition.getChildren().add(bookcard);
 
-                }
+
+
                 }
 
 
@@ -62,7 +77,7 @@ public class BookStacks {
         }
     }
 
-    public void pushToCard(){
+    public void pushToCard() throws IOException{
         try{
 
 
@@ -74,12 +89,14 @@ public class BookStacks {
 
 
             if(popedBook != null){
-                idLabel.setText(String.valueOf(popedBook.getID()));
-                quantityLabel.setText(String.valueOf(popedBook.getQuantity()));
-                titleLabel.setText(popedBook.getTitle());
-                authorLabel.setText(popedBook.getAuthor());
-                genreLabel.setText(popedBook.getGenre());
-                stackPreserve.push(stackToView.pop());
+                cardposition.getChildren().clear();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/book card.fxml"));
+                Parent bookcard = loader.load();
+                BookCard b1= loader.getController();
+                System.out.println("nn");
+                b1.setLabels(String.valueOf(popedBook.getID()), popedBook.getTitle(), popedBook.getAuthor(),String.valueOf(popedBook.getQuantity()) , popedBook.getGenre());
+                cardposition.getChildren().add(bookcard);
+
             }
                 }
 
@@ -100,14 +117,17 @@ public class BookStacks {
             Parent root = page.load();
             Main.switchScene(root);
 
+
         } else if ("BookStacks".equals(b1.getId())) {
             FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
             Parent root1 = page2.load();
             Main.switchScene(root1);
+
         }else if("ViewLatestAdditions".equals(b1.getId())){
             FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
             Parent root1 = page2.load();
             Main.switchScene(root1);
+
         }else if("ViewOtherReaders".equals(b1.getId())){
             FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
             Parent root1 = page2.load();
