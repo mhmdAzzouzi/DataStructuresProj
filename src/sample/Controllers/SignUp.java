@@ -38,6 +38,7 @@ public class SignUp {
                     if ((checkBox.isSelected())) {
                         User user = new User(name, password, email);
                         Main.userList.add(user);
+                        Main.loggedIn = user;
                         FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
                         Parent root = home.load();
                         Main.restoreSize();

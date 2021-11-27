@@ -48,6 +48,7 @@ public class Authentication {
 //                } else {
 //                    errorMessage.setText("Create a new account");
 //                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();

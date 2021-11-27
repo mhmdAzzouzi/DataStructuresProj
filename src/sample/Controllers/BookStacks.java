@@ -33,26 +33,6 @@ public class BookStacks {
         }
     }
 
-    public void popFromCard() {
-        try {
-            if (!stackPreserve.isEmpty()) {
-                stackToView.push(stackPreserve.pop());
-                Book popedBook = stackPreserve.getHead();
-
-                if (popedBook != null) {
-                    idLabel.setText(String.valueOf(popedBook.getID()));
-                    quantityLabel.setText(String.valueOf(popedBook.getQuantity()));
-                    titleLabel.setText(popedBook.getTitle());
-                    authorLabel.setText(popedBook.getAuthor());
-                    genreLabel.setText(popedBook.getGenre());
-
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("error in popFrom Card");
-        }
-    }
-
     public void pushToCard() {
         try {
             if (!stackToView.isEmpty()) {
@@ -73,6 +53,25 @@ public class BookStacks {
         }
 
     }
+
+    public void popFromCard() {
+        try {
+            if (!stackPreserve.isEmpty()) {
+                stackToView.push(stackPreserve.pop());
+                Book popedBook = stackPreserve.getHead();
+                if (popedBook != null) {
+                    idLabel.setText(String.valueOf(popedBook.getID()));
+                    quantityLabel.setText(String.valueOf(popedBook.getQuantity()));
+                    titleLabel.setText(popedBook.getTitle());
+                    authorLabel.setText(popedBook.getAuthor());
+                    genreLabel.setText(popedBook.getGenre());
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("error in popFrom Card");
+        }
+    }
+
 
     public void navigate(ActionEvent event) throws IOException {
         Button b1 = (Button) event.getTarget();

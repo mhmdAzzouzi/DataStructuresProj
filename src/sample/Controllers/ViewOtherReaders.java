@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sample.DataStructures.Stack;
 import sample.Main;
@@ -16,6 +17,9 @@ public class ViewOtherReaders {
     @FXML
     TextField searchField;
 
+    @FXML
+    Label loggedinAs;
+
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
         if (searchField.getText().length() > 0) {
@@ -24,7 +28,9 @@ public class ViewOtherReaders {
             Main.switchScene(page);
         }
     }
-
+    public void initialize() {
+        loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+    }
     public void navigate(ActionEvent event) throws IOException {
         Button b1 = (Button) event.getTarget();
         try {

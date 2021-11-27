@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="648.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Home">
@@ -81,10 +80,6 @@
    </VBox>
    <AnchorPane layoutX="167.0" prefHeight="67.0" prefWidth="741.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
       <children>
-         <Label layoutX="14.0" layoutY="12.0" prefHeight="44.0" prefWidth="127.0" text="Logged in as : " textFill="WHITE">
-            <font>
-               <Font name="Leelawadee UI" size="18.0" />
-            </font></Label>
          <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
          <Button layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0" styleClass="topMenuButtons">
             <graphic>
@@ -104,37 +99,16 @@
                </ImageView>
             </graphic>
          </Button>
-         <Label fx:id="loggedinAs" layoutX="132.0" layoutY="22.0" prefHeight="25.0" prefWidth="247.0">
-            <textFill>
-               <LinearGradient endX="1.0" endY="1.0" startX="0.2714285714285714">
-                  <stops>
-                     <Stop>
-                        <color>
-                           <Color red="0.75" green="0.1180555522441864" blue="0.7394676208496094" />
-                        </color>
-                     </Stop>
-                     <Stop offset="0.19587628865979384">
-                        <color>
-                           <Color red="1.0" green="1.0" blue="1.0" />
-                        </color>
-                     </Stop>
-                     <Stop offset="0.4501718213058417">
-                        <color>
-                           <Color red="0.6184210777282715" green="0.31779971718788147" blue="0.6184210777282715" />
-                        </color>
-                     </Stop>
-                     <Stop offset="1.0">
-                        <color>
-                           <Color red="1.0" green="1.0" blue="1.0" />
-                        </color>
-                     </Stop>
-                  </stops>
-               </LinearGradient>
-            </textFill>
+         <Label fx:id="loggedinAs" layoutX="77.0" layoutY="22.0" prefHeight="25.0" prefWidth="247.0" textFill="WHITE">
             <font>
                <Font name="Leelawadee UI" size="18.0" />
             </font>
          </Label>
+         <ImageView fitHeight="44.0" fitWidth="67.0" layoutX="21.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/iconLoggedIn.png" />
+            </image>
+         </ImageView>
 
       </children>
    </AnchorPane>

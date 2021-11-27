@@ -5,6 +5,9 @@ import javafx.collections.ObservableList;
 import sample.Main;
 import sample.Models.Book;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Data {
     public static ObservableList<Book> bookInfo = FXCollections.observableArrayList();
 
@@ -45,10 +48,10 @@ public class Data {
         User e = new User("", "5", "");
         User f = new User("", "6", "");
 
-        User friends[] = {ahmad, b, c, d, e, f};
-        for (int i = 0; i < friends.length; i++) {
-            Main.friendsList.add(friends[i]);
-        }
+        ArrayList<User> jihansFriends = new ArrayList<>(
+                Arrays.asList(ahmad, b, c)
+        );
+
         User j = new User("Jihan", "041803", "jihanfarhatt@gmail.com");
         User mo = new User("Mohammad", "031704", "mhmdazzouzi@gmail.com");
         User n = new User("", "021602", "nourchreideh@gmail.com");
@@ -56,7 +59,6 @@ public class Data {
         users = new User[]{j, mo, n};
         for (int i = 0; i < users.length; i++) {
             Main.userList.add(users[i]);
-
         }
     }
 

@@ -37,13 +37,12 @@ public class ViewLatestAdditions {
     @FXML
     TextField searchField;
     @FXML
-    Label messageLabel;
+    Label messageLabel,loggedinAs;
 
     Queue queueToView = Main.queue.copy();
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
-
         if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
@@ -72,9 +71,7 @@ public class ViewLatestAdditions {
             BookItem bookItem = loader.getController();
             bookItem.setItems(title, genre, author, quantity);
             listBox.getChildren().add(component);
-
         }
-
     }
 
     public void drawList() throws IOException {
@@ -99,6 +96,9 @@ public class ViewLatestAdditions {
 
     @FXML
     public void initialize() throws IOException {
+
+            loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+
 //        this.authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 //        this.genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
 //        this.titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));

@@ -19,10 +19,14 @@ public class AddBook {
     @FXML
     TextField authorField, genreField, quantityField, titleField, searchField;
     @FXML
-    Label messageLabel;
+    Label messageLabel, loggedinAs;
 
     @FXML
     VBox listBox;
+
+    public void initialize() {
+        loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+    }
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());

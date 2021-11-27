@@ -27,7 +27,7 @@ public class Main extends Application {
     public static BST binaryTree = new BST();
     public static Queue queue = new Queue();
     public static ArrayList<User> userList = new ArrayList<>();
-    public static ArrayList<User> friendsList = new ArrayList<>();
+    public static User loggedIn;
 
     public static void restoreSize(){
         stage.setWidth(910);

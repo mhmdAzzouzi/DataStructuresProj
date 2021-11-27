@@ -6,14 +6,15 @@ import java.util.Random;
 
 public class User {
     String name;
-//    String lastName;
+    //    String lastName;
     int ID;
     String password;
     String email;
     LocalDate date;
     Random random = new Random();
-//
-//    public User(String name ,String password) {
+    public static ArrayList<User> friendsList = new ArrayList<>();
+
+    //    public User(String name ,String password) {
 //        this.name = name;
 ////        this.lastName = lastName;
 //        ID = random.nextInt(10000) + 1;

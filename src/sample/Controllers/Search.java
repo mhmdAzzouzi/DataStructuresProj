@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sample.Main;
 
@@ -14,6 +15,13 @@ import java.io.IOException;
 public class Search {
     @FXML
     TextField searchField;
+
+    @FXML
+    Label loggedinAs;
+
+    public void initialize() {
+        loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+    }
 
     public void searchItem() {
 
