@@ -2,9 +2,13 @@
 .container{
 -fx-background-radius: 30px;
 -fx-background-color: #3F2B63;
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.9) , 7, 0.0 , 0 , 1 );
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 3 , 1 );
 }
 
 .container:hover{
 -fx-cursor:hand;
 -fx-background-color:purple;
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.9) , 7, 1.0 , 1 , 1 );
+ -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 1.0 , 3 , 1 );
 }
