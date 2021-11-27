@@ -16,7 +16,7 @@
 -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 3, 1, 1 , 1 );
 }
 .textfield:hover{
-          -fx-cursor:hand;
+  -fx-cursor:hand;
 
  -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 3, 1, 1 , 1 );
           }

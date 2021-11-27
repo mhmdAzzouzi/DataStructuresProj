@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.text.*?>
+
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.BookStacks">
    <children>
@@ -83,6 +81,49 @@
                    </font></Button>
            </children>
        </VBox>
+       <AnchorPane layoutX="163.0" layoutY="70.0" prefHeight="570.0" prefWidth="767.0" style="-fx-background-color: platinum;">
+           <children>
+               <Label alignment="CENTER" layoutX="20.0" layoutY="21.0" prefHeight="50.0" text="Book Stacks">
+                   <font>
+                       <Font name="Berlin Sans FB" size="24.0" />
+                   </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color blue="0.772549033164978" green="0.0470588244497776" red="0.7450980544090271" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               </Label>
+               <Button layoutX="217.0" layoutY="407.0" mnemonicParsing="false" onAction="#popFromCard" prefHeight="37.0" prefWidth="33.0" styleClass="button" stylesheets="/sample/styles/cardpage.css">
+                   <graphic>
+                       <ImageView fitHeight="25.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@/sample/images/img_1.png" />
+                           </image></ImageView>
+                   </graphic></Button>
+               <Button layoutX="487.0" layoutY="407.0" mnemonicParsing="false" onAction="#pushToCard" prefHeight="37.0" prefWidth="33.0" styleClass="button" stylesheets="/sample/styles/cardpage.css">
+                   <graphic>
+                       <ImageView fitHeight="25.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@/sample/images/img.png" />
+                           </image></ImageView>
+                   </graphic></Button>
+            <AnchorPane layoutX="141.0" layoutY="132.0" prefHeight="246.0" prefWidth="383.0">
+               <children>
+                  <VBox fx:id="cardposition" alignment="CENTER" layoutY="7.0" prefHeight="246.0" prefWidth="383.0" />
+               </children></AnchorPane>
+           </children>
+       </AnchorPane>
        <AnchorPane layoutX="165.0" prefHeight="67.0" prefWidth="743.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
            <children>
                <Label layoutX="14.0" layoutY="12.0" prefHeight="44.0" prefWidth="142.0" text="Logged in as : " textFill="WHITE">
@@ -90,7 +131,7 @@
                        <Font name="Berlin Sans FB" size="18.0" />
                    </font></Label>
                <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
-               <Button styleClass="topMenuButtons" layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0">
+               <Button layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0" styleClass="topMenuButtons">
                    <graphic>
                        <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -99,7 +140,7 @@
                        </ImageView>
                    </graphic>
                </Button>
-               <Button styleClass="topMenuButtons" layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0">
+               <Button layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" styleClass="topMenuButtons">
                    <graphic>
                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -109,39 +150,6 @@
                    </graphic>
                </Button>
 
-           </children>
-       </AnchorPane>
-       <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0">
-           <children>
-               <Label layoutX="24.0" layoutY="14.0" prefHeight="49.0" prefWidth="115.0" text="Book Stacks">
-                   <font>
-                       <Font size="18.0" />
-                   </font>
-               </Label>
-            <AnchorPane layoutX="111.0" layoutY="88.0" prefHeight="256.0" prefWidth="457.0" style="-fx-background-color: lightblue;">
-               <children>
-                  <Label layoutX="27.0" layoutY="104.0" prefHeight="25.0" prefWidth="40.0" text="Title" />
-                  <Label layoutX="27.0" layoutY="168.0" prefHeight="25.0" prefWidth="40.0" text="Author" />
-                  <Label layoutX="230.0" layoutY="104.0" prefHeight="25.0" prefWidth="40.0" text="Genre" />
-                  <Label layoutX="230.0" layoutY="168.0" prefHeight="25.0" prefWidth="53.0" text="Quanity" />
-                  <Label layoutX="21.0" layoutY="23.0" prefHeight="40.0" prefWidth="80.0" text="Book ID">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="titleLabel" layoutX="74.0" layoutY="108.0" prefHeight="17.0" prefWidth="155.0" />
-                  <Label fx:id="authorLabel" layoutX="74.0" layoutY="172.0" prefHeight="17.0" prefWidth="155.0" />
-                  <Label fx:id="quantityLabel" layoutX="283.0" layoutY="172.0" prefHeight="17.0" prefWidth="155.0" />
-                  <Label fx:id="genreLabel" layoutX="283.0" layoutY="108.0" prefHeight="17.0" prefWidth="155.0" />
-                  <Label fx:id="idLabel" layoutX="93.0" layoutY="23.0" prefHeight="40.0" prefWidth="164.0">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <Button layoutX="113.0" layoutY="384.0" mnemonicParsing="false" onAction="#popFromCard" text="&lt;" />
-            <Button layoutX="543.0" layoutY="384.0" mnemonicParsing="false" onAction="#pushToCard" text="&gt;" />
            </children>
        </AnchorPane>
    </children>
