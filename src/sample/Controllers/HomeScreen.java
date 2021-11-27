@@ -27,8 +27,8 @@ public class HomeScreen implements Initializable {
     @FXML
     Label errorAddBooksMessage;
     @FXML
-    TableColumn<Book, Object> authorColumn, genreColumn, titleColumn,quantityColumn;
-//    @FXML
+    TableColumn<Book, Object> authorColumn, genreColumn, titleColumn, quantityColumn;
+    //    @FXML
 //    TableColumn<Book,Integer> quantityColumn;
     @FXML
     TableView<Book> displayTable;

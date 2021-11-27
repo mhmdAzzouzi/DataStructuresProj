@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ViewLatestAdditions  {
+public class ViewLatestAdditions {
 
 //
 //    @FXML
@@ -37,64 +37,57 @@ public class ViewLatestAdditions  {
     @FXML
     TextField searchField;
     @FXML
-    Label messageLabel;
-
+    Label messageLabel,loggedinAs;
 
     Queue queueToView = Main.queue.copy();
 
-
-
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
-
-        if(searchField.getText().length() > 0){
+        if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
             Main.switchScene(page);
         }
     }
 
-    public void filterAll()throws IOException{
-
+    public void filterAll() throws IOException {
         drawList();
     }
 
-    public void filterByLatest() throws IOException{
+    public void filterByLatest() throws IOException {
         Main.queue.display();
         listBox.getChildren().clear();
-        if(Main.queue.length() == 0){
+        if (Main.queue.length() == 0) {
             listBox.getChildren().add(messageLabel);
         }
-        for(int i = 0 ; i<Main.queue.length();i++){
+        for (int i = 0; i < Main.queue.length(); i++) {
             Book book = queueToView.dequeue();
-            String author= book.getAuthor();
-            String title= book.getTitle();
-            String genre= book.getGenre();
-            String quantity= String.valueOf(book.getQuantity());
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
+            String author = book.getAuthor();
+            String title = book.getTitle();
+            String genre = book.getGenre();
+            String quantity = String.valueOf(book.getQuantity());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
             Parent component = loader.load();
             BookItem bookItem = loader.getController();
-            bookItem.setItems(title,genre, author, quantity);
+            bookItem.setItems(title, genre, author, quantity);
             listBox.getChildren().add(component);
-
         }
-
     }
 
     public void drawList() throws IOException {
         System.out.println("I ran by myself");
         System.out.println(Main.arrayList.size());
         listBox.getChildren().clear();
-        for(int i = 0 ; i<Main.arrayList.size();i++){
+        for (int i = 0; i < Main.arrayList.size(); i++) {
 
-            String author= Main.arrayList.get(i).getAuthor();
-            String title= Main.arrayList.get(i).getTitle();
-            String genre= Main.arrayList.get(i).getGenre();
-            String quantity= String.valueOf(Main.arrayList.get(i).getQuantity());
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
+            String author = Main.arrayList.get(i).getAuthor();
+            String title = Main.arrayList.get(i).getTitle();
+            String genre = Main.arrayList.get(i).getGenre();
+            String quantity = String.valueOf(Main.arrayList.get(i).getQuantity());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
             Parent component = loader.load();
             BookItem bookItem = loader.getController();
-            bookItem.setItems(title,genre, author, quantity);
+            bookItem.setItems(title, genre, author, quantity);
             listBox.getChildren().add(component);
 
         }
@@ -102,7 +95,10 @@ public class ViewLatestAdditions  {
     }
 
     @FXML
-    public void initialize()throws IOException{
+    public void initialize() throws IOException {
+
+            loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+
 //        this.authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 //        this.genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
 //        this.titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -112,13 +108,13 @@ public class ViewLatestAdditions  {
         drawList();
     }
 
-    public void setTable(){
-      this.latestAdditionsTable.setItems(Data.bookInfo);
+    public void setTable() {
+        this.latestAdditionsTable.setItems(Data.bookInfo);
     }
 
     public void navigate(ActionEvent event) throws IOException {
-        Button b1= (Button) event.getTarget();
-        try{
+        Button b1 = (Button) event.getTarget();
+        try {
             if ("addBook".equals(b1.getId())) {
                 FXMLLoader page = new FXMLLoader(getClass().getResource("/sample/View/AddBook.fxml"));
                 Parent root = page.load();
@@ -128,16 +124,16 @@ public class ViewLatestAdditions  {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-            }else if("ViewLatestAdditions".equals(b1.getId())){
+            } else if ("ViewLatestAdditions".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-            }else if("ViewOtherReaders".equals(b1.getId())){
+            } else if ("ViewOtherReaders".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("something went wrong");
         }
 
