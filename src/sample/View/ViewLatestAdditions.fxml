@@ -80,7 +80,7 @@
            </children>
        </VBox>
 
-       <AnchorPane layoutX="167.0" prefHeight="67.0" prefWidth="741.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
+       <AnchorPane layoutX="167.0" prefHeight="67.0" prefWidth="742.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
            <children>
                <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
                <Button layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0" styleClass="topMenuButtons">

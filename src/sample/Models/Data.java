@@ -18,17 +18,17 @@ public class Data {
     public static User users[];
 
     public static void load() {
-        Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers", 2);
-        Book b2 = new Book("Harper Lee", "Classics", "To Kill A Mockingbird", 4);
-        Book b3 = new Book("Louisa Sullivan", "Classics", "Little Women", 3);
+        Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers", 2 , 5);
+        Book b2 = new Book("Harper Lee", "Classics", "To Kill A Mockingbird", 4 , 3);
+        Book b3 = new Book("Louisa Sullivan", "Classics", "Little Women", 3 , 5);
         Book b4 = new Book("Madeline Miller", "Fantasy", "Circe");
         Book b5 = new Book("Kathryn Stockett", "Historical Fiction", "The Help", 2);
-        Book b6 = new Book("Josh Malerman", "Horror", "Bird Box", 1);
-        Book b7 = new Book("Sarah Maclean", "Romance", "Brazen and the Beast", 3);
-        Book b8 = new Book("George R.R. Martin", "Fantasy", "Game of Thrones", 8);
-        Book b9 = new Book("Brandon Sanderson", "Fantasy", "The Way of Kings", 2);
-        Book b10 = new Book("Paul Tremblay", "Horror", "A Head Full of Ghosts", 9);
-        Book b11 = new Book("Clive Barker", "Horror", "The Damnation Game", 4);
+        Book b6 = new Book("Josh Malerman", "Horror", "Bird Box", 1, 3);
+        Book b7 = new Book("Sarah Maclean", "Romance", "Brazen and the Beast", 3, 5);
+        Book b8 = new Book("George R.R. Martin", "Fantasy", "Game of Thrones", 8, 5);
+        Book b9 = new Book("Brandon Sanderson", "Fantasy", "The Way of Kings", 2, 3);
+        Book b10 = new Book("Paul Tremblay", "Horror", "A Head Full of Ghosts", 9, 4);
+        Book b11 = new Book("Clive Barker", "Horror", "The Damnation Game", 4, 4);
         Book b12 = new Book("Sue Monk Kidd", "Historical Fiction", "The Book of Longings", 6);
         Book b13 = new Book("Walter Scott", "Action and Adventure", "Ivanhoe", 6);
         Book b14 = new Book("Emily Brontë", "Romance", "Wuthering Heights", 1);
@@ -53,8 +53,8 @@ public class Data {
         );
 
         User j = new User("Jihan", "041803", "jihanfarhatt@gmail.com");
-        User mo = new User("Mohammad", "031704", "mhmdazzouzi@gmail.com");
-        User n = new User("", "021602", "nourchreideh@gmail.com");
+        User mo = new User("MohammadAzzouzi", "123456", "mhmdazzouzi@gmail.com", "Librarian");
+        User n = new User("Nour", "021602", "nourchreideh@gmail.com");
 
         users = new User[]{j, mo, n};
         for (int i = 0; i < users.length; i++) {

@@ -35,7 +35,8 @@ public class Home {
 
     @FXML
     public void initialize() throws IOException {
-        Data.load();
+        Main.restoreSize();
+
         try {
             String nameSignUp = signup.name;
             String nameLogIn = login.name;

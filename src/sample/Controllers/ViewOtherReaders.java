@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import sample.DataStructures.Stack;
 import sample.Main;
 
@@ -16,7 +17,18 @@ public class ViewOtherReaders {
 
     @FXML
     TextField searchField;
+    @FXML
+    HBox userCardBox;
 
+    @FXML
+    public void initialize() throws  IOException{
+        Main.restoreSize();
+        for(int i =0 ; i< Main.userList.size() ; i++){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCard.fxml"));
+            Parent userCard= loader.load();
+            userCardBox.getChildren().add(userCard);
+        }
+    }
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());

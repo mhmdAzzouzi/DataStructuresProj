@@ -37,10 +37,24 @@ public class Authentication {
 //                if (name == u.getName() && passwordText.getText() == u.getPassword()) {
 //
 //                    try {
-                FXMLLoader loginPage = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
-                Parent root = loginPage.load();
-                Main.restoreSize();
-                Main.switchScene(root);
+                User found=null;
+                for(int i = 0 ; i < Main.userList.size(); i++){
+                    User userToFind = Main.userList.get(i);
+                    if(userToFind.getName().equals(name)){
+                        found= Main.userList.get(i);
+                        break;
+                    }
+                }
+                if(found !=null && found.getPassword().equals(passwordText.getText())){
+                    FXMLLoader loginPage = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
+                    Parent root = loginPage.load();
+                    Main.restoreSize();
+                    Main.switchScene(root);
+                }else if(found == null){
+                    errorMessage.setText("User Not found");
+                }else if(!found.getPassword().equals(passwordText.getText())){
+                    errorMessage.setText("Wrong User name or Password");
+                }
 //                    } catch (Exception e) {
 //                        e.printStackTrace();
 //                    }
@@ -57,6 +71,8 @@ public class Authentication {
     }
 
     public void closeAction() throws IOException {
-        stage.close();
+        FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
+        Parent root = home.load();
+        Main.switchScene(root);
     }
 }

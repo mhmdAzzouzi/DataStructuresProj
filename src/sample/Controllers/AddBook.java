@@ -24,7 +24,9 @@ public class AddBook {
     @FXML
     VBox listBox;
 
+    @FXML
     public void initialize() {
+
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
     }
 
@@ -39,21 +41,24 @@ public class AddBook {
 
     public void addBook() {
         try {
-            messageLabel.setText("");
-            String author = authorField.getText();
-            String title = titleField.getText();
-            String genre = genreField.getText();
-            String quantity = quantityField.getText();
+            if(Main.loggedIn.getType() .equals("Librarian") ) {
+                messageLabel.setText("");
+                String author = authorField.getText();
+                String title = titleField.getText();
+                String genre = genreField.getText();
+                String quantity = quantityField.getText();
 
-            Book newBook = new Book(author, title, genre, Integer.parseInt(quantity));
-            Main.binaryTree.insertion(newBook);
-            Main.arrayList.add(newBook);
-            Data.bookInfo.addAll(newBook);
-            Main.queue.enqueue(newBook);
-            System.out.println("new print ");
-            Main.binaryTree.DisplayInorder();
-            messageLabel.setText("Thank you ! Book was added");
-
+                Book newBook = new Book(author, title, genre, Integer.parseInt(quantity));
+                Main.binaryTree.insertion(newBook);
+                Main.arrayList.add(newBook);
+                Data.bookInfo.addAll(newBook);
+                Main.queue.enqueue(newBook);
+                System.out.println("new print ");
+                Main.binaryTree.DisplayInorder();
+                messageLabel.setText("Thank you ! Book was added");
+            }else{
+                messageLabel.setText("Only Librarians Can Add books !");
+            }
 
         } catch (Exception e) {
             messageLabel.setText("Failed to add the book");

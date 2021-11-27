@@ -39,7 +39,7 @@ public class SignUp {
                         User user = new User(name, password, email);
                         Main.userList.add(user);
                         Main.loggedIn = user;
-                        FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
+                        FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                         Parent root = home.load();
                         Main.restoreSize();
                         Main.switchScene(root);
