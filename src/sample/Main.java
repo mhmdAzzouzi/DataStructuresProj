@@ -1,5 +1,7 @@
 package sample;
 
+import animatefx.animation.FadeIn;
+import animatefx.animation.FlipInX;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -41,6 +43,7 @@ public class Main extends Application {
         primaryStage.setTitle("Book Club House");
         primaryStage.setScene(new Scene(root, 600, 390));
         stage.show();
+        new FadeIn(root).play();
     }
 
     public static void switchScene(Parent root) throws IOException {
