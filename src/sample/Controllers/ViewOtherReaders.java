@@ -34,7 +34,7 @@ public class ViewOtherReaders {
                 FXMLLoader page = new FXMLLoader(getClass().getResource("/sample/View/AddBook.fxml"));
                 Parent root = page.load();
                 Main.switchScene(root);
-                new Flip(root).play();
+
 
             } else if ("BookStacks".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));

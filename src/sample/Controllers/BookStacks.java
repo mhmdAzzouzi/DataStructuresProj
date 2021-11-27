@@ -1,6 +1,7 @@
 package sample.Controllers;
 
 import animatefx.animation.FadeIn;
+import animatefx.animation.Flip;
 import animatefx.animation.FlipInX;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,9 +22,7 @@ import javax.xml.soap.Text;
 import java.io.IOException;
 
 public class BookStacks {
-
-    @FXML
-    Label idLabel, titleLabel, authorLabel, quantityLabel, genreLabel;
+    
 
     @FXML
     TextField searchField;
@@ -35,7 +34,6 @@ public class BookStacks {
 
     @FXML
     public void initialize() throws IOException {
-
         pushToCard();
     }
 
@@ -49,62 +47,51 @@ public class BookStacks {
     }
 
     public void popFromCard() throws IOException{
-        try{
 
-                if(!stackPreserve.isEmpty()){
+            try{
 
-                stackToView.push(stackPreserve.pop());
-                Book popedBook = stackPreserve.getHead();
-
-                 cardposition.getChildren().clear();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/book card.fxml"));
-              Parent bookcard = loader.load();
-               BookCard b1= loader.getController();
-
-               b1.setLabels(String.valueOf(popedBook.getID()), popedBook.getTitle(), popedBook.getAuthor(),String.valueOf(popedBook.getQuantity()) , popedBook.getGenre());
-                    cardposition.getChildren().add(bookcard);
+                if(!stackPreserve.isEmpty() && stackPreserve.length() > 1) {
 
 
+                    stackToView.push(stackPreserve.pop());
+                    Book popedBook = stackPreserve.getHead();
 
+                    System.out.println(popedBook);
+                    if (popedBook != null) {
+                        cardposition.getChildren().clear();
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/book card.fxml"));
+                        Parent bookCard = loader.load();
+                        BookCard b1 = loader.getController();
+                        b1.setLabels(String.valueOf(popedBook.getID()), popedBook.getTitle(), popedBook.getAuthor(), String.valueOf(popedBook.getQuantity()), popedBook.getGenre());
+//                        new Flip(bookCard).play();
+                        cardposition.getChildren().add(bookCard);
+
+                    }
                 }
-
-
-
-
-
-        }catch (Exception e){
-            System.out.println("error in popFrom Card");
-        }
+            }catch (Exception e){
+                System.out.println("hello :) there was an issue popping a card");
+//                e.printStackTrace();
+            }
     }
 
-    public void pushToCard() throws IOException{
-        try{
-
-
+    public void pushToCard() throws IOException {
 
                 if(!stackToView.isEmpty()){
 
+                    Book popedBook = stackToView.getHead();
 
-                Book popedBook = stackToView.getHead();
+                    if(popedBook != null) {
+                        stackPreserve.push(stackToView.pop());
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/book card.fxml"));
+                        Parent bookCard = loader.load();
+                        BookCard b1 = loader.getController();
+                        cardposition.getChildren().clear();
+                        b1.setLabels(String.valueOf(popedBook.getID()), popedBook.getTitle(), popedBook.getAuthor(), String.valueOf(popedBook.getQuantity()), popedBook.getGenre());
+                        cardposition.getChildren().add(bookCard);
+//                        new Flip(bookCard).play();
 
-
-            if(popedBook != null){
-                cardposition.getChildren().clear();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/book card.fxml"));
-                Parent bookcard = loader.load();
-                BookCard b1= loader.getController();
-                System.out.println("nn");
-                b1.setLabels(String.valueOf(popedBook.getID()), popedBook.getTitle(), popedBook.getAuthor(),String.valueOf(popedBook.getQuantity()) , popedBook.getGenre());
-                cardposition.getChildren().add(bookcard);
-
-            }
-                }
-
-
-
-        }catch (Exception e){
-            System.out.println("error from push to card!!");
-        }
+                    }
+         }
 
     }
 

@@ -13,7 +13,7 @@
 
 .button:hover{
 -fx-background-color:transparent;
-
+-fx-cursor:hand;
 }
 .button:pressed{
   -fx-background-color: #7156DD;
