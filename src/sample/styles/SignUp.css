@@ -1,0 +1,24 @@
+.textfield{
+-fx-background-color:white;
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 3, 1, 1 , 1 );
+}
+
+.button{
+
+ -fx-background-color:
+         #c3c4c4,
+         linear-gradient(#d6d6d6 20%, white 100%),
+         radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
+     -fx-background-radius: 5;
+     -fx-background-insets: 0,1,1;
+     -fx-text-fill: black;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+
+}
+.button:hover{
+        -fx-cursor:hand;
+        -fx-background-color:purple;
+        -fx-shadow: 0 0 10px 0;
+        -fx-text-fill:white;
+
+        }

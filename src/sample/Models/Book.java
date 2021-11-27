@@ -18,7 +18,7 @@ public class Book {
         this.author = author;
         this.genre = genre;
         this.title = title;
-        ID= random.nextInt(10000) + 1;
+        ID = random.nextInt(10000) + 1;
 
     }
 
