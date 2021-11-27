@@ -66,10 +66,11 @@ public class ViewLatestAdditions {
             String title = book.getTitle();
             String genre = book.getGenre();
             String quantity = String.valueOf(book.getQuantity());
+            int rating = Main.arrayList.get(i).getRating();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
             Parent component = loader.load();
             BookItem bookItem = loader.getController();
-            bookItem.setItems(title, genre, author, quantity);
+            bookItem.setItems(title, genre, author, quantity, rating);
             listBox.getChildren().add(component);
         }
     }
@@ -84,10 +85,11 @@ public class ViewLatestAdditions {
             String title = Main.arrayList.get(i).getTitle();
             String genre = Main.arrayList.get(i).getGenre();
             String quantity = String.valueOf(Main.arrayList.get(i).getQuantity());
+            int rating = Main.arrayList.get(i).getRating();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
             Parent component = loader.load();
             BookItem bookItem = loader.getController();
-            bookItem.setItems(title, genre, author, quantity);
+            bookItem.setItems(title, genre, author, quantity, rating);
             listBox.getChildren().add(component);
 
         }

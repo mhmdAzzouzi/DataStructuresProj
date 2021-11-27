@@ -32,8 +32,9 @@ public class Main extends Application {
     public static User loggedIn;
 
     public static void restoreSize(){
-        stage.setWidth(910);
-        stage.setHeight(650);
+//         906, 648)
+        stage.setWidth(920);
+        stage.setHeight(649);
     }
 
     @Override
@@ -42,6 +43,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/sample/View/SignUp.fxml"));
         primaryStage.setTitle("Book Club House");
         primaryStage.setScene(new Scene(root, 600, 390));
+        Data.load();
         stage.show();
         new FadeIn(root).play();
     }

@@ -12,14 +12,14 @@ public class Book {
     String title;
     int quantity;
     LocalTime duration;
-
+    int rating;
     public Book(String author, String genre, String title) {
         super();
         this.author = author;
         this.genre = genre;
         this.title = title;
         ID = random.nextInt(10000) + 1;
-
+        rating=1;
     }
 
     public Book(String author, String genre, String title, int quantity) {
@@ -29,6 +29,23 @@ public class Book {
 
         ID = random.nextInt(10000) + 1;
         this.quantity = quantity;
+        rating=1;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public Book(String author, String genre, String title, int quantity, int rating) {
+
+        this.author = author;
+        this.genre = genre;
+        this.ID = ID;
+        this.title = title;
+        this.quantity = quantity;
+        this.rating = rating;
+        ID = random.nextInt(10000) + 1;
+
     }
 
     public String getAuthor() {

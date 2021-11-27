@@ -7,6 +7,7 @@ import java.util.Random;
 public class User {
     String name;
     //    String lastName;
+    String type;
     int ID;
     String password;
     String email;
@@ -22,10 +23,34 @@ public class User {
 //        date = LocalDate.now();
 //    }
 
+    public String getType() {
+        return type;
+    }
+
+    public Random getRandom() {
+        return random;
+    }
+
+    public static ArrayList<User> getFriendsList() {
+        return friendsList;
+    }
+
     public User(String name, String password, String email) {
         this.name = name;
+        this.type = "User";
         this.password = password;
         this.email = email;
+        ID = random.nextInt(10000) + 1;
+    }
+
+    public User(String name,  String password, String email , String type) {
+        this.name = name;
+        this.type = type;
+        ID = random.nextInt(10000) + 1;
+        this.password = password;
+        this.email = email;
+
+
     }
 
     public String getEmail() {

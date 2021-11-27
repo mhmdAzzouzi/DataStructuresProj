@@ -1,10 +1,12 @@
 package sample.DataStructures;
 
 import sample.Models.Book;
+import sample.Models.User;
 
 public class BST {
     protected static class Node {
         Book book;
+
         Node left;
         Node right;
 

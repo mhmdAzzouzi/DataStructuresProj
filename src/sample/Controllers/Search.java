@@ -19,6 +19,8 @@ public class Search {
     @FXML
     Label loggedinAs;
 
+
+
     public void initialize() {
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
     }
