@@ -1,26 +1,14 @@
-.container{
--fx-border-color: black;
- -fx-border-width: 0 0 0 0;
-      -fx-background-color: linear-gradient(from  25px 25px to 100px 100px   ,purple ,  #262125);
-       -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.9) , 7, 0.0 , 0 , 1 );
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 3 , 1 );
-    -fx-background-radius:30px;
-}
-
 .Buttons:hover{
 -fx-cursor:hand;
 -fx-background-color: purple;
 -fx-background-radius:10px;
 
 }
-
+.texts{
+-fx-text-fill:white;
+}
 .Buttons{
--fx-background-color: #7156DD;
 -fx-text-fill:white;
 -fx-background-radius:10px;
 
-}
-
-.texts{
--fx-text-fill:white;
 }
