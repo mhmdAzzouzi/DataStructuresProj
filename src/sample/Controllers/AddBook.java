@@ -28,6 +28,7 @@ public class AddBook {
     public void initialize() {
 
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+        System.out.println(Main.loggedIn.friendsList.get(0));
     }
 
     public void searchItem() throws Exception {

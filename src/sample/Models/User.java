@@ -13,7 +13,7 @@ public class User {
     String email;
     LocalDate date;
     Random random = new Random();
-    public static ArrayList<User> friendsList = new ArrayList<>();
+    public  ArrayList<User> friendsList = new ArrayList<>();
 
     //    public User(String name ,String password) {
 //        this.name = name;
@@ -31,7 +31,7 @@ public class User {
         return random;
     }
 
-    public static ArrayList<User> getFriendsList() {
+    public  ArrayList<User> getFriendsList() {
         return friendsList;
     }
 
@@ -41,6 +41,7 @@ public class User {
         this.password = password;
         this.email = email;
         ID = random.nextInt(10000) + 1;
+        this.friendsList.add(this);
     }
 
     public User(String name,  String password, String email , String type) {
@@ -49,7 +50,7 @@ public class User {
         ID = random.nextInt(10000) + 1;
         this.password = password;
         this.email = email;
-
+        this.friendsList.add(this);
 
     }
 

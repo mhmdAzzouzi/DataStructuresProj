@@ -10,8 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import sample.DataStructures.Stack;
 import sample.Main;
+import sample.Models.User;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class ViewOtherReaders {
 
@@ -23,11 +26,17 @@ public class ViewOtherReaders {
     @FXML
     public void initialize() throws  IOException{
         Main.restoreSize();
-        for(int i =0 ; i< Main.userList.size() ; i++){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCard.fxml"));
-            Parent userCard= loader.load();
-            userCardBox.getChildren().add(userCard);
-        }
+
+            ArrayList<User> filtered = Main.userList;
+//            filtering usersList to display readers that aren't in the
+//            friendslist of the current user
+            filtered.removeIf(user -> user == Main.loggedIn || Main.loggedIn.friendsList.contains(user));
+
+            for(int i =0 ; i<  filtered.size() ; i++){
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCard.fxml"));
+                    Parent userCard= loader.load();
+                    userCardBox.getChildren().add(userCard);
+            }
     }
 
     public void searchItem() throws Exception {
