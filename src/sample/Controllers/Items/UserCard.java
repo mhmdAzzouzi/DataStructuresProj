@@ -11,10 +11,13 @@ public class UserCard {
     public void setLabels(String name, String email, int id) {
         usernameLabel.setText(name);
         emailLabel.setText(email);
+        friendsNumberLabel.setText("2");
         idLabel.setText((String.valueOf(id)));
     }
 
     public void addFriend() {
+
+
 
     }
 
