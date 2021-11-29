@@ -39,9 +39,11 @@ public class BookStacks {
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
-        if(searchField.getText().length() > 0){
+        if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
+            Search controller= loader.getController();
+            controller.searchItem(Integer.parseInt(searchField.getText()));
             Main.switchScene(page);
         }
     }

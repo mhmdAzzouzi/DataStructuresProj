@@ -15,7 +15,7 @@ public class Data {
         return bookInfo;
     }
 
-    public static User users[];
+
 
     public static void load() {
         Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers", 2 , 5);
@@ -42,24 +42,21 @@ public class Data {
             Main.binaryTree.insertion(listOfBooks[i]);
         }
         User ahmad = new User("Ahmad", "1", "");
-        User b = new User("", "2", "");
-        User c = new User("", "3", "");
-        User d = new User("", "4", "");
-        User e = new User("", "5", "");
-        User f = new User("", "6", "");
+        User b = new User("khliad", "2", "");
+        User c = new User("Salem", "3", "");
+        User d = new User("omran", "4", "");
+        User e = new User("Mariam", "5", "");
+        User f = new User("Salma", "6", "");
 
-        ArrayList<User> jihansFriends = new ArrayList<>(
-                Arrays.asList(ahmad, b, c)
-        );
+
 
         User j = new User("Jihan", "041803", "jihanfarhatt@gmail.com");
         User mo = new User("MohammadAzzouzi", "123456", "mhmdazzouzi@gmail.com", "Librarian");
         User n = new User("Nour", "021602", "nourchreideh@gmail.com");
-
-        users = new User[]{j, mo, n};
-        for (int i = 0; i < users.length; i++) {
-            Main.userList.add(users[i]);
-        }
+        mo.friendsList.addAll(Arrays.asList(j,n));
+        System.out.println("you have friends = " + mo.getFriendsList().size());
+        User[] users = {j, mo, n, ahmad , b ,c};
+        Main.userList.addAll(Arrays.asList(users));
     }
 
     public static Book deleteFromArrayList(int id) {

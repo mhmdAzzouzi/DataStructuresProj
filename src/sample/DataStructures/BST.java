@@ -44,9 +44,9 @@ public class BST {
         insert(root, b1);
     }
 
-    public Node search(int ID) {
+    public Book search(int ID) {
         try {
-            return searchTree(root, ID);
+            return searchTree(root, ID).book;
         } catch (Exception NullPointerException) {
             return null;
         }

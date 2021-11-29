@@ -28,6 +28,7 @@ public class AddBook {
     public void initialize() {
 
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+        System.out.println(Main.loggedIn.friendsList.get(0));
     }
 
     public void searchItem() throws Exception {
@@ -35,6 +36,8 @@ public class AddBook {
         if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
+            Search controller= loader.getController();
+            controller.searchItem(Integer.parseInt(searchField.getText()));
             Main.switchScene(page);
         }
     }
