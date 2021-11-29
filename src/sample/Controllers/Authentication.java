@@ -24,7 +24,7 @@ public class Authentication {
     public static Stage stage = Main.stage;
 
     public void loginAction() throws IOException {
-        Data.load();
+
         name = nameText.getText();
         try {
             if (name.length() <= 0 || !name.matches("[A-Z][a-zA-Z]*")) {
@@ -42,6 +42,7 @@ public class Authentication {
                     User userToFind = Main.userList.get(i);
                     if(userToFind.getName().equals(name)){
                         found= Main.userList.get(i);
+                        Main.loggedIn = found;
                         break;
                     }
                 }

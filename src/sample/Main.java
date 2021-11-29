@@ -44,6 +44,7 @@ public class Main extends Application {
         primaryStage.setTitle("Book Club House");
         primaryStage.setScene(new Scene(root, 600, 390));
         Data.load();
+
         stage.show();
         new FadeIn(root).play();
     }
