@@ -1,7 +1,8 @@
 .Buttons:hover{
 -fx-cursor:hand;
--fx-background-color: purple;
 -fx-background-radius:10px;
+
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 1, 2, 1 , 2 );
 
 }
 .texts{
@@ -10,5 +11,7 @@
 .Buttons{
 -fx-text-fill:white;
 -fx-background-radius:10px;
-
+}
+.UserCard{
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.9) , 30, 0.0 , 0 , 1 );
 }

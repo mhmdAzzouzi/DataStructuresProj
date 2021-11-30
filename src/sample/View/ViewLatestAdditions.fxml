@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ViewLatestAdditions">
@@ -22,7 +23,7 @@
                        </ImageView>
                    </graphic></Button>
                <AnchorPane prefHeight="44.0" prefWidth="166.0" />
-               <Button id="addBook" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Add Book" textFill="WHITE">
+               <Button fx:id="addBook" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Add Book" textFill="WHITE">
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -118,7 +119,7 @@
            <children>
             <ScrollPane fx:id="scrollPane" layoutX="6.0" layoutY="47.0" prefHeight="519.0" prefWidth="734.0">
                <content>
-                  <VBox fx:id="listBox" alignment="CENTER" prefHeight="518.0" prefWidth="728.0">
+                  <VBox fx:id="listBox" alignment="CENTER" prefHeight="504.0" prefWidth="728.0">
                      <children>
                         <Label fx:id="messageLabel" prefHeight="49.0" text="No Books were added lately..">
                            <font>
@@ -128,7 +129,23 @@
                      </children></VBox>
                </content>
             </ScrollPane>
-               <Label layoutX="24.0" layoutY="2.0" prefHeight="49.0" text="Latest Addtions">
+               <Label layoutX="14.0" layoutY="2.0" prefHeight="49.0" text="Latest Addtions">
+                   <textFill>
+                       <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                               <Stop>
+                                   <color>
+                                       <Color />
+                                   </color>
+                               </Stop>
+                               <Stop offset="1.0">
+                                   <color>
+                                       <Color red="0.7450980544090271" green="0.0470588244497776" blue="0.772549033164978" />
+                                   </color>
+                               </Stop>
+                           </stops>
+                       </LinearGradient>
+                   </textFill>
                    <font>
                        <Font name="Leelawadee UI" size="24.0" />
                    </font>

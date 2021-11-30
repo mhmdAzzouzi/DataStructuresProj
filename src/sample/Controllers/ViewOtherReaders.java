@@ -50,10 +50,8 @@ public class ViewOtherReaders {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCardTest.fxml"));
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
-            userCard1.setLabels(u.getName(), u.getEmail(), u.getID());
+            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(),Main.userList.get(i).friendsList.size());
             userCardFlowPane.getChildren().add(userCard);
-//            userCardFlowPane.setHgap(15);
-//            userCardFlowPane.setVgap(15);
         }
     }
 

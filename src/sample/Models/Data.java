@@ -16,11 +16,10 @@ public class Data {
     }
 
 
-
     public static void load() {
-        Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers", 2 , 5);
-        Book b2 = new Book("Harper Lee", "Classics", "To Kill A Mockingbird", 4 , 3);
-        Book b3 = new Book("Louisa Sullivan", "Classics", "Little Women", 3 , 5);
+        Book b1 = new Book("Alexander Dumas", "Action and Adventure", "The Three Musketeers", 2, 5);
+        Book b2 = new Book("Harper Lee", "Classics", "To Kill A Mockingbird", 4, 3);
+        Book b3 = new Book("Louisa Sullivan", "Classics", "Little Women", 3, 5);
         Book b4 = new Book("Madeline Miller", "Fantasy", "Circe");
         Book b5 = new Book("Kathryn Stockett", "Historical Fiction", "The Help", 2);
         Book b6 = new Book("Josh Malerman", "Horror", "Bird Box", 1, 3);
@@ -41,21 +40,30 @@ public class Data {
             Main.stack.push(listOfBooks[i]);
             Main.binaryTree.insertion(listOfBooks[i]);
         }
-        User ahmad = new User("Ahmad", "1", "");
-        User b = new User("khliad", "2", "");
-        User c = new User("Salem", "3", "");
-        User d = new User("omran", "4", "");
-        User e = new User("Mariam", "5", "");
-        User f = new User("Salma", "6", "");
-
-
-
-        User j = new User("Jihan", "041803", "jihanfarhatt@gmail.com");
+        User ahmad = new User("Ahmad", "1", "ahmad@gmail.com");
+        User khaled = new User("khaled", "2", "khaledkh@gmail.com");
+        User salem = new User("Salem", "3", "s.salem@gmail.com");
+        User omar = new User("omar", "4", "omari@gmail.com");
+        User mariam = new User("Mariam", "5", "mariam.m@gmail.com");
+        User salma = new User("Salma", "6", "salma.s@gmail.com");
+        User jihan = new User("Jihan", "041803", "jihanfarhatt@gmail.com");
         User mo = new User("MohammadAzzouzi", "123456", "mhmdazzouzi@gmail.com", "Librarian");
-        User n = new User("Nour", "021602", "nourchreideh@gmail.com");
-        mo.friendsList.addAll(Arrays.asList(j,n));
+        User nour = new User("Nour", "021602", "nourchreideh@gmail.com");
+
+        mo.friendsList.addAll(Arrays.asList(jihan, nour, salem));
+        jihan.friendsList.addAll(Arrays.asList(nour, mo, ahmad,omar)); // khaled salem salma mariam
+        nour.friendsList.addAll(Arrays.asList(mo, khaled, omar, salma, jihan));
+        ahmad.friendsList.addAll(Arrays.asList(nour, mo, jihan));
+        salem.friendsList.add(mo);
+        khaled.friendsList.addAll(Arrays.asList(nour,salma));
+        omar.friendsList.add(jihan);
+        salma.friendsList.addAll(Arrays.asList(nour,khaled));
+
+
+        System.out.println("Jihan's Friends: "+jihan.friendsList);
+
         System.out.println("you have friends = " + mo.getFriendsList().size());
-        User[] users = {j, mo, n, ahmad , b ,c};
+        User[] users = {jihan, mo, nour, ahmad, khaled, mariam,salem,salma,omar};
         Main.userList.addAll(Arrays.asList(users));
     }
 
