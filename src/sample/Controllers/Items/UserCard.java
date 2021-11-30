@@ -5,6 +5,8 @@ import javafx.scene.control.Label;
 
 public class UserCard {
 
+
+
     @FXML
     Label usernameLabel, idLabel, emailLabel, friendsNumberLabel;
 

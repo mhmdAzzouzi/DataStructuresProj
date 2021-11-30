@@ -108,16 +108,21 @@
                        </ImageView>
                    </graphic>
                </Button>
-               <Label fx:id="loggedinAs" layoutX="77.0" layoutY="22.0" prefHeight="25.0" prefWidth="247.0" textFill="WHITE">
-                   <font>
-                       <Font name="Leelawadee UI" size="18.0" />
-                   </font>
-               </Label>
+<!--               <Label fx:id="loggedinAs" layoutX="77.0" layoutY="22.0" prefHeight="25.0" prefWidth="247.0" textFill="WHITE">-->
+<!--                   <font>-->
+<!--                       <Font name="Leelawadee UI" size="18.0" />-->
+<!--                   </font>-->
+<!--               </Label>-->
                <ImageView fitHeight="44.0" fitWidth="67.0" layoutX="21.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                    <image>
                        <Image url="@../images/iconLoggedIn.png" />
                    </image>
                </ImageView>
+            <Label fx:id="loggedinAs" layoutX="81.0" layoutY="16.0" prefHeight="29.0" prefWidth="239.0" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
    
            </children>
        </AnchorPane>

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -24,6 +25,8 @@ public class ViewOtherReaders {
     @FXML
     TextField searchField;
     @FXML
+    Label loggedinAs;
+    @FXML
     FlowPane userCardFlowPane;
 //    @FXML
 //    HBox userCardBox;
@@ -31,6 +34,7 @@ public class ViewOtherReaders {
     @FXML
     public void initialize() throws IOException {
         Main.restoreSize();
+        loggedinAs.setText(Main.loggedIn.getName());
         ArrayList<User> filtered = Main.userList;
 //            filtering usersList to display readers that aren't in the
 //            friendslist of the current user

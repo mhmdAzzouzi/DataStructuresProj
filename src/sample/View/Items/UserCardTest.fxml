@@ -31,9 +31,9 @@
                   <Image url="@../../images/friendsNumber.png" />
                </image></ImageView>
             <Label fx:id="friendsNumberLabel" layoutX="150.0" layoutY="148.0" styleClass="texts" text="nb" textFill="WHITE" />
-            <Label fx:id="usernameLabel" layoutX="48.0" layoutY="194.0" prefHeight="17.0" prefWidth="65.0" styleClass="texts" text="username" textFill="WHITE" />
-            <Label fx:id="idLabel" layoutX="152.0" layoutY="194.0" styleClass="texts" text="id" textFill="WHITE" />
-            <Label fx:id="emailLabel" layoutX="48.0" layoutY="232.0" prefHeight="17.0" prefWidth="123.0" styleClass="texts" text="email" textFill="WHITE" />
+            <Label fx:id="usernameLabel" layoutX="48.0" layoutY="194.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="65.0" styleClass="texts" text="username" textFill="WHITE" />
+            <Label fx:id="idLabel" layoutX="152.0" layoutY="194.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="texts" text="id" textFill="WHITE" />
+            <Label fx:id="emailLabel" layoutX="48.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="157.0" styleClass="texts" text="email" textFill="WHITE" />
             <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="19.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/username.png" />
