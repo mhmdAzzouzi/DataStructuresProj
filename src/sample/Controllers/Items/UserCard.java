@@ -17,11 +17,14 @@ public class UserCard {
     AnchorPane UserCardBox;
 
 
-    public void setLabels(String name, String email, int id, int friendsNumber) {
+    public void setLabels(String name, String email, int id, int friendsNumber , boolean isFriend) {
         usernameLabel.setText(name);
         emailLabel.setText(email);
         friendsNumberLabel.setText((String.valueOf(friendsNumber)));
         idLabel.setText((String.valueOf(id)));
+        if(isFriend){
+            imageAdd.setImage(new Image("/sample/images/check.png"));
+        }
     }
 
     public void addFriend() {

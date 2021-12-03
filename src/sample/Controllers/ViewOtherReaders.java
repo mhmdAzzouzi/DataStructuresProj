@@ -31,6 +31,12 @@ public class ViewOtherReaders {
 //    @FXML
 //    HBox userCardBox;
 
+    public void viewFriends() throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root= loader.load();
+        Main.switchScene(root);
+    }
+
     @FXML
     public void initialize() throws IOException {
         Main.restoreSize();
@@ -50,7 +56,7 @@ public class ViewOtherReaders {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCardTest.fxml"));
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
-            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(),Main.userList.get(i).friendsList.size());
+            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(),Main.userList.get(i).friendsList.size() ,false);
             userCardFlowPane.getChildren().add(userCard);
         }
     }

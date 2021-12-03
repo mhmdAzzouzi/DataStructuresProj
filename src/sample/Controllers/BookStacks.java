@@ -102,6 +102,11 @@ public class BookStacks {
 
     }
 
+    public void viewFriends() throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root= loader.load();
+        Main.switchScene(root);
+    }
 
     public void navigate(ActionEvent event) throws IOException {
     Button b1= (Button) event.getTarget();

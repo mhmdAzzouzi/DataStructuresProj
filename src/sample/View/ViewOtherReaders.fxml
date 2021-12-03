@@ -100,7 +100,7 @@
                        </ImageView>
                    </graphic>
                </Button>
-               <Button layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" styleClass="topMenuButtons">
+               <Button layoutX="409.0" layoutY="19.0" mnemonicParsing="false" onAction="#viewFriends" prefHeight="26.0" prefWidth="39.0" styleClass="topMenuButtons">
                    <graphic>
                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>

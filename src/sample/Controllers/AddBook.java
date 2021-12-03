@@ -104,4 +104,9 @@ public class AddBook {
 
     }
 
+    public void viewFriends() throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root= loader.load();
+        Main.switchScene(root);
+    }
 }

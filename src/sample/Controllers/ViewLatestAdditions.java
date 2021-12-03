@@ -108,6 +108,11 @@ public class ViewLatestAdditions {
 //        setTable();
         drawList();
     }
+    public void viewFriends() throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root= loader.load();
+        Main.switchScene(root);
+    }
 
     public void setTable() {
         this.latestAdditionsTable.setItems(Data.bookInfo);
@@ -121,10 +126,12 @@ public class ViewLatestAdditions {
                 Parent root = page.load();
                 Main.switchScene(root);
 
+
             } else if ("BookStacks".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
+
             } else if ("ViewLatestAdditions".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                 Parent root1 = page2.load();
@@ -137,5 +144,7 @@ public class ViewLatestAdditions {
         } catch (Exception e) {
             System.out.println("something went wrong");
         }
+
+
     }
 }

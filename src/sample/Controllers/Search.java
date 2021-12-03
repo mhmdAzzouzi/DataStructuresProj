@@ -27,6 +27,11 @@ public class Search {
 
     static boolean found;
 
+    public void viewFriends() throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root= loader.load();
+        Main.switchScene(root);
+    }
 
     public void initialize() throws  IOException {
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
