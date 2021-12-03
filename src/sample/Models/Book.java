@@ -3,6 +3,7 @@ package sample.Models;
 import java.time.LocalTime;
 import java.util.Random;
 
+
 public class Book {
 
     Random random = new Random();
@@ -13,6 +14,7 @@ public class Book {
     int quantity;
     LocalTime duration;
     int rating;
+
     public Book(String author, String genre, String title) {
         super();
         this.author = author;
