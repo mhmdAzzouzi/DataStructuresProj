@@ -68,7 +68,7 @@
                        <Font name="Rockwell" size="12.0" />
                    </font></Button>
                <AnchorPane layoutX="10.0" layoutY="107.0" prefHeight="89.0" prefWidth="166.0" />
-               <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
+               <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>

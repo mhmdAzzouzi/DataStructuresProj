@@ -92,9 +92,10 @@ public class AddBook {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-            } else if ("ViewOtherReaders".equals(b1.getId())) {
-                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
+            } else if ("logout".equals(b1.getId())) {
+                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
                 Parent root1 = page2.load();
+                Main.restoreSize2();
                 Main.switchScene(root1);
             }
         } catch (Exception e) {
