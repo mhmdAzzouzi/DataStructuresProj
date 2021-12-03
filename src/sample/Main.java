@@ -38,7 +38,7 @@ public class Main extends Application {
     }
     public static void restoreSize2(){
         stage.setWidth(600);
-        stage.setHeight(440);
+        stage.setHeight(390);
     }
 
     @Override

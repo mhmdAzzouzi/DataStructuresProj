@@ -1,23 +1,25 @@
 .Topmenu{
 -fx-border-color: black;
  -fx-border-width: 0 .6px 0 0;
- -fx-background-color: linear-gradient(from 100px 100px to 25px 25px  ,purple ,  #3F2B63);
- -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.9) , 7, 0.0 , 0 , 1 );
+    -fx-background-color: linear-gradient(from 100px 100px to 25px 25px  ,purple ,  #3F2B63);
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.9) , 7, 0.0 , 0 , 1 );
 
     }
 
+.mainpage{
 
-  -fx-background-image:url("../images/addbookbg.jpg");
-
+   -fx-background-image: url("../images/addbookbg.jpg");
 }
+
 .textfield{
 -fx-background-color:white;
 -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 3, 1, 1 , 1 );
 }
 .textfield:hover{
   -fx-cursor:hand;
+
  -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 3, 1, 1 , 1 );
- }
+          }
 
 
 .button{
