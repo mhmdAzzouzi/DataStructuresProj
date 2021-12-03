@@ -10,6 +10,7 @@ public class User {
     String type;
     int ID;
     String password;
+
     String email;
     LocalDate date;
     Random random = new Random();

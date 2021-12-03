@@ -78,6 +78,13 @@ public class Search {
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
             }
+            else if ("logout".equals(b1.getId())) {
+                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
+                Parent root1 = page2.load();
+                Main.restoreSize2();
+                Main.loggedIn=null;
+                Main.switchScene(root1);
+            }
         } catch (Exception e) {
             System.out.println("something went wrong");
         }

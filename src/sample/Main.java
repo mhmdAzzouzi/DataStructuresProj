@@ -32,9 +32,13 @@ public class Main extends Application {
     public static User loggedIn;
 
     public static void restoreSize(){
-//         906, 648)
+//         920, 649)
         stage.setWidth(920);
         stage.setHeight(649);
+    }
+    public static void restoreSize2(){
+        stage.setWidth(600);
+        stage.setHeight(390);
     }
 
 
