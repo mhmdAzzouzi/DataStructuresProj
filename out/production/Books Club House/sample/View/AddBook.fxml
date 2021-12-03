@@ -151,7 +151,7 @@
                <font>
                   <Font name="Leelawadee UI Bold" size="14.0" />
                </font></Button>
-            <Label fx:id="messageLabel" layoutX="103.0" layoutY="78.0" prefHeight="17.0" prefWidth="229.0" textFill="#42bc26">
+            <Label fx:id="messageLabel" layoutX="103.0" layoutY="43.0" prefHeight="55.0" prefWidth="230.0" textFill="#42bc26">
                <font>
                   <Font size="14.0" />
                </font></Label>
