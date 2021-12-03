@@ -1,6 +1,5 @@
 package sample.Controllers;
 
-import animatefx.animation.Flip;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,57 +8,49 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import sample.Controllers.Items.UserCard;
-import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
-public class ViewOtherReaders {
+public class Friends {
 
     @FXML
     TextField searchField;
+
     @FXML
     Label loggedinAs;
+
     @FXML
     FlowPane userCardFlowPane;
-//    @FXML
-//    HBox userCardBox;
 
-    public void viewFriends() throws IOException{
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
-        Parent root= loader.load();
-        Main.switchScene(root);
-    }
+
 
     @FXML
     public void initialize() throws IOException {
         Main.restoreSize();
         loggedinAs.setText(Main.loggedIn.getName());
-        ArrayList<User> filtered = new ArrayList<>(Main.userList);
+        ArrayList<User> filtered = new ArrayList<>(Main.loggedIn.friendsList);
 //            filtering usersList to display readers that aren't in the
 //            friendslist of the current user
-        filtered.removeIf(user -> user == Main.loggedIn || Main.loggedIn.friendsList.contains(user));
-//            for(int i =0 ; i<  filtered.size() ; i++){
-//                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCard.fxml"));
-//                    Parent userCard= loader.load();
-//                    userCardBox.getChildren().add(userCard);
 //            }
+
+        filtered.removeIf(user -> Main.loggedIn == user);
+
         for (int i = 0; i < filtered.size(); i++) {
             User u = filtered.get(i);
             System.out.println(u.getName());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCardTest.fxml"));
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
-            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(),Main.userList.get(i).friendsList.size() ,false);
+            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), u.getFriendsList().size() ,true);
             userCardFlowPane.getChildren().add(userCard);
         }
+
     }
+
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
@@ -80,12 +71,10 @@ public class ViewOtherReaders {
                 Parent root = page.load();
                 Main.switchScene(root);
 
-
             } else if ("BookStacks".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-
             } else if ("ViewLatestAdditions".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                 Parent root1 = page2.load();
@@ -95,17 +84,11 @@ public class ViewOtherReaders {
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
             }
-            else if ("logout".equals(b1.getId())) {
-                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
-                Parent root1 = page2.load();
-                Main.restoreSize2();
-
-                Main.switchScene(root1);
-            }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("something went wrong");
         }
 
 
     }
+
 }

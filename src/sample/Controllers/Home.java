@@ -40,19 +40,21 @@ public class Home {
         Main.restoreSize();
 
         try {
-            String nameSignUp = signup.name;
-            String nameLogIn = login.name;
-            if (nameLogIn == null) {
-                loggedinAs.setText(nameSignUp);
-            } else {
-                loggedinAs.setText(nameLogIn);
-            }
+
+            loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+            System.out.println(Main.loggedIn.friendsList.get(0));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     // navigation functionality !-------
+
+    public void viewFriends() throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root= loader.load();
+        Main.switchScene(root);
+    }
 
     public void navigate(ActionEvent event) throws IOException {
         Button b1 = (Button) event.getTarget();
@@ -62,10 +64,12 @@ public class Home {
                 Parent root = page.load();
                 Main.switchScene(root);
 
+
             } else if ("BookStacks".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
+
             } else if ("ViewLatestAdditions".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                 Parent root1 = page2.load();

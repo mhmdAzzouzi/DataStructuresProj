@@ -41,6 +41,7 @@ public class Main extends Application {
         stage.setHeight(390);
     }
 
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;

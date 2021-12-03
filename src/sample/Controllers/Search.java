@@ -27,6 +27,11 @@ public class Search {
 
     static boolean found;
 
+    public void viewFriends() throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root= loader.load();
+        Main.switchScene(root);
+    }
 
     public void initialize() throws  IOException {
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
@@ -77,7 +82,7 @@ public class Search {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
                 Parent root1 = page2.load();
                 Main.restoreSize2();
-                Main.loggedIn=null;
+
                 Main.switchScene(root1);
             }
         } catch (Exception e) {

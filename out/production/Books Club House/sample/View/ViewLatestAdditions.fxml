@@ -81,7 +81,7 @@
            </children>
        </VBox>
 
-       <AnchorPane layoutX="167.0" prefHeight="67.0" prefWidth="742.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
+       <AnchorPane layoutX="167.0" prefHeight="67.0" prefWidth="741.0" styleClass="Topmenu" stylesheets="/sample/styles/TopNavMenu.css">
            <children>
                <TextField fx:id="searchField" layoutX="512.0" layoutY="21.0" promptText="Search.." />
                <Button layoutX="463.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="29.0" prefWidth="39.0" styleClass="topMenuButtons">
@@ -93,7 +93,7 @@
                        </ImageView>
                    </graphic>
                </Button>
-               <Button layoutX="409.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" styleClass="topMenuButtons">
+               <Button layoutX="409.0" layoutY="19.0" mnemonicParsing="false" onAction="#viewFriends" prefHeight="26.0" prefWidth="39.0" styleClass="topMenuButtons">
                    <graphic>
                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -102,16 +102,21 @@
                        </ImageView>
                    </graphic>
                </Button>
-               <Label fx:id="loggedinAs" layoutX="77.0" layoutY="22.0" prefHeight="25.0" prefWidth="247.0" textFill="WHITE">
-                   <font>
-                       <Font name="Leelawadee UI" size="18.0" />
-                   </font>
-               </Label>
+               <!--               <Label fx:id="loggedinAs" layoutX="77.0" layoutY="22.0" prefHeight="25.0" prefWidth="247.0" textFill="WHITE">-->
+               <!--                   <font>-->
+               <!--                       <Font name="Leelawadee UI" size="18.0" />-->
+               <!--                   </font>-->
+               <!--               </Label>-->
                <ImageView fitHeight="44.0" fitWidth="67.0" layoutX="21.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                    <image>
                        <Image url="@../images/iconLoggedIn.png" />
                    </image>
                </ImageView>
+               <Label fx:id="loggedinAs" layoutX="77.0" layoutY="22.0" prefHeight="25.0" prefWidth="247.0" textFill="WHITE">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Label>
 
            </children>
        </AnchorPane>
