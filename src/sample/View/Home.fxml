@@ -21,7 +21,7 @@
                </ImageView>
             </graphic></Button>
          <AnchorPane prefHeight="44.0" prefWidth="166.0" />
-         <Button id="addBook" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Add Book" textFill="WHITE">
+         <Button fx:id="addBook" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Add Book" textFill="WHITE">
             <graphic>
                <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                   <image>

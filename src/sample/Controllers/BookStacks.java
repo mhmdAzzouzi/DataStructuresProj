@@ -26,14 +26,19 @@ public class BookStacks {
 
     @FXML
     TextField searchField;
+
     Stack stackPreserve = new Stack();
     Stack stackToView = Main.stack.copy();
+
+    @FXML
+    Label loggedinAs;
 
     @FXML
     VBox cardposition;
 
     @FXML
     public void initialize() throws IOException {
+        loggedinAs.setText(Main.loggedIn.getName());
         pushToCard();
     }
 
