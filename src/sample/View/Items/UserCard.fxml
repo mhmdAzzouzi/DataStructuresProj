@@ -1,52 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<!--<?import javafx.scene.control.*?>-->
+<!--<?import javafx.scene.image.*?>-->
+<!--<?import javafx.scene.layout.*?>-->
+<!--<?import javafx.scene.shape.*?>-->
+<!--<?import javafx.scene.text.*?>-->
 
-<AnchorPane prefHeight="320.0" prefWidth="290.0" stylesheets="/sample/styles/UserCard.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Items.UserCard">
-   <children>
-      <AnchorPane layoutX="33.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="293.0" prefWidth="211.0" styleClass="container">
-         <children>
-            <Line endX="90.0" layoutX="111.0" layoutY="100.0" startX="-100.0" stroke="#e8e3e3" />
-            <Label fx:id="email" layoutX="26.0" layoutY="227.0" styleClass="texts" text="email">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="username" layoutX="26.0" layoutY="182.0" styleClass="texts" text="username" />
-            <Label layoutX="135.0" layoutY="227.0" styleClass="texts" text="member" />
-            <Label fx:id="id" layoutX="144.0" layoutY="182.0" styleClass="texts" text="id" />
-            <ImageView fitHeight="76.0" fitWidth="67.0" layoutX="72.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/user.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="25.0" layoutY="121.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="33.0" styleClass="Buttons">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/add_friends.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Label fx:id="friends" layoutX="132.0" layoutY="126.0" text="number" textFill="#a19898">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Label>
-            <Label layoutX="132.0" layoutY="139.0" text="friend" textFill="#a19898">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </children>
-</AnchorPane>
+<!--<AnchorPane prefHeight="320.0" prefWidth="290.0" stylesheets="/sample/styles/UserCard.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Items.UserCard">-->
+<!--   <children>-->
+<!--      <AnchorPane layoutX="33.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="293.0" prefWidth="211.0" styleClass="container">-->
+<!--         <children>-->
+<!--            <Line endX="90.0" layoutX="111.0" layoutY="100.0" startX="-100.0" stroke="#e8e3e3" />-->
+<!--            <Label fx:id="email" layoutX="26.0" layoutY="227.0" styleClass="texts" text="email">-->
+<!--               <font>-->
+<!--                  <Font name="System Bold" size="12.0" />-->
+<!--               </font>-->
+<!--            </Label>-->
+<!--            <Label fx:id="username" layoutX="26.0" layoutY="182.0" styleClass="texts" text="username" />-->
+<!--            <Label layoutX="135.0" layoutY="227.0" styleClass="texts" text="member" />-->
+<!--            <Label fx:id="id" layoutX="144.0" layoutY="182.0" styleClass="texts" text="id" />-->
+<!--            <ImageView fitHeight="76.0" fitWidth="67.0" layoutX="72.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">-->
+<!--               <image>-->
+<!--                  <Image url="@../../images/user.png" />-->
+<!--               </image>-->
+<!--            </ImageView>-->
+<!--            <Button layoutX="25.0" layoutY="121.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="33.0" styleClass="Buttons">-->
+<!--               <graphic>-->
+<!--                  <ImageView fitHeight="20.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                     <image>-->
+<!--                        <Image url="@../../images/add_friends.png" />-->
+<!--                     </image>-->
+<!--                  </ImageView>-->
+<!--               </graphic>-->
+<!--            </Button>-->
+<!--            <Label fx:id="friends" layoutX="132.0" layoutY="126.0" text="number" textFill="#a19898">-->
+<!--               <font>-->
+<!--                  <Font size="10.0" />-->
+<!--               </font>-->
+<!--            </Label>-->
+<!--            <Label layoutX="132.0" layoutY="139.0" text="friend" textFill="#a19898">-->
+<!--               <font>-->
+<!--                  <Font size="10.0" />-->
+<!--               </font>-->
+<!--            </Label>-->
+<!--         </children>-->
+<!--      </AnchorPane>-->
+<!--   </children>-->
+<!--</AnchorPane>-->

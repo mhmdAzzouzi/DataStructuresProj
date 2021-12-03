@@ -37,7 +37,7 @@ public class ViewLatestAdditions {
     @FXML
     TextField searchField;
     @FXML
-    Label messageLabel,loggedinAs;
+    Label messageLabel, loggedinAs;
 
     Queue queueToView = Main.queue.copy();
 
@@ -46,7 +46,7 @@ public class ViewLatestAdditions {
         if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
-            Search controller= loader.getController();
+            Search controller = loader.getController();
             controller.searchItem(Integer.parseInt(searchField.getText()));
             Main.switchScene(page);
         }
@@ -78,7 +78,6 @@ public class ViewLatestAdditions {
     }
 
     public void drawList() throws IOException {
-        System.out.println("I ran by myself");
         System.out.println(Main.arrayList.size());
         listBox.getChildren().clear();
         for (int i = 0; i < Main.arrayList.size(); i++) {
@@ -93,15 +92,13 @@ public class ViewLatestAdditions {
             BookItem bookItem = loader.getController();
             bookItem.setItems(title, genre, author, quantity, rating);
             listBox.getChildren().add(component);
-
         }
-
     }
 
     @FXML
     public void initialize() throws IOException {
 
-            loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+        loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
 
 //        this.authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 //        this.genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
@@ -140,7 +137,5 @@ public class ViewLatestAdditions {
         } catch (Exception e) {
             System.out.println("something went wrong");
         }
-
-
     }
 }
