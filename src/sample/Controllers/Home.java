@@ -40,13 +40,9 @@ public class Home {
         Main.restoreSize();
 
         try {
-            String nameSignUp = signup.name;
-            String nameLogIn = login.name;
-            if (nameLogIn == null) {
-                loggedinAs.setText(nameSignUp);
-            } else {
-                loggedinAs.setText(nameLogIn);
-            }
+
+            loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+            System.out.println(Main.loggedIn.friendsList.get(0));
         } catch (Exception e) {
             e.printStackTrace();
         }

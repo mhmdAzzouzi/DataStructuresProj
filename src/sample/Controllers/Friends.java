@@ -32,12 +32,13 @@ public class Friends {
     public void initialize() throws IOException {
         Main.restoreSize();
         loggedinAs.setText(Main.loggedIn.getName());
-        ArrayList<User> filtered = Main.loggedIn.friendsList;
+        ArrayList<User> filtered = new ArrayList<>(Main.loggedIn.friendsList);
 //            filtering usersList to display readers that aren't in the
 //            friendslist of the current user
 //            }
 
         filtered.removeIf(user -> Main.loggedIn == user);
+
         for (int i = 0; i < filtered.size(); i++) {
             User u = filtered.get(i);
             System.out.println(u.getName());
@@ -47,6 +48,7 @@ public class Friends {
             userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), u.getFriendsList().size() ,true);
             userCardFlowPane.getChildren().add(userCard);
         }
+
     }
 
 

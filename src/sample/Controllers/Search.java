@@ -82,7 +82,7 @@ public class Search {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
                 Parent root1 = page2.load();
                 Main.restoreSize2();
-                Main.loggedIn=null;
+
                 Main.switchScene(root1);
             }
         } catch (Exception e) {

@@ -41,7 +41,7 @@ public class ViewOtherReaders {
     public void initialize() throws IOException {
         Main.restoreSize();
         loggedinAs.setText(Main.loggedIn.getName());
-        ArrayList<User> filtered = Main.userList;
+        ArrayList<User> filtered = new ArrayList<>(Main.userList);
 //            filtering usersList to display readers that aren't in the
 //            friendslist of the current user
         filtered.removeIf(user -> user == Main.loggedIn || Main.loggedIn.friendsList.contains(user));
@@ -99,7 +99,7 @@ public class ViewOtherReaders {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
                 Parent root1 = page2.load();
                 Main.restoreSize2();
-                Main.loggedIn=null;
+
                 Main.switchScene(root1);
             }
         }catch (Exception e){
