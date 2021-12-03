@@ -8,7 +8,7 @@
 
 .mainpage{
 
-  -fx-background-color:Platinum ;
+  -fx-background-image:url("../images/addbookbg.jpg");
 
 }
 .textfield{
