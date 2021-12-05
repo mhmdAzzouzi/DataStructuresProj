@@ -33,9 +33,9 @@ public class ViewOtherReaders {
 //    @FXML
 //    HBox userCardBox;
 
-    public void viewFriends() throws IOException{
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
-        Parent root= loader.load();
+    public void viewFriends() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root = loader.load();
         Main.switchScene(root);
     }
 
@@ -44,14 +44,17 @@ public class ViewOtherReaders {
         Main.restoreSize();
         loggedinAs.setText(Main.loggedIn.getName());
         ArrayList<User> filtered = new ArrayList<>(Main.userList);
-//            filtering usersList to display readers that aren't in the
-//            friendslist of the current user
-        filtered.removeIf(user -> user == Main.loggedIn || Main.loggedIn.friendsList.contains(user));
-        if (filtered.size() > 0) {
-            friendsNumber.setText(String.valueOf(filtered.size()));
+
+        ArrayList<User> filteredfriendsList = new ArrayList<>(Main.loggedIn.friendsList);
+        filteredfriendsList.removeIf(user -> Main.loggedIn == user);
+        if (filteredfriendsList.size() > 0) {
+            friendsNumber.setText(String.valueOf(filteredfriendsList.size()));
         } else {
             friendsNumber.setText("0");
         }
+
+//            filtering usersList to display readers that aren't in the
+//            friendslist of the current user
 //            for(int i =0 ; i<  filtered.size() ; i++){
 //                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCard.fxml"));
 //                    Parent userCard= loader.load();
@@ -63,7 +66,7 @@ public class ViewOtherReaders {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCardTest.fxml"));
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
-            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(),Main.userList.get(i).friendsList.size() ,false);
+            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), Main.userList.get(i).friendsList.size(), false);
             userCardFlowPane.getChildren().add(userCard);
         }
     }
@@ -101,15 +104,14 @@ public class ViewOtherReaders {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-            }
-            else if ("logout".equals(b1.getId())) {
+            } else if ("logout".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
                 Parent root1 = page2.load();
                 Main.restoreSize2();
 
                 Main.switchScene(root1);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("something went wrong");
         }
 

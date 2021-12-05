@@ -27,9 +27,9 @@ public class SignUp {
         String password = passwordText.getText();
         String email = emailText.getText();
         try {
-            if (name.length() <= 0 || !name.matches("[A-Z][a-zA-Z]*")) {
+            if (name.length() <= 0) {
                 errorMessage.setText("Please enter a valid name");
-            } else if (email.length() <= 0) { // || !email.matches("^(.+)@(\\S+) $")
+            } else if (email.length() <= 0) {
                 errorMessage.setText("Please enter a valid email");
             } else if (password.length() <= 0 || password.length() < 5) {
                 errorMessage.setText("Please enter a valid password");

@@ -27,7 +27,7 @@ public class Authentication {
 
         name = nameText.getText();
         try {
-            if (name.length() <= 0 || !name.matches("[A-Z][a-zA-Z]*")) {
+            if (name.length() <= 0) {
                 errorMessage.setText("Please enter a valid name");
             } else if (passwordText.getText().length() <= 0 || passwordText.getLength() < 5) {
                 errorMessage.setText("Please enter a valid password");
@@ -37,23 +37,23 @@ public class Authentication {
 //                if (name == u.getName() && passwordText.getText() == u.getPassword()) {
 //
 //                    try {
-                User found=null;
-                for(int i = 0 ; i < Main.userList.size(); i++){
+                User found = null;
+                for (int i = 0; i < Main.userList.size(); i++) {
                     User userToFind = Main.userList.get(i);
-                    if(userToFind.getName().equals(name)){
-                        found= Main.userList.get(i);
+                    if (userToFind.getName().equals(name)) {
+                        found = Main.userList.get(i);
                         Main.loggedIn = found;
                         break;
                     }
                 }
-                if(found !=null && found.getPassword().equals(passwordText.getText())){
+                if (found != null && found.getPassword().equals(passwordText.getText())) {
                     FXMLLoader loginPage = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
                     Parent root = loginPage.load();
                     Main.restoreSize();
                     Main.switchScene(root);
-                }else if(found == null){
+                } else if (found == null) {
                     errorMessage.setText("User Not found");
-                }else if(!found.getPassword().equals(passwordText.getText())){
+                } else if (!found.getPassword().equals(passwordText.getText())) {
                     errorMessage.setText("Wrong User name or Password");
                 }
 //                    } catch (Exception e) {
