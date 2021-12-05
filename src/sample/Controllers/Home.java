@@ -10,9 +10,11 @@ import javafx.scene.control.TextField;
 import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Data;
+import sample.Models.User;
 
 import javax.naming.ldap.Control;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Home {
 
@@ -20,6 +22,8 @@ public class Home {
     TextField searchField;
     @FXML
     Label loggedinAs;
+    @FXML
+    Label friendsNumber;
 
     public static SignUp signup = new SignUp();
     public static Authentication login = new Authentication();
@@ -29,7 +33,7 @@ public class Home {
         if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
-            Search controller= loader.getController();
+            Search controller = loader.getController();
             controller.searchItem(Integer.parseInt(searchField.getText()));
             Main.switchScene(page);
         }
@@ -38,7 +42,14 @@ public class Home {
     @FXML
     public void initialize() throws IOException {
         Main.restoreSize();
-
+        ArrayList<User> filtered = new ArrayList<>(Main.loggedIn.friendsList);
+        filtered.removeIf(user -> Main.loggedIn == user);
+        if (filtered.size() > 0) {
+            friendsNumber.setText(String.valueOf(filtered.size()));
+        } else {
+            friendsNumber.setText("0");
+        }
+//        System.out.println(Main.loggedIn.getFriendsList());
         try {
 
             loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
@@ -50,9 +61,9 @@ public class Home {
 
     // navigation functionality !-------
 
-    public void viewFriends() throws IOException{
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
-        Parent root= loader.load();
+    public void viewFriends() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root = loader.load();
         Main.switchScene(root);
     }
 

@@ -17,9 +17,11 @@ import sample.Controllers.Items.BookCard;
 import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Book;
+import sample.Models.User;
 
 import javax.xml.soap.Text;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class BookStacks {
     
@@ -37,8 +39,18 @@ public class BookStacks {
     VBox cardposition;
 
     @FXML
+    Label friendsNumber;
+
+    @FXML
     public void initialize() throws IOException {
         loggedinAs.setText(Main.loggedIn.getName());
+        ArrayList<User> filtered = new ArrayList<>(Main.loggedIn.friendsList);
+        filtered.removeIf(user -> Main.loggedIn == user);
+        if (filtered.size() > 0) {
+            friendsNumber.setText(String.valueOf(filtered.size()));
+        } else {
+            friendsNumber.setText("0");
+        }
         pushToCard();
     }
 

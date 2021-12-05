@@ -28,6 +28,8 @@ public class ViewOtherReaders {
     Label loggedinAs;
     @FXML
     FlowPane userCardFlowPane;
+    @FXML
+    Label friendsNumber;
 //    @FXML
 //    HBox userCardBox;
 
@@ -45,6 +47,11 @@ public class ViewOtherReaders {
 //            filtering usersList to display readers that aren't in the
 //            friendslist of the current user
         filtered.removeIf(user -> user == Main.loggedIn || Main.loggedIn.friendsList.contains(user));
+        if (filtered.size() > 0) {
+            friendsNumber.setText(String.valueOf(filtered.size()));
+        } else {
+            friendsNumber.setText("0");
+        }
 //            for(int i =0 ; i<  filtered.size() ; i++){
 //                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCard.fxml"));
 //                    Parent userCard= loader.load();

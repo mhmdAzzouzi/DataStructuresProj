@@ -26,6 +26,8 @@ public class Friends {
     @FXML
     FlowPane userCardFlowPane;
 
+    @FXML
+    Label friendsNumber;
 
 
     @FXML
@@ -38,7 +40,11 @@ public class Friends {
 //            }
 
         filtered.removeIf(user -> Main.loggedIn == user);
-
+        if (filtered.size() > 0) {
+            friendsNumber.setText(String.valueOf(filtered.size()));
+        } else {
+            friendsNumber.setText("0");
+        }
         for (int i = 0; i < filtered.size(); i++) {
             User u = filtered.get(i);
             System.out.println(u.getName());
