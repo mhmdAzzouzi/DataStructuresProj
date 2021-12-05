@@ -73,7 +73,7 @@
                    </font>
             </Button>
                <AnchorPane layoutX="10.0" layoutY="107.0" prefHeight="89.0" prefWidth="166.0" />
-               <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="166.0" onAction="#navigate" styleClass="Buttons" text="Log Out" fx:id="logout"  textFill="WHITE">
+               <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
                    <graphic>
                        <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -134,6 +134,8 @@
                   <VBox fx:id="cardposition" alignment="CENTER" layoutY="7.0" prefHeight="246.0" prefWidth="383.0" />
                </children>
             </AnchorPane>
+            <Button fx:id="deleteButton" layoutX="308.0" layoutY="421.0" mnemonicParsing="false" onAction="#deleteBookAction" styleClass="Button" stylesheets="/sample/styles/SignUp.css" text="Delete This book" />
+            <Label fx:id="message" layoutX="197.0" layoutY="26.0" text="Label" />
          </children>
       </AnchorPane>
 

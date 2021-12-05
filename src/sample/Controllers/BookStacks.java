@@ -49,6 +49,7 @@ public class BookStacks {
             Parent page = loader.load();
             Search controller= loader.getController();
             controller.searchItem(Integer.parseInt(searchField.getText()));
+            Search.bookId=searchField.getText();
             Main.switchScene(page);
         }
     }

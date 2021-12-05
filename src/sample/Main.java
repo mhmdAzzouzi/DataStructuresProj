@@ -24,7 +24,6 @@ public class Main extends Application {
     public static Stage stage;
     public static LinkedList linkedlist = new LinkedList();
     public static Stack stack = new Stack();
-    //    public static Librarian librarian = new Librarian();
     public static ArrayList<Book> arrayList = new ArrayList<>();
     public static BST binaryTree = new BST();
     public static Queue queue = new Queue();

@@ -39,6 +39,22 @@ public class Stack extends LinkedList {
             }
         }
     }
+    public void deleteBook(int id){
+        if(!this.isEmpty()){
+            Stack temp = new Stack();
+            Book idToCheck = this.pop();
+            temp.push(idToCheck);
+            while( idToCheck.getID() != id){
+                Book b =this.pop();
+                idToCheck=b;
+                temp.push(b);
+            }
+            temp.pop();
+            while(!temp.isEmpty()){
+                this.push(temp.pop());
+            }
+        }
+    }
 
     public void push(Book b1) {
         addFirst(b1);

@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import sample.Controllers.Items.BookCard;
 import sample.Main;
 import sample.Models.Book;
+import sample.Models.Data;
 
 import javax.xml.soap.Text;
 import java.io.IOException;
@@ -20,12 +21,15 @@ public class Search {
     TextField searchField;
 
     @FXML
-    Label loggedinAs;
+    Label loggedinAs, message;
 
     @FXML
     VBox cardposition;
-
+    @FXML
+    Button deleteButton;
     static boolean found;
+
+    static String bookId;
 
     public void viewFriends() throws IOException{
         FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
@@ -47,14 +51,31 @@ public class Search {
            BookCard cardController = loader.getController();
            cardController.setLabels(String.valueOf(book.getID()), book.getTitle(),book.getAuthor(),String.valueOf(book.getQuantity()),book.getGenre());
            cardposition.getChildren().clear();
+           message.setText("");
+           deleteButton.setVisible(!Main.loggedIn.getType().equals("User"));
            cardposition.getChildren().add(root);
        }else{
            found = false;
            Label label = new Label();
            cardposition.getChildren().clear();
+           deleteButton.setVisible(false);
+           message.setText("");
            label.setText("Book not found ...");
            cardposition.getChildren().add(label);
        }
+    }
+
+    public void deleteBookAction(){
+            try {
+                Main.binaryTree.deletion(Integer.parseInt(bookId));
+                Main.stack.deleteBook(Integer.parseInt(bookId));
+                Data.deleteFromArrayList( Integer.parseInt(bookId));
+                Main.queue.deleteBook(Integer.parseInt(bookId));
+                message.setText("Book was deleted !");
+                deleteButton.setVisible(false);
+            }catch (Exception e){
+                System.out.println("no book to delete");
+            }
     }
 
     public void navigate(ActionEvent event) throws IOException {

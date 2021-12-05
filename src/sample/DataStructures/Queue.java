@@ -33,6 +33,23 @@ public class Queue extends LinkedList {
         return null;
     }
 
+    public void deleteBook(int id){
+        if(!this.isEmpty()){
+            Queue temp = new Queue();
+            Book idToCheck = this.dequeue();
+            temp.enqueue(idToCheck);
+            while( idToCheck.getID() != id){
+                Book b =this.dequeue();
+                idToCheck=b;
+                temp.enqueue(b);
+            }
+            temp.dequeue();
+            while(!temp.isEmpty()){
+                this.enqueue(temp.dequeue());
+            }
+        }
+    }
+
     public void reverse(){
         Queue q1 = new Queue();
         Queue q2 = new Queue();

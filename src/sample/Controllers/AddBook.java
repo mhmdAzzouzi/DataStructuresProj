@@ -38,6 +38,7 @@ public class AddBook {
             Parent page = loader.load();
             Search controller= loader.getController();
             controller.searchItem(Integer.parseInt(searchField.getText()));
+            Search.bookId=searchField.getText();
             Main.switchScene(page);
         }
     }
@@ -56,6 +57,7 @@ public class AddBook {
                 Main.arrayList.add(newBook);
                 Data.bookInfo.addAll(newBook);
                 Main.queue.enqueue(newBook);
+                Main.stack.push(newBook);
                 System.out.println("new print ");
                 Main.binaryTree.DisplayInorder();
                 messageLabel.setText("Thank you ! Book was added");
