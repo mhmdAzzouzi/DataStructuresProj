@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import sample.Main;
 import sample.Models.User;
@@ -14,7 +15,9 @@ import java.io.IOException;
 
 public class SignUp {
     @FXML
-    TextField nameText, passwordText, emailText;
+    TextField nameText, emailText;
+    @FXML
+    PasswordField passwordText;
     @FXML
     Label errorMessage;
     @FXML
@@ -27,9 +30,9 @@ public class SignUp {
         String password = passwordText.getText();
         String email = emailText.getText();
         try {
-            if (name.length() <= 0 || !name.matches("[A-Z][a-zA-Z]*")) {
+            if (name.length() <= 0) {
                 errorMessage.setText("Please enter a valid name");
-            } else if (email.length() <= 0) { // || !email.matches("^(.+)@(\\S+) $")
+            } else if (email.length() <= 0) {
                 errorMessage.setText("Please enter a valid email");
             } else if (password.length() <= 0 || password.length() < 5) {
                 errorMessage.setText("Please enter a valid password");
@@ -39,7 +42,7 @@ public class SignUp {
                         User user = new User(name, password, email);
                         Main.userList.add(user);
                         Main.loggedIn = user;
-                        FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
+                        FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                         Parent root = home.load();
                         Main.restoreSize();
                         Main.switchScene(root);

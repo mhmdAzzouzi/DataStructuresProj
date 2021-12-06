@@ -1,6 +1,5 @@
 package sample.Controllers;
 
-import animatefx.animation.Flip;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,16 +8,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import sample.Controllers.Items.UserCard;
-import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class ViewOtherReaders {
 
@@ -28,17 +23,34 @@ public class ViewOtherReaders {
     Label loggedinAs;
     @FXML
     FlowPane userCardFlowPane;
-//    @FXML
-//    HBox userCardBox;
+    @FXML
+    Label friendsNumber;
 
-    public void viewFriends() throws IOException{
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
-        Parent root= loader.load();
+    public void viewFriends() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
+        Parent root = loader.load();
         Main.switchScene(root);
     }
 
     @FXML
+    public void increment() {
+        if (friendsNumber.getText() != null) {
+            friendsNumber.setText(String.valueOf(Integer.parseInt(friendsNumber.getText()) + 1));
+        }else{
+            friendsNumber.setText("1");
+        }
+
+    }
+
+    @FXML
     public void initialize() throws IOException {
+        ArrayList<User> filteredfriendsList = new ArrayList<>(Main.loggedIn.friendsList);
+        filteredfriendsList.removeIf(user -> Main.loggedIn == user);
+        if (filteredfriendsList.size() > 0) {
+            friendsNumber.setText(String.valueOf(filteredfriendsList.size()));
+        } else {
+            friendsNumber.setText("0");
+        }
         Main.restoreSize();
         loggedinAs.setText(Main.loggedIn.getName());
         ArrayList<User> filtered = new ArrayList<>(Main.userList);
@@ -56,9 +68,10 @@ public class ViewOtherReaders {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCardTest.fxml"));
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
-            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(),Main.userList.get(i).friendsList.size() ,false);
+            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), Main.userList.get(i).friendsList.size(), false);
             userCardFlowPane.getChildren().add(userCard);
         }
+
     }
 
     public void searchItem() throws Exception {
@@ -94,15 +107,14 @@ public class ViewOtherReaders {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-            }
-            else if ("logout".equals(b1.getId())) {
+            } else if ("logout".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
                 Parent root1 = page2.load();
                 Main.restoreSize2();
 
                 Main.switchScene(root1);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("something went wrong");
         }
 
