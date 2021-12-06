@@ -2,6 +2,7 @@ package sample.Controllers.Items;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +21,8 @@ public class UserCard {
     @FXML
     ImageView imageAdd;
 
+    @FXML
+    public Button addButton;
     @FXML
     AnchorPane UserCardBox;
 
@@ -44,12 +47,10 @@ public class UserCard {
         for (User user : Main.userList) {
             if (user.getID() == Integer.parseInt(idLabel.getText())) {
                 Main.loggedIn.friendsList.add(user);
+                addButton.setMouseTransparent(true);
                 break;
             }
         }
-        FXMLLoader load = new FXMLLoader(getClass().getResource("/sample/View/Items/ViewOtherReaders.fxml"));
-        ViewOtherReaders numberLabel = load.getController();
-//                increment(ViewOtherReaders.friendsNumber);
-        numberLabel.increment();
+
     }
 }

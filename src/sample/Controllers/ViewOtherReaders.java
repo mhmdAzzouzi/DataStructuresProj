@@ -32,15 +32,6 @@ public class ViewOtherReaders {
         Main.switchScene(root);
     }
 
-    @FXML
-    public void increment() {
-        if (friendsNumber.getText() != null) {
-            friendsNumber.setText(String.valueOf(Integer.parseInt(friendsNumber.getText()) + 1));
-        }else{
-            friendsNumber.setText("1");
-        }
-
-    }
 
     @FXML
     public void initialize() throws IOException {
@@ -69,6 +60,7 @@ public class ViewOtherReaders {
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
             userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), Main.userList.get(i).friendsList.size(), false);
+
             userCardFlowPane.getChildren().add(userCard);
         }
 
