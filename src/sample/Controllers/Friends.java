@@ -51,6 +51,7 @@ public class Friends {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCardTest.fxml"));
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
+            userCard1.addButton.setMouseTransparent(true);
             userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), u.getFriendsList().size(), true);
             userCardFlowPane.getChildren().add(userCard);
         }

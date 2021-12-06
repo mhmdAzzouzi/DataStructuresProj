@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="UserCardBox" prefHeight="320.0" prefWidth="263.0" stylesheets="@../../styles/UserCard.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Items.UserCard">
+<AnchorPane fx:id="UserCardBox" prefHeight="320.0" prefWidth="263.0" stylesheets="@../../styles/UserCard.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Items.UserCard">
     <children>
       <AnchorPane layoutX="28.0" layoutY="14.0" prefHeight="293.0" prefWidth="211.0">
          <children>
@@ -17,7 +18,7 @@
                <image>
                   <Image url="@../../images/iconUser.png" />
                </image></ImageView>
-            <Button layoutX="26.0" layoutY="142.0" mnemonicParsing="false" onAction="#addFriend" prefHeight="25.0" prefWidth="37.0" style="-fx-background-color: none;" styleClass="Buttons">
+            <Button fx:id="addButton" layoutX="26.0" layoutY="142.0" mnemonicParsing="false" onAction="#addFriend" prefHeight="25.0" prefWidth="37.0" style="-fx-background-color: none;" styleClass="Buttons">
                <graphic>
                   <ImageView fx:id="imageAdd" fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
