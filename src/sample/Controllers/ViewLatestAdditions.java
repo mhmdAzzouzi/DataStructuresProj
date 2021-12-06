@@ -15,9 +15,11 @@ import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.Book;
 import sample.Models.Data;
+import sample.Models.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ViewLatestAdditions {
@@ -38,6 +40,8 @@ public class ViewLatestAdditions {
     TextField searchField;
     @FXML
     Label messageLabel, loggedinAs;
+    @FXML
+    Label friendsNumber;
 
     Queue queueToView = Main.queue.copy();
 
@@ -100,7 +104,13 @@ public class ViewLatestAdditions {
     public void initialize() throws IOException {
 
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
-
+        ArrayList<User> filtered = new ArrayList<>(Main.loggedIn.friendsList);
+        filtered.removeIf(user -> Main.loggedIn == user);
+        if (filtered.size() > 0) {
+            friendsNumber.setText(String.valueOf(filtered.size()));
+        } else {
+            friendsNumber.setText("0");
+        }
 //        this.authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 //        this.genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
 //        this.titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));

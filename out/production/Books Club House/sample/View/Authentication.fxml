@@ -39,7 +39,6 @@
             </LinearGradient>
          </textFill></Label>
       <TextField fx:id="nameText" layoutX="368.0" layoutY="142.0" promptText="Name" styleClass="textfield" />
-      <TextField fx:id="passwordText" layoutX="368.0" layoutY="198.0" promptText="Password" styleClass="textfield" />
       <Button layoutX="440.0" layoutY="286.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="25.0" prefWidth="89.0" text="Log In" textAlignment="CENTER" />
       <Label fx:id="errorMessage" layoutX="368.0" layoutY="100.0" prefHeight="17.0" prefWidth="194.0" textAlignment="CENTER">
          <textFill>
@@ -118,6 +117,7 @@
             <Image url="@../images/icons8_key_24px_5.png" />
          </image>
       </ImageView>
-      <Button layoutX="332.0" layoutY="286.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="25.0" prefWidth="89.0" text="Close" textAlignment="CENTER" />
+      <Button layoutX="332.0" layoutY="286.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="25.0" prefWidth="89.0" text="Sign Up" textAlignment="CENTER" />
+      <PasswordField fx:id="passwordText" layoutX="368.0" layoutY="198.0" promptText="Password" styleClass="textfield" />
    </children>
 </AnchorPane>

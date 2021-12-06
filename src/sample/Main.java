@@ -18,6 +18,7 @@ import sample.Models.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main extends Application {
 
@@ -30,12 +31,13 @@ public class Main extends Application {
     public static ArrayList<User> userList = new ArrayList<>();
     public static User loggedIn;
 
-    public static void restoreSize(){
+    public static void restoreSize() {
 //         920, 649)
         stage.setWidth(920);
         stage.setHeight(649);
     }
-    public static void restoreSize2(){
+
+    public static void restoreSize2() {
         stage.setWidth(600);
         stage.setHeight(390);
     }

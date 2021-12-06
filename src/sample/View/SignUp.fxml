@@ -41,7 +41,6 @@
          </textFill></Label>
       <TextField fx:id="nameText" layoutX="368.0" layoutY="118.0" promptText="Name" styleClass="textfield" />
       <TextField fx:id="emailText" layoutX="368.0" layoutY="164.0" promptText="Email" styleClass="textfield" />
-      <TextField fx:id="passwordText" layoutX="368.0" layoutY="212.0" promptText="Password" styleClass="textfield" />
       <CheckBox fx:id="checkBox" layoutX="380.0" layoutY="260.0" mnemonicParsing="false" text="I Agree To Terms">
          <font>
             <Font name="Mongolian Baiti" size="12.0" />
@@ -137,5 +136,6 @@
          </image>
       </ImageView>
       <Button layoutX="339.0" layoutY="296.0" mnemonicParsing="false" onAction="#backtologinAction" prefHeight="25.0" prefWidth="89.0" text="Back to login" />
+      <PasswordField fx:id="passwordText" layoutX="368.0" layoutY="212.0" promptText="Password" styleClass="textfield" />
    </children>
 </AnchorPane>

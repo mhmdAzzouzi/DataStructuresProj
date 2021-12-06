@@ -6,23 +6,14 @@ import java.util.Random;
 
 public class User {
     String name;
-    //    String lastName;
     String type;
     int ID;
     String password;
-
     String email;
     LocalDate date;
     Random random = new Random();
     public  ArrayList<User> friendsList = new ArrayList<>();
 
-    //    public User(String name ,String password) {
-//        this.name = name;
-////        this.lastName = lastName;
-//        ID = random.nextInt(10000) + 1;
-//        this.password = password;
-//        date = LocalDate.now();
-//    }
 
     public String getType() {
         return type;
@@ -79,14 +70,6 @@ public class User {
         this.name = name;
     }
 
-//    public String getLastName() {
-//        return lastName;
-//    }
-//
-//    public void setLastName(String lastName) {
-//        this.lastName = lastName;
-//    }
-
     public String getPassword() {
         return password;
     }
@@ -107,7 +90,6 @@ public class User {
     public String toString() {
         return "User{" +
                 ", name='" + name + '\'' +
-//                ", lastName='" + lastName + '\'' +
                 ", ID='" + ID + '\'' +
                 ", password='" + password + '\'' +
                 ", date=" + date +
