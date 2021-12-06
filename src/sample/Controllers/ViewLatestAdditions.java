@@ -50,8 +50,9 @@ public class ViewLatestAdditions {
         if (searchField.getText().length() > 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Search.fxml"));
             Parent page = loader.load();
-            Search controller = loader.getController();
+            Search controller= loader.getController();
             controller.searchItem(Integer.parseInt(searchField.getText()));
+            Search.bookId=searchField.getText();
             Main.switchScene(page);
         }
     }
