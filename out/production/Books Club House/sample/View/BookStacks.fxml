@@ -120,7 +120,7 @@
                    </graphic></Button>
             <AnchorPane layoutX="141.0" layoutY="132.0" prefHeight="246.0" prefWidth="383.0">
                <children>
-                  <VBox fx:id="cardposition" alignment="CENTER" layoutY="7.0" prefHeight="246.0" prefWidth="383.0" />
+                  <VBox fx:id="bookCardItem" alignment="CENTER" layoutY="7.0" prefHeight="246.0" prefWidth="383.0" />
                </children></AnchorPane>
             <Separator layoutX="3.0" layoutY="60.0" prefHeight="2.0" prefWidth="699.0" />
            </children>

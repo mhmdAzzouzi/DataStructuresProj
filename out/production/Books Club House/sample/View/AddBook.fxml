@@ -139,9 +139,9 @@
 
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="166.0" layoutY="66.0" prefHeight="583.0" prefWidth="747.0" styleClass="mainpage" stylesheets="/sample/styles/TopNavMenu.css">
+        <AnchorPane layoutX="166.0" layoutY="68.0" prefHeight="581.0" prefWidth="747.0" styleClass="mainpage" stylesheets="/sample/styles/TopNavMenu.css">
             <children>
-                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="44.0" stylesheets="/sample/styles/TopNavMenu.css" text="Add Book">
+                <Label alignment="CENTER" layoutX="44.0" layoutY="14.0" prefHeight="44.0" stylesheets="/sample/styles/TopNavMenu.css" text="Add Book">
                     <textFill>
                         <LinearGradient endX="1.0" endY="1.0">
                             <stops>
@@ -243,62 +243,7 @@
                         <Image url="@/sample/images/quantity.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="114.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="79.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="44.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="79.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="538.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="608.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="573.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="573.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="551.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="586.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="621.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/sample/images/addbook.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="113.0" layoutX="586.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/sample/images/addbook.png" />
                     </image>

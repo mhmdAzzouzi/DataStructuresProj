@@ -73,7 +73,7 @@
                     </font>
                 </Button>
                 <AnchorPane layoutX="10.0" layoutY="107.0" prefHeight="89.0" prefWidth="166.0" />
-                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
+                <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#navigate" prefHeight="55.0" prefWidth="166.0" styleClass="Buttons" text="Log Out" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -133,7 +133,7 @@
         </AnchorPane>
         <AnchorPane layoutX="164.0" layoutY="79.0" prefHeight="570.0" prefWidth="742.0">
             <children>
-                <Label layoutX="14.0" layoutY="2.0" prefHeight="49.0" text="Other Readers">
+                <Label layoutX="14.0" layoutY="2.0" prefHeight="49.0" text="Friends">
                     <textFill>
                         <LinearGradient endX="1.0" endY="1.0">
                             <stops>

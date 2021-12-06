@@ -1,6 +1,5 @@
 package sample.Controllers;
 
-import animatefx.animation.Flip;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,16 +8,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import sample.Controllers.Items.UserCard;
-import sample.DataStructures.Stack;
 import sample.Main;
 import sample.Models.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class ViewOtherReaders {
 
@@ -30,8 +25,6 @@ public class ViewOtherReaders {
     FlowPane userCardFlowPane;
     @FXML
     Label friendsNumber;
-//    @FXML
-//    HBox userCardBox;
 
     public void viewFriends() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));
@@ -40,11 +33,17 @@ public class ViewOtherReaders {
     }
 
     @FXML
-    public void initialize() throws IOException {
-        Main.restoreSize();
-        loggedinAs.setText(Main.loggedIn.getName());
-        ArrayList<User> filtered = new ArrayList<>(Main.userList);
+    public void increment() {
+        if (friendsNumber.getText() != null) {
+            friendsNumber.setText(String.valueOf(Integer.parseInt(friendsNumber.getText()) + 1));
+        }else{
+            friendsNumber.setText("1");
+        }
 
+    }
+
+    @FXML
+    public void initialize() throws IOException {
         ArrayList<User> filteredfriendsList = new ArrayList<>(Main.loggedIn.friendsList);
         filteredfriendsList.removeIf(user -> Main.loggedIn == user);
         if (filteredfriendsList.size() > 0) {
@@ -52,9 +51,12 @@ public class ViewOtherReaders {
         } else {
             friendsNumber.setText("0");
         }
-
+        Main.restoreSize();
+        loggedinAs.setText(Main.loggedIn.getName());
+        ArrayList<User> filtered = new ArrayList<>(Main.userList);
 //            filtering usersList to display readers that aren't in the
 //            friendslist of the current user
+        filtered.removeIf(user -> user == Main.loggedIn || Main.loggedIn.friendsList.contains(user));
 //            for(int i =0 ; i<  filtered.size() ; i++){
 //                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCard.fxml"));
 //                    Parent userCard= loader.load();
@@ -69,6 +71,7 @@ public class ViewOtherReaders {
             userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), Main.userList.get(i).friendsList.size(), false);
             userCardFlowPane.getChildren().add(userCard);
         }
+
     }
 
     public void searchItem() throws Exception {

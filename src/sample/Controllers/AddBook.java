@@ -22,10 +22,6 @@ public class AddBook {
     TextField authorField, genreField, quantityField, titleField, searchField;
     @FXML
     Label messageLabel, loggedinAs;
-
-    @FXML
-    VBox listBox;
-
     @FXML
     Label friendsNumber;
 
@@ -65,7 +61,7 @@ public class AddBook {
                 Book newBook = new Book(author, title, genre, Integer.parseInt(quantity));
                 Main.binaryTree.insertion(newBook);
                 Main.arrayList.add(newBook);
-                Data.bookInfo.addAll(newBook);
+                Data.bookInfo.add(newBook);
                 Main.queue.enqueue(newBook);
                 System.out.println("new print ");
                 Main.binaryTree.DisplayInorder();

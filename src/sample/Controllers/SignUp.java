@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import sample.Main;
 import sample.Models.User;
@@ -14,7 +15,9 @@ import java.io.IOException;
 
 public class SignUp {
     @FXML
-    TextField nameText, passwordText, emailText;
+    TextField nameText, emailText;
+    @FXML
+    PasswordField passwordText;
     @FXML
     Label errorMessage;
     @FXML
@@ -39,7 +42,7 @@ public class SignUp {
                         User user = new User(name, password, email);
                         Main.userList.add(user);
                         Main.loggedIn = user;
-                        FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/Home.fxml"));
+                        FXMLLoader home = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                         Parent root = home.load();
                         Main.restoreSize();
                         Main.switchScene(root);

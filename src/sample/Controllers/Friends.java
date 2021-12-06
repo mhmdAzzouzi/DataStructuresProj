@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
 import sample.Controllers.Items.UserCard;
 import sample.Main;
@@ -37,7 +38,6 @@ public class Friends {
         ArrayList<User> filtered = new ArrayList<>(Main.loggedIn.friendsList);
 //            filtering usersList to display readers that aren't in the
 //            friendslist of the current user
-//            }
 
         filtered.removeIf(user -> Main.loggedIn == user);
         if (filtered.size() > 0) {
@@ -51,12 +51,11 @@ public class Friends {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/UserCardTest.fxml"));
             Parent userCard = loader.load();
             UserCard userCard1 = loader.getController();
-            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), u.getFriendsList().size() ,true);
+            userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), u.getFriendsList().size(), true);
             userCardFlowPane.getChildren().add(userCard);
         }
 
     }
-
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
@@ -76,7 +75,6 @@ public class Friends {
                 FXMLLoader page = new FXMLLoader(getClass().getResource("/sample/View/AddBook.fxml"));
                 Parent root = page.load();
                 Main.switchScene(root);
-
             } else if ("BookStacks".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
                 Parent root1 = page2.load();
@@ -89,12 +87,14 @@ public class Friends {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
+            } else if ("logout".equals(b1.getId())) {
+                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
+                Parent root1 = page2.load();
+                Main.restoreSize2();
+                Main.switchScene(root1);
             }
         } catch (Exception e) {
             System.out.println("something went wrong");
         }
-
-
     }
-
 }
