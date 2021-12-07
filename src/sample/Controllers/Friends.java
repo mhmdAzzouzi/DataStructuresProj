@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import sample.Controllers.Items.UserCard;
 import sample.Main;
@@ -55,6 +57,15 @@ public class Friends {
             userCard1.setLabels(u.getName(), u.getEmail(), u.getID(), u.getFriendsList().size(), true);
             userCardFlowPane.getChildren().add(userCard);
         }
+        searchField.setOnKeyPressed((KeyEvent e) -> {
+            if(e.getCode().equals(KeyCode.ENTER) ||e.getCode().equals(KeyCode.TAB)) {
+                try {
+                    searchItem();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
 
     }
 

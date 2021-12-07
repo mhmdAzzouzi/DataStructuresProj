@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import sample.Controllers.Items.BookItem;
 import sample.Main;
@@ -36,7 +38,18 @@ public class AddBook {
         }
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
         System.out.println(Main.loggedIn.friendsList.get(0));
+        searchField.setOnKeyPressed((KeyEvent e) -> {
+            if(e.getCode().equals(KeyCode.ENTER) ||e.getCode().equals(KeyCode.TAB)) {
+                try {
+                    searchItem();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
     }
+
+
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
@@ -45,6 +58,8 @@ public class AddBook {
             Parent page = loader.load();
             Search controller = loader.getController();
             controller.searchItem(Integer.parseInt(searchField.getText()));
+
+
             Search.bookId=searchField.getText();
             Main.switchScene(page);
         }
@@ -67,6 +82,9 @@ public class AddBook {
                 Main.stack.push(newBook);
                 System.out.println("new print ");
                 Main.binaryTree.DisplayInorder();
+
+                  clear();
+
                 messageLabel.setText("Thank you ! Book was added");
             } else {
                 messageLabel.setText("Only Librarians Can Add books !");

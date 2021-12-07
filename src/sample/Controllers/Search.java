@@ -7,21 +7,25 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import sample.Controllers.Items.BookCard;
 import sample.Main;
 import sample.Models.Book;
 import sample.Models.Data;
+import sample.Models.User;
 
 import javax.xml.soap.Text;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Search {
     @FXML
     TextField searchField;
 
     @FXML
-    Label loggedinAs, message;
+    Label loggedinAs, message , friendsNumber;;
 
     @FXML
     VBox cardposition;
@@ -37,8 +41,26 @@ public class Search {
         Main.switchScene(root);
     }
 
+    @FXML
     public void initialize() throws  IOException {
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
+        ArrayList<User> filteredfriendsList = new ArrayList<>(Main.loggedIn.friendsList);
+        filteredfriendsList.removeIf(user -> Main.loggedIn == user);
+        if (filteredfriendsList.size() > 0) {
+            friendsNumber.setText(String.valueOf(filteredfriendsList.size()));
+        } else {
+            friendsNumber.setText("0");
+        }
+        searchField.setOnKeyPressed((KeyEvent e) -> {
+            if(e.getCode().equals(KeyCode.ENTER) ||e.getCode().equals(KeyCode.TAB)) {
+                try {
+                    searchItem();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
+
 
     }
 

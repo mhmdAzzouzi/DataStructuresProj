@@ -44,7 +44,7 @@ public class Stack extends LinkedList {
             Stack temp = new Stack();
             Book idToCheck = this.pop();
             temp.push(idToCheck);
-            while( idToCheck.getID() != id){
+            while( idToCheck.getID() != id && !this.isEmpty()){
                 Book b =this.pop();
                 idToCheck=b;
                 temp.push(b);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="392.0" prefWidth="582.0" stylesheets="@../styles/SignUp.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SignUp">
+<AnchorPane prefHeight="392.0" prefWidth="582.0" stylesheets="@../styles/SignUp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SignUp">
    <children>
       <Label layoutX="319.0" layoutY="42.0" text="Create New Account">
          <font>
@@ -18,22 +19,22 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.7032407522201538" green="0.0486111119389534" blue="0.75" />
+                        <Color blue="0.75" green="0.0486111119389534" red="0.7032407522201538" />
                      </color>
                   </Stop>
                   <Stop offset="0.007662835249042145">
                      <color>
-                        <Color red="0.7032407522201538" green="0.0486111119389534" blue="0.75" />
+                        <Color blue="0.75" green="0.0486111119389534" red="0.7032407522201538" />
                      </color>
                   </Stop>
                   <Stop offset="0.8556701030927835">
                      <color>
-                        <Color red="0.8500000238418579" green="0.042500000447034836" blue="0.677762508392334" />
+                        <Color blue="0.677762508392334" green="0.042500000447034836" red="0.8500000238418579" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.5509482622146606" green="0.04008284583687782" blue="0.6184210777282715" />
+                        <Color blue="0.6184210777282715" green="0.04008284583687782" red="0.5509482622146606" />
                      </color>
                   </Stop>
                </stops>
@@ -48,7 +49,7 @@
          <effect>
             <InnerShadow>
                <color>
-                  <Color red="0.5978882312774658" green="0.09551656991243362" blue="0.7368420958518982" />
+                  <Color blue="0.7368420958518982" green="0.09551656991243362" red="0.5978882312774658" />
                </color>
             </InnerShadow>
          </effect></CheckBox>
@@ -59,22 +60,22 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.5844917297363281" green="0.1283503919839859" blue="0.6447368264198303" />
+                        <Color blue="0.6447368264198303" green="0.1283503919839859" red="0.5844917297363281" />
                      </color>
                   </Stop>
                   <Stop offset="0.37425445352924913">
                      <color>
-                        <Color red="0.6399999856948853" green="0.12800000607967377" blue="0.40525633096694946" />
+                        <Color blue="0.40525633096694946" green="0.12800000607967377" red="0.6399999856948853" />
                      </color>
                   </Stop>
                   <Stop offset="0.6941580756013745">
                      <color>
-                        <Color red="0.5802666544914246" green="0.12800000607967377" blue="0.6399999856948853" />
+                        <Color blue="0.6399999856948853" green="0.12800000607967377" red="0.5802666544914246" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.3379111886024475" green="0.008223684504628181" blue="0.3552631437778473" />
+                        <Color blue="0.3552631437778473" green="0.008223684504628181" red="0.3379111886024475" />
                      </color>
                   </Stop>
                </stops>
@@ -98,22 +99,22 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.9333333373069763" blue="1.0" />
+                        <Color blue="1.0" red="0.9333333373069763" />
                      </color>
                   </Stop>
                   <Stop offset="0.007662835249042145">
                      <color>
-                        <Color red="0.9333333373069763" blue="1.0" />
+                        <Color blue="1.0" red="0.9333333373069763" />
                      </color>
                   </Stop>
                   <Stop offset="0.8556701030927835">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.5831708908081055" green="0.0974658876657486" blue="0.6578947305679321" />
+                        <Color blue="0.6578947305679321" green="0.0974658876657486" red="0.5831708908081055" />
                      </color>
                   </Stop>
                </stops>
@@ -135,7 +136,7 @@
             <Image url="@../images/icons8_important_mail_24px_1.png" />
          </image>
       </ImageView>
-      <Button layoutX="339.0" layoutY="296.0" mnemonicParsing="false" onAction="#backtologinAction" prefHeight="25.0" prefWidth="89.0" text="Back to login" />
+      <Button layoutX="339.0" layoutY="296.0" mnemonicParsing="false" onAction="#backtologinAction" prefHeight="25.0" prefWidth="89.0" text="Login" />
       <PasswordField fx:id="passwordText" layoutX="368.0" layoutY="212.0" promptText="Password" styleClass="textfield" />
    </children>
 </AnchorPane>
