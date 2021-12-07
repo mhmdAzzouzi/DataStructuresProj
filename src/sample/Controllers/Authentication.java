@@ -6,13 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import sample.Models.Data;
 import sample.Main;
 import sample.Models.User;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Authentication {
     @FXML

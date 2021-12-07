@@ -9,8 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.VBox;
-import sample.Controllers.Items.BookItem;
 import sample.Main;
 import sample.Models.Book;
 import sample.Models.Data;
@@ -39,7 +37,7 @@ public class AddBook {
         loggedinAs.setText(String.valueOf(Main.loggedIn.getName()));
         System.out.println(Main.loggedIn.friendsList.get(0));
         searchField.setOnKeyPressed((KeyEvent e) -> {
-            if(e.getCode().equals(KeyCode.ENTER) ||e.getCode().equals(KeyCode.TAB)) {
+            if (e.getCode().equals(KeyCode.ENTER) || e.getCode().equals(KeyCode.TAB)) {
                 try {
                     searchItem();
                 } catch (Exception exception) {
@@ -48,7 +46,6 @@ public class AddBook {
             }
         });
     }
-
 
 
     public void searchItem() throws Exception {
@@ -60,7 +57,7 @@ public class AddBook {
             controller.searchItem(Integer.parseInt(searchField.getText()));
 
 
-            Search.bookId=searchField.getText();
+            Search.bookId = searchField.getText();
             Main.switchScene(page);
         }
     }
@@ -83,7 +80,7 @@ public class AddBook {
                 System.out.println("new print ");
                 Main.binaryTree.DisplayInorder();
 
-                  clear();
+                clear();
 
                 messageLabel.setText("Thank you ! Book was added");
             } else {
@@ -104,40 +101,8 @@ public class AddBook {
     }
 
     public void navigate(ActionEvent event) throws IOException {
-        Button b1 = (Button) event.getTarget();
-        try {
-            if ("addBook".equals(b1.getId())) {
-                FXMLLoader page = new FXMLLoader(getClass().getResource("/sample/View/AddBook.fxml"));
-                Parent root = page.load();
-                Main.switchScene(root);
-
-
-            } else if ("BookStacks".equals(b1.getId())) {
-                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
-                Parent root1 = page2.load();
-                Main.switchScene(root1);
-
-            } else if ("ViewLatestAdditions".equals(b1.getId())) {
-                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
-                Parent root1 = page2.load();
-                Main.switchScene(root1);
-
-            } else if ("ViewOtherReaders".equals(b1.getId())) {
-                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
-                Parent root1 = page2.load();
-                Main.switchScene(root1);
-            } else if ("logout".equals(b1.getId())) {
-                FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
-                Parent root1 = page2.load();
-                Main.restoreSize2();
-
-                Main.switchScene(root1);
-            }
-        } catch (Exception e) {
-            System.out.println("something went wrong");
-        }
-
-
+        BookStacks nav = new BookStacks();
+        nav.navigate(event);
     }
 
     public void viewFriends() throws IOException {

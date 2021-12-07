@@ -4,7 +4,6 @@ import sample.Models.Book;
 
 public class Stack extends LinkedList {
 
-
     public Stack copy() {
         Stack s1 = new Stack();
         Stack s2 = new Stack();
@@ -39,18 +38,19 @@ public class Stack extends LinkedList {
             }
         }
     }
-    public void deleteBook(int id){
-        if(!this.isEmpty()){
+
+    public void deleteBook(int id) {
+        if (!this.isEmpty()) {
             Stack temp = new Stack();
             Book idToCheck = this.pop();
             temp.push(idToCheck);
-            while( idToCheck.getID() != id && !this.isEmpty()){
-                Book b =this.pop();
-                idToCheck=b;
+            while (idToCheck.getID() != id && !this.isEmpty()) {
+                Book b = this.pop();
+                idToCheck = b;
                 temp.push(b);
             }
             temp.pop();
-            while(!temp.isEmpty()){
+            while (!temp.isEmpty()) {
                 this.push(temp.pop());
             }
         }

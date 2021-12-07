@@ -49,9 +49,8 @@ public class BookStacks {
         }
         pushToCard();
 
-
         searchField.setOnKeyPressed((KeyEvent e) -> {
-            if(e.getCode().equals(KeyCode.ENTER) ||e.getCode().equals(KeyCode.TAB)) {
+            if (e.getCode().equals(KeyCode.ENTER) || e.getCode().equals(KeyCode.TAB)) {
                 try {
                     searchItem();
                 } catch (Exception exception) {
@@ -60,16 +59,15 @@ public class BookStacks {
             }
         });
 
-
         friendsNumber.setOnKeyPressed((KeyEvent e) -> {
-            if(e.getCode().equals(KeyCode.LEFT) ) {
+            if (e.getCode().equals(KeyCode.LEFT)) {
                 try {
                     pushToCard();
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-            }else{
-                if(e.getCode().equals(KeyCode.RIGHT) ){
+            } else {
+                if (e.getCode().equals(KeyCode.RIGHT)) {
                     try {
                         popFromCard();
                     } catch (IOException ioException) {
@@ -78,8 +76,6 @@ public class BookStacks {
                 }
             }
         });
-
-
     }
 
     public void searchItem() throws Exception {
@@ -89,17 +85,14 @@ public class BookStacks {
             Parent page = loader.load();
             Search controller = loader.getController();
             controller.searchItem(Integer.parseInt(searchField.getText()));
-            Search.bookId=searchField.getText();
+            Search.bookId = searchField.getText();
             Main.switchScene(page);
         }
     }
 
     public void pushToCard() throws IOException {
-
         if (!stackToView.isEmpty()) {
-
             Book popedBook = stackToView.getHead();
-
             if (popedBook != null) {
                 stackPreserve.push(stackToView.pop());
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/book card.fxml"));
@@ -114,14 +107,10 @@ public class BookStacks {
     }
 
     public void popFromCard() throws IOException {
-
         try {
-
             if (!stackPreserve.isEmpty() && stackPreserve.length() > 1) {
-
                 stackToView.push(stackPreserve.pop());
                 Book popedBook = stackPreserve.getHead();
-
                 System.out.println(popedBook);
                 if (popedBook != null) {
                     bookCardItem.getChildren().clear();
@@ -130,7 +119,6 @@ public class BookStacks {
                     BookCard b1 = loader.getController();
                     b1.setLabels(String.valueOf(popedBook.getID()), popedBook.getTitle(), popedBook.getAuthor(), String.valueOf(popedBook.getQuantity()), popedBook.getGenre());
                     bookCardItem.getChildren().add(bookCard);
-
                 }
             }
         } catch (Exception e) {
@@ -151,18 +139,14 @@ public class BookStacks {
                 FXMLLoader page = new FXMLLoader(getClass().getResource("/sample/View/AddBook.fxml"));
                 Parent root = page.load();
                 Main.switchScene(root);
-
-
             } else if ("BookStacks".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/BookStacks.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-
             } else if ("ViewLatestAdditions".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewLatestAdditions.fxml"));
                 Parent root1 = page2.load();
                 Main.switchScene(root1);
-
             } else if ("ViewOtherReaders".equals(b1.getId())) {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/ViewOtherReaders.fxml"));
                 Parent root1 = page2.load();
@@ -171,12 +155,10 @@ public class BookStacks {
                 FXMLLoader page2 = new FXMLLoader(getClass().getResource("/sample/View/SignUp.fxml"));
                 Parent root1 = page2.load();
                 Main.restoreSize2();
-
                 Main.switchScene(root1);
             }
         } catch (Exception e) {
             System.out.println("something went wrong");
         }
-
     }
 }

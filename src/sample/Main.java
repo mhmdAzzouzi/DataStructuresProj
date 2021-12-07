@@ -11,13 +11,11 @@ import sample.DataStructures.LinkedList;
 import sample.DataStructures.Queue;
 import sample.Models.Book;
 import sample.Models.Data;
-import sample.Models.Librarian;
 import sample.DataStructures.Stack;
 import sample.Models.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Main extends Application {
 
@@ -31,7 +29,6 @@ public class Main extends Application {
     public static User loggedIn;
 
     public static void restoreSize() {
-//         920, 649)
         stage.setWidth(920);
         stage.setHeight(649);
     }
@@ -57,7 +54,6 @@ public class Main extends Application {
     public static void switchScene(Parent root) throws IOException {
         stage.getScene().setRoot(root);
     }
-
 
     public static void main(String[] args) {
         launch(args);

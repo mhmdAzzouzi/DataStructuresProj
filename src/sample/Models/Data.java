@@ -3,9 +3,7 @@ package sample.Models;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.Main;
-import sample.Models.Book;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Data {
@@ -51,19 +49,15 @@ public class Data {
         User nour = new User("Nour", "021602", "nourchreideh@gmail.com");
 
         mo.friendsList.addAll(Arrays.asList(jihan, nour, salem));
-        jihan.friendsList.addAll(Arrays.asList(nour, mo, ahmad,omar)); // khaled salem salma mariam
+        jihan.friendsList.addAll(Arrays.asList(nour, mo, ahmad, omar));
         nour.friendsList.addAll(Arrays.asList(mo, khaled, omar, salma, jihan));
         ahmad.friendsList.addAll(Arrays.asList(nour, mo, jihan));
         salem.friendsList.add(mo);
-        khaled.friendsList.addAll(Arrays.asList(nour,salma));
+        khaled.friendsList.addAll(Arrays.asList(nour, salma));
         omar.friendsList.add(jihan);
-        salma.friendsList.addAll(Arrays.asList(nour,khaled));
+        salma.friendsList.addAll(Arrays.asList(nour, khaled));
 
-
-        System.out.println("Jihan's Friends: "+jihan.friendsList);
-
-        System.out.println("you have friends = " + mo.getFriendsList().size());
-        User[] users = {jihan, mo, nour, ahmad, khaled, mariam,salem,salma,omar};
+        User[] users = {jihan, mo, nour, ahmad, khaled, mariam, salem, salma, omar};
         Main.userList.addAll(Arrays.asList(users));
     }
 

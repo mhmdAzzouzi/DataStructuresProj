@@ -6,7 +6,6 @@ import sample.Models.User;
 public class BST {
     protected static class Node {
         Book book;
-
         Node left;
         Node right;
 
@@ -89,8 +88,6 @@ public class BST {
     }
 
     public Node delete(Node r, int id) {
-        //If the tree is empty return null and if r==null
-        // then just return r because it's null :)
         if (r == null) {
             return r;
         }
@@ -99,7 +96,7 @@ public class BST {
         } else if (id > r.book.getID()) {
             r.right = delete(r.right, id);
         } else {
-            // node with only one child or no child
+//             node with only one child or no child
             if (r.left == null) {
                 return r.right;
             } else if (r.right == null) {
@@ -107,13 +104,13 @@ public class BST {
             }
 //            node with 2 children
             r.book = minValue(r.right);
-            // Delete the inorder successor
+//             Delete the inorder successor
             r.right = delete(r.right, r.book.getID());
         }
         return r;
     }
 
-    //to return minimum of a tree or a subtree
+    //    to return minimum of a tree or a subtree
     public Book minValue(Node r) {
         Book min = r.book;
         while (r.left != null) {

@@ -42,7 +42,6 @@ public class Book {
 
         this.author = author;
         this.genre = genre;
-        this.ID = ID;
         this.title = title;
         this.quantity = quantity;
         this.rating = rating;

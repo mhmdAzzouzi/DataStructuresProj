@@ -1,14 +1,11 @@
 package sample.Controllers.Items;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import sample.Controllers.Friends;
-import sample.Controllers.ViewOtherReaders;
 import sample.Main;
 import sample.Models.User;
 
@@ -36,11 +33,6 @@ public class UserCard {
             imageAdd.setImage(new Image("/sample/images/check.png"));
         }
     }
-
-//    @FXML
-//    public void increment(Label number) {
-//        number.setText(String.valueOf(Integer.parseInt(number.getText()) + 1));
-//    }
 
     public void addFriend() throws IOException {
         imageAdd.setImage(new Image("/sample/images/check.png"));

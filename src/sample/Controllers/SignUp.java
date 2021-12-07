@@ -1,6 +1,5 @@
 package sample.Controllers;
 
-import com.sun.xml.internal.bind.XmlAccessorFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
