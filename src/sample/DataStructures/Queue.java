@@ -10,7 +10,7 @@ public class Queue extends LinkedList {
     }
 
     public Book dequeue(){
-        Book temp = tail.book;
+        Book temp = head.book;
         deleteFirst();
         return temp;
     }
@@ -27,7 +27,6 @@ public class Queue extends LinkedList {
             while(!q1.isEmpty()){
                 this.enqueue(q1.dequeue());
             }
-            q2.reverse();
             return q2;
         }
         return null;
@@ -38,7 +37,7 @@ public class Queue extends LinkedList {
             Queue temp = new Queue();
             Book idToCheck = this.dequeue();
             temp.enqueue(idToCheck);
-            while( idToCheck.getID() != id){
+            while( idToCheck.getID() != id && !this.isEmpty()){
                 Book b =this.dequeue();
                 idToCheck=b;
                 temp.enqueue(b);

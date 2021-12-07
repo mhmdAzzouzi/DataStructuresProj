@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import sample.Controllers.Items.BookItem;
 import sample.DataStructures.Queue;
@@ -43,7 +45,6 @@ public class ViewLatestAdditions {
     @FXML
     Label friendsNumber;
 
-    Queue queueToView = Main.queue.copy();
 
     public void searchItem() throws Exception {
         System.out.println(searchField.getText());
@@ -67,19 +68,29 @@ public class ViewLatestAdditions {
         if (Main.queue.length() == 0) {
             listBox.getChildren().add(messageLabel);
         }
+        System.out.println("main");
+        Main.queue.display();
+        Queue queueToView = Main.queue.copy();
+        System.out.println("before");
+
+        System.out.println("not main");
+        queueToView.display();
         for (int i = 0; i < Main.queue.length(); i++) {
             Book book = queueToView.dequeue();
             String author = book.getAuthor();
             String title = book.getTitle();
             String genre = book.getGenre();
             String quantity = String.valueOf(book.getQuantity());
-            int rating = Main.arrayList.get(i).getRating();
+            int rating = book.getRating();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/View/Items/BookItem.fxml"));
             Parent component = loader.load();
             BookItem bookItem = loader.getController();
             bookItem.setItems(title, genre, author, quantity, rating);
             listBox.getChildren().add(component);
         }
+        System.out.println("after");
+        queueToView.display();
+
     }
 
     public void drawList() throws IOException {
@@ -118,6 +129,15 @@ public class ViewLatestAdditions {
 //        this.idColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
 //        setTable();
         drawList();
+        searchField.setOnKeyPressed((KeyEvent e) -> {
+            if(e.getCode().equals(KeyCode.ENTER) ||e.getCode().equals(KeyCode.TAB)) {
+                try {
+                    searchItem();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
     }
     public void viewFriends() throws IOException{
         FXMLLoader loader= new FXMLLoader(getClass().getResource("/sample/View/Friends.fxml"));

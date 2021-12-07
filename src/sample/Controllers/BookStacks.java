@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import sample.Controllers.Items.BookCard;
 import sample.DataStructures.Stack;
@@ -46,6 +48,38 @@ public class BookStacks {
             friendsNumber.setText("0");
         }
         pushToCard();
+
+
+        searchField.setOnKeyPressed((KeyEvent e) -> {
+            if(e.getCode().equals(KeyCode.ENTER) ||e.getCode().equals(KeyCode.TAB)) {
+                try {
+                    searchItem();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
+
+
+        friendsNumber.setOnKeyPressed((KeyEvent e) -> {
+            if(e.getCode().equals(KeyCode.LEFT) ) {
+                try {
+                    pushToCard();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }else{
+                if(e.getCode().equals(KeyCode.RIGHT) ){
+                    try {
+                        popFromCard();
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                }
+            }
+        });
+
+
     }
 
     public void searchItem() throws Exception {

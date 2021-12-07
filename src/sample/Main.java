@@ -45,7 +45,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/View/SignUp.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/View/Authentication.fxml"));
         primaryStage.setTitle("Book Club House");
         primaryStage.setScene(new Scene(root, 600, 390));
         Data.load();
